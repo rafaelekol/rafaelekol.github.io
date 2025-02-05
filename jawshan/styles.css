@@ -168,7 +168,7 @@ select {
 
 /* Add these styles */
 #settingsBtn {
-    font-size: 1.5rem;  /* Increase icon size */
+    font-size: 1.2rem;  /* Increase icon size */
     padding: 0.5rem;
     line-height: 1;     /* Helps with vertical alignment */
 }
