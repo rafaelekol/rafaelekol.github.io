@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jawshan App Test</title>
+</head>
+<body>
+    <h1>Jawshan App Test</h1>
+    <script>
+        // Test if data is loaded
+        console.log('JAWSHAN_DATA length:', JAWSHAN_DATA ? JAWSHAN_DATA.length : 'Not loaded');
+        
+        // Test if Store is available
+        console.log('Store available:', typeof Store !== 'undefined');
+        
+        // Test if app initializes
+        console.log('App initialized:', typeof JawshanApp !== 'undefined');
+
+        // Test local storage functionality
+        window.addEventListener('load', () => {
+            const store = new Store();
+            console.log('Initial settings:', store.loadSettings());
+            store.setLastPage(5);
+            console.log('After setting page:', store.getLastPage());
+        });
+    </script>
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 
