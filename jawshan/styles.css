@@ -44,24 +44,27 @@ body {
     flex: 1;
     overflow: hidden;
     position: relative;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .page-content {
-    height: 100%;
+    flex: 1;
     padding: 1rem;
     overflow-y: auto;
     white-space: pre-line;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     overflow-x: hidden;
 }
 
 .page-text {
+    flex: 1;
     font-size: inherit;
     line-height: 1.6;
     direction: ltr;
+    overflow-y: auto;
+    padding-bottom: 1rem;
 }
 
 .page-text[lang="ar"] {
@@ -71,10 +74,15 @@ body {
 }
 
 .page-dua {
-    margin-top: auto;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    bottom: 0;
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
     font-style: italic;
+    margin-top: 1rem;
+    width: 100%;
+    z-index: 1;
 }
 
 .page-dua[lang="ar"] {
