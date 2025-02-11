@@ -13,6 +13,8 @@ class JawshanApp {
         this.loadPage(this.currentPage);
         this.applySettings();
         this.initializeApp();
+        this.audio = null;
+        this.isPlaying = false;
     }
 
     async loadJawshanData() {
@@ -40,6 +42,7 @@ class JawshanApp {
         this.pageIndicator = document.querySelector('.page-indicator');
         this.sliderContainer = document.querySelector('.slider-container');
         this.sliderBubble = document.querySelector('.slider-bubble');
+        this.audioBtn = document.getElementById('audioBtn');
     }
 
     initEventListeners() {
@@ -164,6 +167,15 @@ class JawshanApp {
         this.sliderContainer.addEventListener('mouseleave', () => {
             this.hideSliderWithDelay();
         });
+
+        // Add audio button event listener
+        this.audioBtn.addEventListener('click', () => {
+            if (this.isPlaying) {
+                this.stopAudio();
+            } else {
+                this.playAudio();
+            }
+        });
     }
 
     changeFontSize(delta) {
@@ -190,10 +202,22 @@ class JawshanApp {
         this.currentPageEl.textContent = pageNumber;
         this.store.setSetting('currentPage', pageNumber);
         this.pageSlider.value = pageNumber;
+
+        // Add this line to update audio button visibility
+        this.updateAudioButtonVisibility();
+
+        // If audio was playing, start the new page's audio
+        if (this.isPlaying) {
+            this.playAudio();
+        }
     }
 
     nextPage() {
         if (this.currentPage < 101) {
+            const wasPlaying = this.isPlaying;
+            if (wasPlaying) {
+                this.stopAudio();
+            }
             this.currentPage++;
             this.loadPage(this.currentPage);
         }
@@ -201,6 +225,10 @@ class JawshanApp {
 
     previousPage() {
         if (this.currentPage > 1) {
+            const wasPlaying = this.isPlaying;
+            if (wasPlaying) {
+                this.stopAudio();
+            }
             this.currentPage--;
             this.loadPage(this.currentPage);
         }
@@ -253,6 +281,58 @@ class JawshanApp {
         this.sliderTimer = setTimeout(() => {
             this.hideSlider();
         }, 3000);
+    }
+
+    playAudio() {
+        if (this.audio) {
+            this.audio.pause();
+        }
+
+        this.audio = new Audio(`audio/bab${this.currentPage}.mp3`);
+        
+        // When audio ends, play next track and show next page
+        this.audio.addEventListener('ended', () => {
+            if (this.currentPage < 101) {
+                this.nextPage();
+                this.playAudio();
+            } else {
+                this.stopAudio();
+            }
+        });
+
+        // Handle any errors
+        this.audio.addEventListener('error', (e) => {
+            console.error('Error playing audio:', e);
+            this.stopAudio();
+        });
+
+        this.audio.play().then(() => {
+            this.isPlaying = true;
+            // Change to stop icon
+            this.audioBtn.querySelector('img').src = 'assets/stop_circle_24dp_5F6368_FILL1_wght400_GRAD0_opsz24.png';
+        }).catch(error => {
+            console.error('Error starting playback:', error);
+        });
+    }
+
+    stopAudio() {
+        if (this.audio) {
+            this.audio.pause();
+            this.audio.currentTime = 0;
+            this.audio = null;
+        }
+        this.isPlaying = false;
+        // Change back to play icon
+        this.audioBtn.querySelector('img').src = 'assets/play_circle_24dp_5F6368_FILL1_wght400_GRAD0_opsz24.png';
+    }
+
+    // Add this new method
+    updateAudioButtonVisibility() {
+        if (this.currentPage === 101) {
+            this.audioBtn.style.display = 'none';
+        } else {
+            this.audioBtn.style.display = 'block';
+        }
     }
 }
 
