@@ -73,12 +73,15 @@ body {
     direction: ltr;
     overflow-y: auto;
     padding-bottom: 1rem;
+    white-space: pre-line;
 }
 
 .page-text[lang="ar"] {
     direction: rtl;
     font-family: "Traditional Arabic", "Scheherazade New", serif;
     font-size: 1.2em;
+    white-space: pre-line;
+    text-align: right;
 }
 
 .page-dua {

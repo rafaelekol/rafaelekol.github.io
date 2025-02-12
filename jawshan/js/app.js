@@ -190,9 +190,14 @@ class JawshanApp {
         const page = this.jawshanData.find(p => p.id === pageNumber);
         if (!page) return;
 
-        const content = page[this.settings.language];
+        let content = page[this.settings.language];
         const dua = page[`${this.settings.language}_dua`];
         const isArabic = this.settings.language === 'arabic';
+
+        // Add line breaks after ؛۝؛ for Arabic text
+        if (isArabic) {
+            content = content.replace(/؛۝؛/g, '؛۝؛<br>');
+        }
 
         this.pageContent.innerHTML = `
             <div class="page-text" ${isArabic ? 'lang="ar"' : ''}>${content}</div>
