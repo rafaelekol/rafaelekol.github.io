@@ -5,7 +5,7 @@ class Store {
             currentPage: 1,
             fontSize: 16,
             theme: 'light',
-            language: 'latin'
+            language: 'english'
         };
         
         // Load settings from localStorage or use defaults

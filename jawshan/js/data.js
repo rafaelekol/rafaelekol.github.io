@@ -39,6 +39,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, чья сущность неизменна и независимо существование, и от которого исходит бытие всего сущего,
   10. О, Господин наш, чья доброта не имеет границ, а щедрость не иссякает, в ком собраны все достоинства , и чьи дела восхваления  достойны,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name: \nO Allah,\nO Most Merciful, \nO Most Compassionate,\nO Most Generous, \nO Self-Subsisting,\nO Greatest, \nO Eternal,\nO All-Knowing, \nO Forbearing, \nO Wise.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`اَللّٰهُمَّ إِنِّي أَسْأَلُكَ بِأَسْمَائِكَ يَا اَللهُ ؛۝؛ يَا رَحْمٰنُ ؛۝؛ يَا رَحِيمُ ؛۝؛ يَا عَلِيمُ ؛۝؛ يَا حَلِيمُ ؛۝؛ يَا عَظِيمُ ؛۝؛ يَا حَكِيمُ ؛۝؛ يَا قَدِيمُ ؛۝؛ يَا مُقِيمُ ؛۝؛ يَا كَرِيمُ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -77,6 +79,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто не оставляет без ответа желания всех им сотворенных,
   10. О, Господь наш, знающий все сокрытое и потаённое, `,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Master of Masters,\nO Acceptor of prayers,\nO Elevator of rank,\nO Guardian of good deeds,\nO Forgiver of evil deeds,\nO Granter of requests,\nO Acceptor of repentance,\nO Hearer of voices,\nO Knower of attributes,\nO Repeller of calamities.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic": `يَا سَيِّدَ السَّادَاتِ ؛۝؛ يَا مُجِيبَ الدَّعَوَاتِ ؛۝؛ يَا وَلِيَّ الْحَسَنَاتِ ؛۝؛ يَا رَفِيعَ الدَّرَجَاتِ ؛۝؛ يَا عَظِيمَ الْبَرَكَاتِ ؛۝؛ يَا غَافِرَ الْخَطِيئَاتِ ؛۝؛يَا دَافِعَ الْبَلِيَّاتِ ؛۝؛ يَا سَامِعَ الْأَصْوَاتِ ؛۝؛ يَا مُعْطِيَ الْمَسْؤُولَاتِ ؛۝؛ يَا عَالِمَ السِّرِّ وَالْخَفِيَّاتِ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -115,6 +119,8 @@ const JAWSHAN_DATA = [
   9. О, наилучший и добрейший из тех, кто отделяет правду ото лжи, и из тех, кто правит и решает,
   10. Нет иных благ, кроме благ Твоих, о, наилучший и добрейший из всех, кто дарит благородно и щедро,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Best of forgivers,\nO Best of deciders,\nO Best of helpers,\nO Best of rulers,\nO Best of providers,\nO Best of inheritors\nO Best of praisers,\nO Best of rememberers,\nO Best of Dischargers,\nO Best of benefactors.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا خَيْرَ الْغَافِرِينَ ؛۝؛ يَا خَيْرَ النَّاصِرِينَ ؛۝؛ يَا خَيْرَ الْحَاكِمِينَ ؛۝؛ يَا خَيْرَ الْفَاتِحِينَ ؛۝؛ يَا خَيْرَ الذَّاكِرِينَ ؛۝؛ يَا خَيْرَ الْوَارِثِينَ ؛۝؛ يَا خَيْرَ الْحَامِدِينَ ؛۝؛ يَا خَيْرَ الرَّازِقِينَ ؛۝؛ يَا خَيْرَ الْفَاصِلِينَ ؛۝؛ يَا خَيْرَ الْمُحْسِنِينَ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -153,6 +159,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, у кого есть книга, где все отражено и отмечено,
   10. О, Владыка наш, который творит облака, полные дождя, и поднимает их в небеса,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, to Whom is all glory and virtue,\nO He, to Whom is all might and perfection,\nO He, to Whom is all dominion and sublimity,\nO He, Who is great above all,\nO He, Who creates heavy clouds,\nO He, Who is the most powerful,\nO He, Who is quick to reckon,\nO He, Who metes out the severest punishment,\nO He, with Whom is the excellent reward,\nO He, with Whom is the Original Book.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ لَهُ الْعِزُّ وَالْجَمَالُ ؛۝؛يَا مَنْ لَهُ الْمُلْكُ وَالْجَلَالُ ؛۝؛ يَا مَنْ لَهُ الْقُدْرَةُ وَالْكَمَالُ ؛۝؛ يَا مَنْ هُوَ الْكَبِيرُ الْمُتَعَالِ ؛۝؛ يَا مَنْ هُوَ شَدِيدُ الْمِحَالِ ؛۝؛ يَا مَنْ هُوَ شَدِيدُ الْعِقَابِ ؛۝؛ يَا مَنْ هُوَ سَرِيعُ الْحِسَابِ ؛۝؛ يَا مَنْ هُوَ عِنْدَهُ حُسْنُ الثَّوَابِ ؛۝؛ يَا مَنْ هُوَ عِنْدَهُ أُمُّ الْكِتَابِ ؛۝؛ يَا مَنْ هُوَ يُنْشِئُ السَّحَابَ الثِّقَالَ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -182,7 +190,6 @@ const JAWSHAN_DATA = [
       9. Ey nîmet ve beyan sahibi
       10. Ey emnü eman sahibi`,
       "russian":`Обращаюсь к тебе и молю;
-  
   1. О, Тот, который милосерден многократно о обращает милость свою к тому, кто отвернулся от Него,
   2. О. Тот, чьи блага и доброты бессчетны,
   3. О, Тот, кто призывает к ответу рабов своих и не оставляет без награды ни одно из деяний их,
@@ -194,6 +201,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто бесконечными благами своими питает и растит творения свои, дает им силу выразить себя и помыслы свои и лучше всех поясняет цель свою,
   10. О, дарующий уверенность и покой всему сущему перед лицом всякой опасности и страха,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, Verily I beseech You in Your name:\nO Charitable One, \nO Benefactor,\nO Judge, \nO Proof,\nO Sovereign, \nO Approver,\nO Fver, \nO Elevated One, \nO Helper,\nO Holder of blessings and manifestation.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا حَنَّانُ ؛۝؛ يَا مَنَّانُ ؛۝؛ يَا دَيَّانُ ؛۝؛ يَا غُفْرَانُ ؛۝؛ يَا بُرْهَانُ ؛۝؛ يَا سُلْطَانُ ؛۝؛ يَا سُبْحَانُ ؛۝؛ يَا مُسْتَعَانُ ؛۝؛ يَا ذَا الْمَنِّ وَالْبَيَانِ ؛۝؛ يَا ذَا الْأَمَانِ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -232,6 +241,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, благодаря чьему соизволению Земля существует ,
   10. О, обладатель власти неоспоримой , Господь наш, в справедливости которого народ Его не сомневается,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He before Whose greatness everything bows,\nO He before Whose power everything submits,\nO He before Whose might overshadows everything,\nO He before Whose awesomeness everything is humbled,\nO He before Whose fearsomeness everything yields,\nO He before Whose terribleness mountains shake,\nO He before Whose command the heavens are raised,\nO He through Whose permission in the earths are secured,\nO He Whose glory the thunder proclaims,\nO He Who is never cruel to his subjects.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ تَوَاضَعَ كُلُّ شَيْءٍ لِعَظَمَتِه۪ ؛۝؛ يَا مَنِ اسْتَسْلَمَ كُلُّ شَيْءٍ لِقُدْرَتِه۪ ؛۝؛ يَا مَنْ ذَلَّ كُلُّ شَيْءٍ لِعِزَّتِه۪ ؛۝؛ يَا مَنْ خَضَعَ كُلُّ شَيْءٍ لِهَـيْـبَـتِـه۪ ؛۝؛ يَا مَنِ انْقَادَ كُلُّ شَيْءٍ لِمُلْكَتِه۪ ؛۝؛ يَا مَنْ دَانَ كُلُّ شَيْءٍ مِنْ مَخَافَـتِه۪ ؛۝؛ يَا مَنِ انْشَقَّتِ الْجِبَالُ مِنْ خَشْيَـتِه۪ ؛۝؛ يَا مَنْ قَامَتِ السَّمَاوَاتُ بِأَمْرِه۪ ؛۝؛ يَا مَنِ اسْتَـقَرَّتِ الْأَرْضُ بِإِذْنِه۪ ؛۝؛ يَا مَنْ لَا يَعْتَدِي عَلَى أَهْلِ مَمْلَكَتِه۪ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -270,6 +281,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто посылает воинства свои на помощь нуждающимся,
   10. О, Господь наш, который освобождает от рабства духовного и физического,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Forgiver of sins,\nO Dispeller of tribulations,\nO Aim of hopes,\nO Giver of abundant gifts,\nO Bestower of bounties,\nO Provider of creatures,\nO Judge of destinies,\nO Hearer of complaints,\nO Resurrector of creatures,\nO Freer of captives.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا غَافِرَ الْخَطَايَا ؛۝؛ يَا كَاشِفَ الْبَلَايَا ؛۝؛ يَا مُنْـتَـهَى الرَّجَايَـا ؛۝؛ يَا مُجْزِلَ الْعَطَايَا ؛۝؛ يَا وَاسِعَ الْهَدَايَا ؛۝؛ يَا رَازِقَ الْبَرَايَا ؛۝؛ يَا قَاضِيَ الْمَنَايَا ؛۝؛ يَا سَامِعَ الشَّكَايَا ؛۝؛ يَا بَاعِثَ السَّرَايَا ؛۝؛ يَا مُطْلِقَ الْأُسَارَى ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -308,6 +321,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто раздает щедрые блага,
   10. О, Господь наш, дарящий и дающий безвозмездно,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, to Whom is due all praise and adoration,\nO He, Who holds all pride and eminence,\nO He, Who holds all honour and rank,\nO He, Who makes promises and honours them,\nO He, Who pardons and is content,\nO He, Who holds all abundance and provides,\nO He, Who holds decision and judgement,\nO He, Who is glorious and eternal,\nO He, Who is liberal and munificent,\nO He, Who holds all blessings and bounties,`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا ذَا الْحَمْدِ وَالثَّنَاءِ ؛۝؛ يَا ذَا الْمَجْدِ وَالسَّنَاءِ ؛۝؛ يَا ذَا الْفَخْرِ وَالْبَهَاءِ ؛۝؛ يَا ذَا الْعَهْدِ وَالْوَفَاءِ ؛۝؛ يَا ذَا الْعَفْوِ وَالرِّضَاءِ ؛۝؛ يَا ذَا الْمَنِّ وَالْعَطَاءِ ؛۝؛ يَا ذَا الْفَصْلِ وَالْقَضَاءِ ؛۝؛ يَا ذَا الْعِزَّةِ وَالْبَقَاءِ ؛۝؛ يَا ذَا الْجُودِ وَالنَّعْمَاءِ ؛۝؛ يَا ذَا الْفَضْلِ وَالْأٰلَاءِ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -348,6 +363,8 @@ const JAWSHAN_DATA = [
   9. О, всеокружающий,
   10. О, Господь наш, вседержитель миров и пространств, в чьей власти раздвинуть границы их насколько он пожелает,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO Preventer of misfortune, \nO Repeller of calamities.\nO Elevator of rank, \nO Fashioner,\nO Benefiter \nO Hearer,\nO Aggregator, \nO Intercessor,\nO Magnanimous, \nO Increaser.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا مَانِعُ ؛۝؛ يَا دَافِعُ ؛۝؛ يَا نَافِعُ ؛۝؛ يَا سَامِعُ ؛۝؛ يَا رَافِعُ ؛۝؛ يَا صَانِعُ ؛۝؛ يَا شَافِعُ ؛۝؛ يَا جَامِعُ ؛۝؛ يَا وَاسِعُ ؛۝؛ يَا مُوسِعُ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -386,6 +403,8 @@ const JAWSHAN_DATA = [
   9. О, прикрывающий все изъяны,
   10. О, Господь мой, прибежище всех, кто стал жертвой зла и несправедливости,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Fashioner of every fashioned thing,\nO Creator of every created thing,\nO Provider for every needy thing,\nO Sovereign over all subjects,\nO Dispeller of every hardship,\nO Comforter of every griever,\nO Merciful to every sufferer,\nO Helper of everything forsaken,\nO Concealer of every blemished thing,\nO Shelter for every exile.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا صَانِعَ كُلِّ مَصْنُوعٍ ؛۝؛ يَا خَالِقَ كُلِّ مَخْلُوقٍ ؛۝؛ يَا رَازِقَ كُلِّ مَرْزُوقٍ ؛۝؛ يَا مَالِكَ كُلِّ مَمْلُوكٍ ؛۝؛ يَا كَاشِفَ كُلِّ مَكْرُوبٍ ؛۝؛ يَا فَارِجَ كُلِّ مَغْمُومٍ ؛۝؛ يَا رَاحِمَ كُلِّ مَرْحُومٍ ؛۝؛ يَا نَاصِرَ كُلِّ مَخْذُولٍ ؛۝؛ يَا سَاتِرَ كُلِّ مَعْيُوبٍ ؛۝؛ يَا مَلْجَأَ كُلِّ مَظْلُومٍ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -424,6 +443,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто помогает мне побороть страх, когда мне страшно,
   10. О, Владыка мой, указывающий мне путь верный, когда пребываю я в смущении и замешательстве,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Provider in my hardship,\nO Source of Hope in my misfortune,\nO Companion in my isolation,\nO Fellow Traveller in my journey,\nO Friend in my ease,\nO Rescuer from my trials,\nO Guide in my perplexity,\nO Resource in my neediness,\nO Shelter in my helplessness,\nO Deliverer from my fears.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا عُدَّتِي عِنْدَ شِدَّتِي ؛۝؛ يَا رَجَائِي عِنْدَ مُصِيبَتِي ؛۝؛ يَا مُونِسِي عِنْدَ وَحْشَتِي ؛۝؛ يَا صَاحِبِي عِنْدَ غُرْبَتِي ؛۝؛ يَا وَلِيِّي عِنْدَ نِعْمَتِي ؛۝؛يَا كَاشِفِي عِنْدَ كُرْبَتِي ؛۝؛ يَا غِيَاثِي عِنْدَ افْتِقَارِي ؛۝؛ يَا مَلْجَئِي عِنْدَ اضْطِرَارِي ؛۝؛ يَا مُعِينِي عِنْدَ فَزَعِي ؛۝؛ يَا دَلِيلِي عِنْدَ حَيْرَتِي ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -462,6 +483,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кого любят сердца,
   10. О, Владыка мой, вселяющий дружбу в сердца,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Knower of the unseen,\nO Forgiver of sins,\nO Concealer of defects,\nO Expeller of pain,\nO Transformer of the hearts\nO Physician of the hearts,\nO Illuminator of the hearts,\nO Intimate of the hearts,\nO Dispeller of anxiety,\nO Liberator from grief.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا عَلَّامَ الْغُيُوبِ ؛۝؛ يَا غَفَّارَ الذُّنُوبِ ؛۝؛ يَا سَتَّارَ الْعُيُوبِ ؛۝؛ يَا كَشَّافَ الْكُرُوبِ ؛۝؛ يَا مُقَلِّبَ الْقُلُوبِ ؛۝؛ يَا مُزَيِّنَ الْقُلُوبِ ؛۝؛ يَا مُنَوِّرَ الْقُلُوبِ ؛۝؛ يَا طَبِيبَ الْقُلُوبِ ؛۝؛ يَا حَبِيبَ الْقُلُوبِ ؛۝؛ يَا أَنِيسَ الْقُلُوبِ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -491,7 +514,6 @@ const JAWSHAN_DATA = [
       9. Ey sonsuz izzet sahibi Aziz,
       10. Ey bütün mevcudatın gerçek sahibi ve hükümdarı olan Melik`,
       "russian":`Обращаюсь к тебе и молю;
-  
   1. О, обладатель величия безграничного и бесконечного,
   2. О, прекрасный и украшающий все сущее,
   3. О, насыщающий всех и управляющий всеми,
@@ -503,6 +525,8 @@ const JAWSHAN_DATA = [
   9. О, сильный, непобедимый,
   10. О, Владыка мой, Царь всего мироздания и истинный хозяин всего сущего,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO Glorious, \nO Virtuous,\nO Protector, \nO Patron,\nO Guide, \nO Guarantor,\nO Bestower of Wealth, \nO Bestower of blessings,\nO Bestower of strength, \nO Acceptor of repentance.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا جَلِيلُ ؛۝؛ يَا جَمِيلُ ؛۝؛ يَا وَكِيلُ ؛۝؛ يَا كَفِيلُ ؛۝؛ يَا دَلِيلُ ؛۝؛ يَا مُقِيلُ ؛۝؛ يَا خَبِيرُ ؛۝؛ يَا لَطِيفُ ؛۝؛ يَا عَزِيزُ ؛۝؛ يَا مَلِيكُ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -541,6 +565,8 @@ const JAWSHAN_DATA = [
   9. О, не оставляющий тех, кто остался в полном одиночестве,
   10. О, Владыка мой, внимающий мольбам всех, кому трудно и тяжко,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Guide of the waylaid,\nO Rescuer of those who appeal,\nO Helper of those who call,\nO Aider of those who call,\nO Shelter of the fearful,\nO Succourer of the faithful,\nO Merciful to the indigent,\nO Refuge for the disobedient,\nO Forgiver of the sinner,\nO Responder to the supplicant`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا دَلِيلَ الْمُتَحَيِّرِينَ ؛۝؛ يَا غِيَاثَ الْمُسْتَغِيثِينَ ؛۝؛ يَا صَرِيخَ الْمُسْتَصْرِخِينَ ؛۝؛ يَا جَارَ الْمُسْتَجِيرِينَ ؛۝؛ يَا مَلْجَأَ الْعَاصِينَ ؛۝؛ يَا غَافِرَ الْمُذْنِبِينَ ؛۝؛ يَا أَمَانَ الْخَائِفِينَ ؛۝؛ يَا رَاحِمَ الْمَسَاكِينِ ؛۝؛ يَا أَنِيسَ الْمُسْتَوْحِشِينَ ؛۝؛ يَا مُجِيبَ دَعْوَةِ الْمُضْطَرِّينَ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -579,6 +605,8 @@ const JAWSHAN_DATA = [
   9. О, прощающий грешных рабов своих,
   10. О, Владыка мой, безгранично сострадающий и великодушный в благодеяниях своих, тот, к кому все живое обращается в мольбах о помощи,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Master of liberality and beneficence,\nO Most gracious and obliging,\nO Master of peace and security,\nO Most holy and above all defects,\nO Master of wisdom and manifestation,\nO Master of mercy and satisfaction,\nO Master of argument and proof,\nO Master of grandeur and sovereignty,\nO Master of kindness and succour,\nO Master of pardon and forgiveness.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا ذَا الْجُودِ وَالْإِحْسَانِ ؛۝؛ يَا ذَا الْفَضْلِ وَالْاِمْتِنَانِ ؛۝؛ يَا ذَا الْأَمْنِ وَالْأَمَانِ ؛۝؛ يَا ذَا الْقُدْسِ وَالسُّبْحَانِ ؛۝؛ يَا ذَا الْحِكْمَةِ وَالْبَيَانِ ؛۝؛ يَا ذَا الرَّحْمَةِ وَالرِّضْوَانِ ؛۝؛ يَا ذَا الْحُجَّةِ وَالْبُرْهَانِ ؛۝؛ يَا ذَا الْعَظَمَةِ وَالسُّلْطَانِ ؛۝؛ يَا ذَا الْعَفْوِ وَالْغُفْرَانِ ؛۝؛ يَا ذَا الرَّأْفَةِ وَالْمُسْتَعَانِ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -617,6 +645,8 @@ const JAWSHAN_DATA = [
   9. О, творящий искусно и совершенно,
   10. О, Владыка мой вечный, тогда как все остальное не вечно,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Who is the Lord over all things,\nO He, Who is the Allah of all things,\nO He, Who is the Creator of all things,\nO He. Who is the Fashioner of all things,\nO He, Who is the Preceder of all things,\nO He, Who is the Successor of all things,\nO He, Who is above all things,\nO He, Who knows all things,\nO He, Who is Powerful over all things,\nO He, Who is the Sustainer and Extinguisher of all things,`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ هُوَ رَبُّ كُلِّ شَيْءٍ ؛۝؛ يَا مَنْ هُوَ إِلٰهُ كُلِّ شَيْءٍ ؛۝؛ يَا مَنْ هُوَ خَالِقُ كُلِّ شَيْءٍ ؛۝؛ يَا مَنْ هُوَ فَوْقَ كُلِّ شَيْءٍ ؛۝؛ يَا مَنْ هُوَ قَبْلَ كُلِّ شَيْءٍ ؛۝؛ يَا مَنْ هُوَ بَعْدَ كُلِّ شَيْءٍ ؛۝؛ يَا مَنْ هُوَ عَالِمُ كُلِّ شَيْءٍ ؛۝؛ يَا مَنْ هُوَ قَادِرُ كُلِّ شَيْءٍ ؛۝؛ يَا مَنْ هُوَ صَانِعُ كُلِّ شَيْءٍ ؛۝؛ يَا مَنْ هُوَ يَـبْقَى وَيَـفْنَى كُلُّ شَيْءٍ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -646,7 +676,6 @@ const JAWSHAN_DATA = [
       9. Ey muhtaçlarin yardımına koşan Mavvin,
       10. Ey her şeyi çesit çesit renklerle bezeyen Melevvin`,
       "russian":`Обращаюсь к тебе и молю;
-  
   1. О, оберегающий рабов своих в мире земном от всякой опасности и в День Суда от несправедливости,
   2. О, оберегающий рабов своих и наблюдающий за ними неусыпно,
   3. О, создавший все сущее из ничего,
@@ -658,6 +687,8 @@ const JAWSHAN_DATA = [
   9. О, заставляющий создания свои спешить друг другу на помощь и сам помогающий всем, кто в ней нуждается,
   10. О, который творит радужно и многообразно,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO Securer of safety, \nO Protector,\nO Bestower of being, \nO Bestower of knowledge,\nO Manifester, \nO Facilitator,\nO Provider of place, \nO Adorner,\nO Proclaimer, \nO Distributor.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا مُؤْمِنُ ؛۝؛ يَا مُهَيْمِنُ ؛۝؛ يَا مُكَوِّنُ ؛۝؛ يَا مُلَقِّنُ ؛۝؛ يَا مُبَـيِّنُ ؛۝؛ يَا مُهَوِّنُ ؛۝؛ يَا مُزَيِّنُ ؛۝؛ يَا مُعَظِّمُ ؛۝؛ يَا مُعَوِّنُ ؛۝؛ يَا مُلَوِّنُ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -696,6 +727,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто утончен и изящен в решениях своих и знает все тайные и скрытые стороны всех дел,
   10. О, Владыка мой, могущий каждому воздать по заслугам милость и доброту Свою,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Everlasting in His Kingdom,\nO Eternal in His sovereignty,\nO Greatest in His grandeur,\nO Most Merciful to His servants,\nO Knower of everything,\nO Forbearing to him who disobeys Him,\nO Magnanimous to him who places his hope in Him,\nO He Who is Wise over what He has fashioned,\nO He Who is Subtle in his Wisdom,\nO He Who is Eternal in His Kindness.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ هُوَ فِي مُلْكِه۪ مُقِيمٌ ؛۝؛ يَا مَنْ هُوَ فِي جَلَالِه۪ عَظِيمٌ ؛۝؛ يَا مَنْ هُوَ فِي سُلْطَانِه۪ قَدِيمٌ ؛۝؛ يَا مَنْ هُوَ عَلَى عَبْدِه۪ رَحِيمٌ ؛۝؛ يَا مَنْ هُوَ بِكُلِّ شَيْءٍ عَلِيمٌ ؛۝؛ يَا مَنْ هُوَ لِمَنْ جَفَاهُ حَلِيمٌ ؛۝؛ يَا مَنْ هُوَ لِمَنْ تَرَجَّاهُ كَرِيمٌ ؛۝؛ يَا مَنْ هُوَ فِي مَقَادِيرِه۪ حَكِيمٌ ؛۝؛ يَا مَنْ هُوَ فِي حُكْمِه۪ لَطِيفٌ ؛۝؛ يَا مَنْ هُوَ فِي لُطْفِه۪ قَدِيرٌ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -734,6 +767,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, чья милость сильнее гнева Его,
   10. О, Владыка мой, чье знание охватывает все и вся,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, from Whom no hope is entertained save by His Grace ,\nO He, from Whom nothing is begged save His Pardon,\nO He, of Whom nothing is seen save His Goodness,\nO He, from Whom nothing is feared save His Justice,\nO He, Whose sovereignty alone of eternal,\nO He, Who alone has true majesty,\nO He, Whose blessings extend to all,\nO He, Whose Wrath is surpassed by His Mercy,\nO He, Whose knowledge encompasses everything,\nO He, Who is without equal,`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ لَا يُرْجَى إِلَّا فَضْلُهُ ؛۝؛ يَا مَنْ لَا يُخَافُ إِلَّا عَدْلُهُ ؛۝؛ يَا مَنْ لَا يُنْتَظَرُ إِلَّا بِرُّهُ ؛۝؛ يَا مَنْ لَا يُسْئَلُ إِلَّا عَفْوُهُ ؛۝؛يَا مَنْ لَا يَدُومُ إِلَّا مُلْكُهُ ؛۝؛يَا مَنْ لَا سُلْطَانَ إِلَّا سُلْطَانُهُ ؛۝؛ يَا مَنْ لَا بُرْهَانَ إِلَّا بُرْهَانُهُ ؛۝؛ يَا مَنْ وَسِعَتْ كُلَّ شَيْءٍ رَحْمَتُهُ ؛۝؛ يَا مَنْ سَبَقَتْ رَحْمَتُهُ عَلَى غَضَبِه۪ ؛۝؛ يَا مَنْ أَحَاطَ بِكُلِّ شَيْءٍ عِلْمُهُ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -772,6 +807,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто знает тайны все,
   10. О, Владыка мой, что рассекает семена и зерна и выводит из них ростки,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Remover of anxiety,\nO Expeller of sorrow,\nO Forgiver of sins,\nO Acceptor of repentance,\nO Creator of creatures,\nO Truthful in promises,\nO Fulfiller of promises,\nO Knower of secrets,\nO Splitter of seed,\nO Provider for creatures.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا فَارِجَ الْهَمِّ ؛۝؛ يَا كَاشِفَ الْغَمِّ ؛۝؛ يَا غَافِرَ الذَّنْبِ ؛۝؛ يَا قَابِلَ التَّوْبِ ؛۝؛ يَا خَالِقَ الْخَلْقِ ؛۝؛ يَا صَادِقَ الْوَعْدِ ؛۝؛ يَا رَازِقَ الطِّفْلِ ؛۝؛ يَا مُوفِيَ الْعَهْدِ ؛۝؛ يَا عَالِمَ السِّرِّ ؛۝؛ يَا فَالِقَ الْحَبِّ ؛۝؛`,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -813,6 +850,8 @@ const JAWSHAN_DATA = [
   9. О, ведающий обо всём, вплоть до мельчайшей из мелочей и дарующий незаметно,
   10. О, чья мощь и сила не знают границ,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO High, \nO Perfect\nO Independent, \nO Rich,\nO Kind, \nO Agreeable\nO Purifier, \nO Eternal,\nO Mighty, \nO Friend.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`فَأَسْأَلُكَ بِأَسْمَائِكَ يَا عَلِيُّ ؛۝؛ يَا وَفِيُّ ؛۝؛ يَا وَلِيُّ ؛۝؛ يَا غَنِيُّ ؛۝؛ يَا مَلِيُّ ؛۝؛ يَا زَكِيُّ ؛۝؛ يَا رَضِيُّ ؛۝؛ يَا بَدِيُّ ؛۝؛ يَا حَفِيُّ ؛۝؛ يَا قَوِيُّ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -851,6 +890,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто улавливает и распознаёт всякий шёпот,
   10. О, Владыка мой, последний и высочайший, к кому обращаются с жалобами,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Who reveals virtue,\nO He, Who conceals vice,\nO He Who does not call to severe account for sins,\nO He, Who does not disclose the disgrace of his servants,\nO He, Who is the best forgiver,\nO He, Who overlooks errancy,\nO He, Whose forgiveness extends over all.\nO He, Whose Hands are stretched forth in mercy,\nO He, Who knows all secrets,\nO He, to Whom all complaints are directed.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ أَظْهَرَ الْجَمِيلَ ؛۝؛ يَا مَنْ سَتَرَ عَلَى الْقَبِيحِ ؛۝؛ يَا مَنْ لَا يُؤَاخِذُ بِالْجَرِيمَةِ ؛۝؛ يَا مَنْ لَا يَهْتِكُ السِّتْرَ ؛۝؛ يَا عَظِيمَ الْعَفْوِ ؛۝؛ يَا حَسَنَ التَّجَاوُزِ ؛۝؛ يَا وَاسِعَ الْمَغْفِرَةِ ؛۝؛ يَا بَاسِطَ الْيَدَيْنِ بِالرَّحْمَةِ ؛۝؛ يَا صَاحِبَ كُلِّ نَجْوَى ؛۝؛ يَا مُنْتَهَى كُلِّ شَكْوَى ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -889,6 +930,8 @@ const JAWSHAN_DATA = [
   9. О, обладатель силы твердой,
   10. О, Владыка мой, что осыпает благами рабов своих прежде, чем они сослужат ему службу,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Master of countless blessings,\nO Master of limitless mercy,\nO Master surpassing all obligation,\nO Master of perfect wisdom,\nO Master of infinite might,\nO Master of the decisive argument,\nO Master of the manifest miracle,\nO Master of perpetual prestige,\nO Master of great strength,\nO Master of unsurpassable glory`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا ذَا النِّعْمَةِ السَّابِغَةِ ؛۝؛ يَا ذَا الرَّحْمَةِ الْوَاسِعَةِ ؛۝؛ يَا ذَا الْحِكْمَةِ الْبَالِغَةِ ؛۝؛ يَا ذَا الْقُدْرَةِ الْكَامِلَةِ ؛۝؛ يَا ذَا الْحُجَّةِ الْقَاطِعَةِ ؛۝؛ يَا ذَا الْكَرَامَةِ الظَّاهِرَةِ ؛۝؛ يَا ذَا الصِّفَةِ الْعَالِـيَـةِ ؛۝؛ يَا ذَا الْعِـزَّةِ الدَّائِمَةِ ؛۝؛ يَا ذَا الْقُوَّةِ الْمَـتِـينَـةِ ؛۝؛ يَا ذَا الْمِنَّـةِ السَّابِقَةِ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -929,6 +972,8 @@ const JAWSHAN_DATA = [
   10. О, наимилосердный из милосердных,
   11. О, величайший из всех заступников,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Originator of the heavens,\nO Maker of darkness,\nO Merciful to those who weep,\nO He Who oversees slips and errors,\nO Concealer of defects,\nO Reviver of the dead,\nO Revealer of signs,\nO Increaser of virtue,\nO Who rubs out vices,\nO He Who calls to account.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا أَحْكَمَ الْحَاكِمِينَ ؛۝؛ يَا أَعْدَلَ الْعَادِلِينَ ؛۝؛ يَا أَصْدَقَ الصَّادِقِينَ ؛۝؛ يَا أَظْهَرَ الظَّاهِرِينَ ؛۝؛ يَا أَطْهَرَ الطَّاهِرِينَ ؛۝؛ يَا أَحْسَنَ الْخَالِقِينَ ؛۝؛ يَا أَسْرَعَ الْحَاسِبِينَ ؛۝؛ يَا أَسْمَعَ السَّامِعِينَ ؛۝؛ يَا أَكْرَمَ الْأَكْرَمِينَ ؛۝؛ يَا أَرْحَمَ الرَّاحِمِينَ ؛۝؛ يَا أَشْفَعَ الشَّافِعِينَ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -967,6 +1012,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто ниспосылает благодать и изобилие,
   10. О, Владыка мой, карающий беспощадно и сурово тех, кто достоин наказания,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO Fashioner, \nO Preordainer,\nO Planner, \nO Purifier,\nO Illuminator, \nO Facilitator,\nO Giver of glad tidings, \nO Warner,\nO Giver of precedence, \nO Postponer.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا بَدِيعَ السَّمَاوَاتِ ؛۝؛ يَا جَاعِلَ الظُّلُمَاتِ ؛۝؛ يَا عَالِمَ الْخَـفِـيَّـاتِ ؛۝؛ يَا رَاحِمَ الْعَـبَـرَاتِ ؛۝؛ يَا سَاتِرَ الْعَوْرَاتِ ؛۝؛ يَا كَاشِفَ الْـبَـلِـيَّـاتِ ؛۝؛ يَا مُحْيِـيَ الْأَمْوَاتِ ؛۝؛ يَا ضَاعِفَ الْحَسَنَاتِ ؛۝؛ يَا مُنْزِلَ الْبَرَكَاتِ ؛۝؛ يَا شَدِيدَ الـنَّـقَمَاتِ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -996,7 +1043,6 @@ const JAWSHAN_DATA = [
       9. Ey kullarını Cennet ve diğer mükafatlarla müjdeleyen Mübeşşir,
       10. Ey bütün kainati tam bir nizam içinde idare eden Müdebbir,`,
       "russian":`Обращаюсь к тебе и молю;
-  
   1. О, придающий созданиям своим образ, какой пожелает,
   2. О, творящий всё соразмерно,
   3. О, очищающий всё и вся от грязи духовной и физической,
@@ -1008,6 +1054,8 @@ const JAWSHAN_DATA = [
   9. О, радующий рабов своих благой вестью,
   10. О, правящий всем мирозданием распорядительно,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Lord of the Sanctuary,\nO Lord of the holy month,\nO Lord of the Holy City,\nO Lord of the Rukn and the Maqam,\nO Lord of the Mashair of Mecca,\nO Lord of the Holy Mosque in Mecca,\nO Lord of what is lawful and what is proscribed,\nO Lord of light and darkness,\nO Lord of salutation and peace,\nO Lord of strength among creatures.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا مُصَوِّرُ ؛۝؛ يَا مُقَدِّرُ ؛۝؛ يَا مُطَهِّرُ ؛۝؛ يَا مُنَوِّرُ ؛۝؛ يَا مُقَدِّمُ ؛۝؛ يَا مُؤَخِّرُ ؛۝؛ يَا مُيَسِّرُ ؛۝؛ يَا مُنْذِرُ ؛۝؛ يَا مُبَشِّرُ ؛۝؛ يَا مُدَبِّرُ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -1046,6 +1094,8 @@ const JAWSHAN_DATA = [
   9. О, единственный источник здравия, мира и согласия,
   10. О, Владыка мой, обладатель величия грозного и воздаяний несчётных,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Highest of all authorities,\nO Most Just of all the just,\nO Most Trustworthy of all the trustworthy,\nO Purest of the pure,\nO Best of creators,\nO Quickest Reckoner,\nO Best of listeners,\nO Most vigilant of invigilators,\nO Best of intercessors,\nO Most honourable of all.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا رَبَّ الْبَيْتِ الْحَرَامِ ؛۝؛ يَا رَبَّ الشَّهْرِ الْحَرَامِ ؛۝؛ يَا رَبَّ الْمَسْجِدِ الْحَرَامِ ؛۝؛ يَا رَبَّ الْبَلَدِ الْحَرَامِ ؛۝؛ يَا رَبَّ الرُّكْنِ وَالْمَقَامِ ؛۝؛ يَا رَبَّ الْمَشْعَرِ الْحَرَامِ ؛۝؛ يَا رَبَّ الْحِلِّ وَالْحَرَمِ ؛۝؛ يَا رَبَّ النُّورِ وَالظَّلَامِ ؛۝؛ يَا رَبَّ التَّحِيَّةِ وَالسَّلَامِ ؛۝؛ يَا رَبَّ الْجَلَالِ وَالْإِكْرَامِ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -1084,6 +1134,8 @@ const JAWSHAN_DATA = [
   9. О, друг тех, у кого нет друзей,
   10. О, Владыка мой, являющийся несметным богатством тех, у кого нет богатства,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Supporter of the unsupported,\nO Helper of the helpless,\nO Protector of the unprotected,\nO Shield for the defenseless,\nO Hearer of the unheard appeal,\nO Pride of those without pride,\nO Honour of the honourless,\nO Giver of Aid to the unaided,\nO Friend of the forsaken,\nO Shelter of the shelterless.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا عِمَادَ مَنْ لَا عِمَادَ لَهُ ؛۝؛ يَا سَنَدَ مَنْ لَا سَنَدَ لَهُ ؛۝؛ يَا ذُخْرَ مَنْ لَا ذُخْرَ لَهُ ؛۝؛ يَا غِيَاثَ مَنْ لَا غِيَاثَ لَهُ ؛۝؛ يَا حِرْزَ مَنْ لَا حِرْزَ لَهُ ؛۝؛ يَا فَخْرَ مَنْ لَا فَخْرَ لَهُ ؛۝؛ يَا عِزَّ مَنْ لَا عِزَّ لَهُ ؛۝؛ يَا مُعِينَ مَنْ لَا مُعِينَ لَهُ ؛۝؛ يَا أَنِيسَ مَنْ لَا أَنِيسَ لَهُ ؛۝؛ يَا غُنْيَةَ مَنْ لَا غُنْيَةَ لَهُ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -1113,7 +1165,6 @@ const JAWSHAN_DATA = [
       9. Ey istediğinin maddi ve manevi rızkını daraltan Kabid,
       10. Ey istediğinin maddi ve manevi rızkını genişleten Basıt,`,
       "russian":`Обращаюсь к тебе и молю;
-  
   1. О, дающий жизнь всякому существу,
   2. О, извечный и бессмертный,
   3. О, милостивый ко всему сущему,
@@ -1125,6 +1176,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто сужает источники пищи духовной и материальной любому из рабов своих, кому пожелает,
   10. О, расширяющий источники пищи духовной и материальной любому из рабов своих, кому пожелает,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO Protector, \nO Persistent,\nO Eternal, \nO Merciful,\nO Accorder of peace,\nO Omniscient, \nO Distributor,\nO Preventer, \nO Opener.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا قَائِمُ ؛۝؛ يَا دَائِمُ ؛۝؛ يَا رَاحِمُ ؛۝؛ يَا حَاكِمُ ؛۝؛ يَا عَالِمُ ؛۝؛ يَا عَاصِمُ ؛۝؛ يَا قَاسِمُ ؛۝؛ يَا سَالِمُ ؛۝؛ يَا قَابِضُ ؛۝؛ يَا بَاسِطُ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -1163,6 +1216,8 @@ const JAWSHAN_DATA = [
   9. О, слышащий вопли всех, кто взывает к нему,
   10. О, Владыка мой, прощающий всех, кто просит прощения,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Protector of he who seeks His protection,\nO Merciful to he who requests His mercy,\nO Forgiver of the implore His forgiveness,\nO Helper of he who asks for His help,\nO Protector of he who seeks His protection,\nO Magnanimous to he who seeks His magnanimity,\nO Guide for he who seeks His guidance,\nO Giver of Aid to he who seeks His aid,\nO Helper of he who appeals to Him,\nO Rescuer of he who appeals to Him,`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا عَاصِمَ مَنِ اسْتَعْصَمَهُ ؛۝؛ يَا رَاحِمَ مَنِ اسْتَرْحَمَهُ ؛۝؛ يَا نَاصِرَ مَنِ اسْتَنْصَرَهُ ؛۝؛ يَا حَافِظَ مَنِ اسْتَحْفَظَهُ ؛۝؛ يَا مُكْرِمَ مَنِ اسْتَكْرَمَهُ ؛۝؛ يَا مُرْشِدَ مَنِ اسْتَرْشَدَهُ ؛۝؛ يَا مُعِينَ مَنِ اسْتَعَانَهُ ؛۝؛ يَا مُغِيثَ مَنِ اسْتَغَاثَهُ ؛۝؛ يَا صَرِيخَ مَنِ اسْتَصْرَخَهُ ؛۝؛ يَا غَافِرَ مَنِ اسْتَغْفَرَهُ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -1201,6 +1256,8 @@ const JAWSHAN_DATA = [
   9. О, Владыка царствия и власти,
   10. О, Владыка мой, правящий справедливо и творящий справедливость,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Powerful Who is never overpowered,\nO Benign Who is invisible,\nO Self-Subsistent Who never sleeps,\nO Eternal Who never perishes,\nO Ever-living Who never dies,\nO Monarch Whose rule is endless,\nO Eternal Who is imperishable,\nO Omniscient Who never forgets,\nO Independent Who needs no sustenance,\nO Mighty Who never weakens.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا كَرِيمَ الصَّفْحِ ؛۝؛ يَا عَظِيمَ الْمَنِّ ؛۝؛ يَا كَثِيرَ الْخَيْرِ ؛۝؛ يَا قَدِيمَ الْفَضْلِ ؛۝؛ يَا لَطِيفَ الصُّنْعِ ؛۝؛ يَا دَائِمَ اللُّطْفِ ؛۝؛ يَا نَافِسَ الْكَرْبِ ؛۝؛ يَا كَاشِفَ الضُّرِّ ؛۝؛ يَا مَالِكَ الْمُلْكِ ؛۝؛ يَا قَاضِيًا بِالْحَقِّ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -1239,6 +1296,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, в ком всё и вся нуждается, а он не испытывает нужды ни в чём
   10. О, Владыка, обладатель силы и могущества, и тот, кого нельзя ослабить,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO Unique, \nO One,\nO Present, \nO Praiser,\nO Exalted, \nO Guide,\nO Resurrector, \nO Heir,\nO Harmful to the unjust, \nO Beneficial to the just.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا عَزِيزًا لَا يُضَامُ ؛۝؛ يَا لَطِيفًا لَا يُرَامُ ؛۝؛ يَا رَقِيبًا لَا يَنَامُ ؛۝؛ يَا قَـائِـمًا لَا يَـفُوتُ ؛۝؛ يَا حَيًّا لَا يَمُوتُ ؛۝؛ يَا مَلِكًا لَا يَزُولُ ؛۝؛ يَا بَاقِـيًا لَا يَفْنَى ؛۝؛ يَا عَالِمًا لَا يَجْهَلُ ؛۝؛ يَا صَمَدًا لَا يُطْعَمُ ؛۝؛ يَا قَوِيًّا لَا يُـضْعَفُ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -1269,7 +1328,6 @@ const JAWSHAN_DATA = [
       10. Ey kullarına hidayet veren Hadi,`,
       "russian":`
   Обращаюсь к тебе и молю;
-  
   1. О, не имеющий равных себе и сотоварищей ни в самости своей, ни в качествах своих, ни в именах и деяниях своих,
   2. О, не нуждающийся ни в чём и обретающий, что пожелает и когда пожелает,
   3. О, от которого ничего не скроешь, и который ничего не забывает,
@@ -1281,6 +1339,8 @@ const JAWSHAN_DATA = [
   9. О, творец добра и всего полезного,
   10. О, творец спасения и дарующий спасение всякому, кому пожелает,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Grandest of all the grand,\nO Most Magnanimous of all the magnanimous,\nO Most Merciful of all the merciful,\nO Most Knowledgeable of all knowers,\nO Most Wise of all the wise,\nO Most Ancient of all the ancient,\nO Most Great of all the great,\nO Most Benign of all the benign,\nO Most Magnificent of all the magnificent,\nO Most Mighty of all the mighty.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا وَاحِدُ ؛۝؛ يَا وَاجِدُ ؛۝؛ يَا شَاهِدُ ؛۝؛ يَا مَاجِدُ ؛۝؛ يَا رَاشِدُ ؛۝؛ يَا بَاعِثُ ؛۝؛ يَا وَارِثُ ؛۝؛ يَا ضَارُّ ؛۝؛ يَا نَافِعُ ؛۝؛ يَا هَادِي ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -1319,6 +1379,8 @@ const JAWSHAN_DATA = [
   9. О, наиблистательнейший из всех обладателей величия гордого и непреодолимого,
   10. О, утонченнейший из всех обладателей утонченной щедрости и изящества,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Most Magnanimous in overlooking sins,\nO Greatest Benefactor,\nO Most Bounteous in goodness,\nO Eternal in grace,\nO Eternal in subtlety,\nO Creator of subtlety,\nO Remover of pain,\nO Healer of injury,\nO Master of dominion,\nO True Judge.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا أَعْظَمُ مِنْ كُلِّ عَظِيمٍ ؛۝؛ يَا أَكْرَمُ مِنْ كُلِّ كَرِيمٍ ؛۝؛ يَا أَرْحَمُ مِنْ كُلِّ رَحِيمٍ ؛۝؛ يَا أَحْكَمُ مِنْ كُلِّ حَكِيمٍ ؛۝؛ يَا أَعْلَمُ مِنْ كُلِّ عَلِيمٍ ؛۝؛ يَا أَقْدَمُ مِنْ كُلِّ قَدِيمٍ ؛۝؛ يَا أَكْبَرُ مِنْ كُلِّ كَبِيرٍ ؛۝؛ يَا أَجَلُّ مِنْ كُلِّ جَلِيلٍ ؛۝؛ يَا أَعَزُّ مِنْ كُلِّ عَزِيزٍ ؛۝؛ يَا أَلْطَفُ مِنْ كُلِّ لَطِيفٍ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -1357,6 +1419,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, чье величие не мешает широте щедрости его и благородство,
   10. О, Владыка мой, которому возносится слава, хвала и благодарение за щедрость его и воздаяния благие,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He Who fulfils His promise,\nO He Who is Strong in His fulfillment,\nO He Who is great in His might,\nO He Who is near everyone in spite of His greatness,\nO He Who is benign in His weariness,\nO He Who is noble in His benignity,\nO He Who is powerful in His nobility,\nO He Who is great in His power,\nO He Who is exalted in His greatness,\nO He Who is praiseworthy in his exaltation.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ هُوَ فِي عَهْدِه۪ وَفِيٌّ ؛۝؛ يَا مَنْ هُوَ فِي وَفَائِه۪ قَوِيٌّ ؛۝؛ يَا مَنْ هُوَ فِي قُوَّتِه۪ عَلِيٌّ ؛۝؛ يَا مَنْ هُوَ فِي عُلُوِّه۪ قَرِيبٌ ؛۝؛ يَا مَنْ هُوَ فِي قُرْبِه۪ لَطِيفٌ ؛۝؛ يَا مَنْ هُوَ فِي لُطْفِه۪ شَرِيفٌ ؛۝؛ يَا مَنْ هُوَ فِي شَرَفِه۪ عَزِيزٌ ؛۝؛ يَا مَنْ هُوَ فِي عِزَّتِه۪ عَظِيمٌ ؛۝؛ يَا مَنْ هُوَ فِي عَظَمَتِه۪ مَجِيدٌ ؛۝؛ يَا مَنْ هُوَ فِي مَجْدِه۪ حَمِيدٌ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -1395,6 +1459,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, к которому всё возвратится по окончанию бытия своего,
   10. О, Владыка мой, кроме вечной сути которого всё обречено на тлен,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO Sufficient, \nO Restorer of health,\nO Faithful, \nO Forgiver\nO Guide, \nO Summoner,\nO Judge, \nO Agreeable,\nO High, \nO Eternal`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ هُوَ كُلُّ شَيْءٍ خَاضِعٌ لَهُ ؛۝؛ يَا مَنْ هُوَ كُلُّ شَيْءٍ كَائِنٌ لَهُ ؛۝؛ يَا مَنْ هُوَ كُلُّ شَيْءٍ مَوْجُودٌ لَهُ ؛۝؛ يَا مَنْ هُوَ كُلُّ شَيْءٍ مُنِـيبٌ لَـهُ ؛۝؛ يَا مَنْ هُوَ كُلُّ شَيْءٍ خَائِفٌ مِنْهُ ؛۝؛ يَا مَنْ هُوَ كُلُّ شَيْءٍ مُسَبِّحٌ لَـهُ ؛۝؛ يَا مَنْ هُوَ كُلُّ شَيْءٍ قَائِمٌ بِه۪ ؛۝؛ يَا مَنْ هُوَ كُلُّ شَيْءٍ خَاشِعٌ لَـهُ ؛۝؛ يَا مَنْ هُوَ كُلُّ شَيْءٍ صَائِرٌ إِلَيْهِ ؛۝؛ يَا مَنْ هُوَ كُلُّ شَيْءٍ هَالِكٌ إِلَّا وَجْهَهُ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -1424,7 +1490,6 @@ const JAWSHAN_DATA = [
       9. Ey varlığının sonu olmayan Bakî,
       10. Ey dilediğini doğru yola ulaştıran Hadî,`,
       "russian":`Обращаюсь к тебе и молю;
-  
   1. О, самодостаточный и удовлетворяющий все нужды созданий своих,
   2. О, целитель всех болезней - духовных и физических,
   3. О, верный слову своему и мудро исполняющий желания и потребности созданий своих,
@@ -1436,6 +1501,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, чье бытие неподвластно времени,
   10. О, направляющий на путь истинный всякого, кого пожелает направить,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He before Whom everything bows,\nO He before Whom everything is humbled,\nO He for Whom everything exists,\nO He to Whom everything owes its existence,\nO He to Whom everything returns,\nO He of Whom everything is afraid,\nO One to Whom everything owes its stability,\nO He towards Whom everything retreats,\nO He Whom everything glorifies with praise,\nO He besides Whom everything is perishable.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا كَافِي ؛۝؛ يَا شَافِي ؛۝؛ يَا وَافِي ؛۝؛ يَا مُعَافِي ؛۝؛ يَا عَالِي ؛۝؛ يَا دَاعِي ؛۝؛ يَا رَاضِي ؛۝؛ يَا قَاضِي ؛۝؛ يَا بَاقِي ؛۝؛ يَا هَادِي ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },
@@ -1474,6 +1541,8 @@ const JAWSHAN_DATA = [
   9. О, единственный к кому обращаются за помощью,
   10. О, Владыка мой, единственный обладатель абсолютной силы и могущества,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He-there is no retreat but towards Him,\nO He-there is no place of protection except with Him,\nO He—there is no right path except that which leads to Him,\nO He-there is no shelter against Him but with Him,\nO He-there is no inclination towards anyone except Him,\nO He-there is no strength and vigour but from Him,\nO He-none is invoked for help but He.\nO He-trust is not reposed in anyone but He,\nO He-hope is not entertained from anyone except from He,\nO He-none is worshipped except He`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ لَا مَفَرَّ إِلَّا إِلَيْهِ ؛۝؛ يَا مَنْ لَا مَفْزَعَ إِلَّا إِلَيْهِ ؛۝؛ يَا مَنْ لَا مَلْجَأَ إِلَّا إِلَيْهِ ؛۝؛ يَا مَنْ لَا يُتَوَكَّلُ إِلَّا عَلَيْهِ ؛۝؛ يَا مَنْ لَا مَقْصَدَ إِلَّا إِلَيْهِ ؛۝؛ يَا مَنْ لَا مَنْجَى إِلَّا إِلَيْهِ ؛۝؛ يَا مَنْ لَا يُرْغَبُ إِلَّا إِلَيْهِ ؛۝؛ يَا مَنْ لَا يُعْبَدُ إِلَّا إِيَّاهُ ؛۝؛ يَا مَنْ لَا يُسْتَعَانُ إِلَّا مِنْهُ ؛۝؛ يَا مَنْ لَاحَوْلَ وَلَا قُوَّةَ إِلَّا بِـه۪ ؛۝؛` ,
       "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
     },{
@@ -1511,6 +1580,8 @@ const JAWSHAN_DATA = [
   9. О, наилучший из тех, кто гостеприимен,
   10. О, Владыка мой, лучший из всех, к кому чувствуют близость,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Best of those who are feared,\nO Best of those who are liked,\nO Best of those who are sought,\nO Best of those who are entreated,\nO Best of those who are longed for,\nO Best of those who are remembered,\nO Best of those to whom thanks are offered,\nO Best of those who are loved,\nO Best of those who are called on,\nO Best of those who are held in affection.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا خَيْرَ الْمَرْهُوبِينَ ؛۝؛ يَا خَيْرَ الْمَطْلُوبِينَ ؛۝؛ يَا خَيْرَ الْمَرْغُوبِينَ ؛۝؛ يَا خَيْرَ الْمَسْؤُولِينَ ؛۝؛ يَا خَيْرَ الْمَقْصُودِينَ ؛۝؛ يَا خَيْرَ الْمَذْكُورِينَ ؛۝؛ يَا خَيْرَ الْمَشْكُورِينَ ؛۝؛ يَا خَيْرَ الْمَحْبُوبِينَ ؛۝؛ يَا خَيْرَ الْمُنْزِلِينَ ؛۝؛ يَا خَيْرَ الْمُسْتَأْنِسِينَ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -1548,6 +1619,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто заставляет плакать и смеяться,
   10. О, Владыка мой, могущие свести с пути истинного и перевести на него,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I entreat You in Your name:\nO Forgiver, \nO Concealer [of defects]\nO Mighty, \nO Supreme, \nO Creator,\nO Shatterer, \nO Joiner,\nO Rememberer, \nO Seeing, \nO Helper.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ هُوَ خَلَقَ فَسَوَّى ؛۝؛ يَا مَنْ هُوَ قَدَّرَ فَهَدَى ؛۝؛ يَا مَنْ هُوَ يَكْشِفُ الْبَلْوَى ؛۝؛ يَا مَنْ هُوَ يَسْمَعُ النَّجْوَى ؛۝؛ يَا مَنْ هُوَ يُنْقِذُ الْغَرْقَى ؛۝؛ يَا مَنْ هُوَ يُنْجِي الْهَلْكَى ؛۝؛ يَا مَنْ هُوَ يَشْفِي الْمَرْضَى ؛۝؛ يَا مَنْ هُوَ أَمَاتَ وأَحْيَا ؛۝؛ يَا مَنْ هُوَ أَضْحَكَ وَأَبْكَى ؛۝؛ يَا مَنْ هُوَ أَضَلَّ وَأَهْدَى ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -1576,7 +1649,6 @@ const JAWSHAN_DATA = [
     9. Ey dostlarına yardim eden Nâsir,
     10. Ey dilediğini zorla yaptıran Câbir,`,
     "russian":`Обращаюсь к тебе и молю;
-  
   1. О, прощающий грехи рабов своих,
   2. О, скрывающий недостатки рабов своих и укрывающий их от позора,
   3. О, побеждающий властью своей и могуществом рабов своих и как угодно ему, рабами своими управляющий,
@@ -1588,6 +1660,8 @@ const JAWSHAN_DATA = [
   9. О, помогающий,
   10. О, понуждающий делать, что пожелает, исправляющий испорченное, выправляющий дела и восстанавливающий неисправное,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He Who created and perfected,\nO He Who made everything to measure and guided,\nO He Who removes misfortunes,\nO He Who overhears secrets,\nO He Who rescues the drowning,\nO He Who saves the distressed,\nO He Who restores the sick to health,\nO He who makes [His slaves] laugh and weep,\nO He Who causes to dies and calls to life,\nO He Who has created pairs of male and female.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا غَافِـرُ ؛۝؛ يَا سَاتِـرُ ؛۝؛ يَا قَاهِـرُ ؛۝؛ يَا قَادِرُ ؛۝؛ يَا نَاظِرُ ؛۝؛ يَا فَاطِرُ ؛۝؛ يَا شَاكِرُ ؛۝؛ يَا ذَاكِرُ ؛۝؛ يَا نَاصِرُ ؛۝؛ يَا جَابِرُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -1625,6 +1699,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, чья милость проявиться в Раю,
   10. О, Владыка мой, чье возмездие проявится в Аду,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He Whose course is on land and in water,\nO He Whose signs are in the universe,\nO He in Whose signs are undeniable proofs,\nO He Whose; might is exhibited in causing death,\nO He Whose lesson is in graves,\nO He Whose kingdom will be on the Day of Judgement,\nO He in Whose reckoning of deeds is His dread,\nO He in Whose balance is His order,\nO He Whose paradise is the place of His good reward,\nO He Whose hell is the place of chastisement.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ هُوَ فِي الْبَرِّ وَالْبَحْرِ سَبِيلُهُ ؛۝؛ يَا مَنْ هُوَ فِي الْأٰفَاقِ أٰيَاتُهُ ؛۝؛ يَا مَنْ هُوَ فِي الْأٰيَاتِ بُـرْهَانُـهُ ؛۝؛ يَا مَنْ هُوَ فِي الْمَمَاتِ قُدْرَتُهُ ؛۝؛  يَا مَنْ هُوَ فِي الْقُبُورِ عِزَّتُهُ ؛۝؛ يَا مَنْ هُوَ فِي الْـقِـيَامَةِ مِلْكَـتُـهُ ؛۝؛ يَا مَنْ هُوَ فِي الْحِسَابِ هَيْبَتُهُ ؛۝؛ يَا مَنْ هُوَ فِي الْمِيزَانِ قَضَاؤُهُ ؛۝؛ يَا مَنْ هُوَ فِي الْجَـنَّـةِ رَحْمَـتُـهُ ؛۝؛ يَا مَنْ هُوَ فِي ؛النَّارِ ؛عَذَابُهُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -1662,6 +1738,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кому доверяют те, кто уповает на божью милость,
   10. О, Владыка мой, в ком находят покой души - обладатели веры истинной,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He-the frightened flee to Him,\nO He-sinners take shelter with Him,\nO He-the repentant return to Him,\nO He-the pious incline towards Him,\nO He-the confounded seek shelter in Him,\nO He-the desirous have affliction for Him,\nO He-lovers are proud of Him,\nO He-transgressors have agreed for His forgiveness,\nO He-those who are sure in faith receive consolation from Him,\nO He-those who trust Him rely on Him.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ هُوَ إِلَيْهِ يَهْرَبُ الْخَائِـفُونَ ؛۝؛ يَا مَنْ هُوَ إِلَيْهِ يَـفْزَعُ الْمُذْنِـبُونَ ؛۝؛ يَا مَنْ هُوَ إِلَيْهِ يَـقْصِدُ الْمُـنِـيـبُونَ ؛۝؛ يَا مَنْ هُوَ إِلَيْهِ يَلْجَأُ الْعَاصُونَ ؛۝؛ يَا مَنْ هُوَ إِلَيْهِ يَـرْغَبُ الزَّاهِدُونَ ؛۝؛ يَا مَنْ هُوَ فِيهِ يَـطْمَعُ الْخَاطِئُونَ ؛۝؛ يَا مَنْ هُوَ يَسْتَأْنِسُ بِهِ الْمُرِيدُونَ ؛۝؛ يَا مَنْ هُوَ يَـفْـتَخِرُ بِهِ الْمُحْسِنُونَ ؛۝؛ يَا مَنْ هُوَ عَلَيْهِ يَـتَـوَكَّلُ الْمُتَـوَكِّلُونَ ؛۝؛ يَا مَنْ هُوَ يَـسْكُنُ بِهِ الْمُوقِـنُونَ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -1699,6 +1777,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто в милости своей не имеет равных себе,
   10. О, Владыка мой, выше которого нет никого,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I entreat You in Your name:\nO Friend, \nO physician,\nO Near, \nO Supervisor,\nO Reckoner to account, \nO Awful,\nO Rewarder, \nO Acceptor,\nO Aware, \nO All-Seeing.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا أَقْرَبُ مِنْ كُلِّ قَرِيبٍ ؛۝؛ يَا أَحَبُّ مِنْ كُلِّ حَبِيبٍ ؛۝؛ يَا أَعْظَمُ مِنْ كُلِّ عَظِيمٍ ؛۝؛ يَا أَعَزُّ مِنْ كُلِّ عَزِيزٍ ؛۝؛ يَا أَقْوَى مِنْ كُلِّ قَوِيٍّ ؛۝؛ يَا أَغْنَى مِنْ كُلِّ غَنِيٍّ ؛۝؛ يَا أَجْوَدُ مِنْ كُلِّ جَوَادٍ ؛۝؛ يَا أَرْأَفُ مِنْ كُلِّ رَؤُوفٍ ؛۝؛ يَا أَرْحَمُ مِنْ كُلِّ رَحِيمٍ ؛۝؛ يَا أَجَلُّ مِنْ كُلِّ جَلِيلٍ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -1727,7 +1807,6 @@ const JAWSHAN_DATA = [
     9. Ey her şeyi nuruyla aydınlatan Münîr,
     10. Ey kullarına gerekli her şeyi açıklayan Mübîn,`,
     "russian":`Обращаюсь к тебе и молю;
-  
   1. О, Тот, ближе которого нет никого и ничего,
   2. О, следящий неусыпно за всеми созданиями своими,
   3. О, любящий и любимый,
@@ -1739,6 +1818,8 @@ const JAWSHAN_DATA = [
   9. О, озаряющий всё светом своим,
   10. О, выявляющий всю правду и существующий вне всякого сомнения,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Nearest of all,\nO Friendliest of all the friends,\nO Possessor Of greater insight than all others,\nO Most Aware of all\nO Noblest of all the nobles,\nO Most Exalted of all the exalted,\nO Mightiest of all mighty,\nO Most Independent of all,\nO Most Generous of all,\nO Kindest of all those who are kind`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا قَرِيبُ ؛۝؛ يَا رَقِيبُ ؛۝؛ يَا حَبِيبُ ؛۝؛ يَا مُجِيبُ ؛۝؛ يَا حَسِيبُ ؛۝؛ يَا طَبِيبُ ؛۝؛ يَا بَصِيرُ ؛۝؛ يَا خَبِيرُ ؛۝؛ يَا مُنِيرُ ؛۝؛ يَا مُبِينُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -1776,6 +1857,8 @@ const JAWSHAN_DATA = [
   9. О, свидетель, от которого ничего не скроется, близкий ко всему ближе ближнего,
   10. О, Владыка мой, который совсем близко,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Dominant who is not overpowered,\nO Designer who is not made.\nO Creator who is not created,\nO Master and not the slave,\nO All-Dominant who is not dominated,\nO Exalter and the Exalted,\nO Protector who needs no protection,\nO Helper who needs no help,\nO Witness who is not absent,\nO Near who is not distant.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`  يَا غَالِبًا غَيْرَ مَغْلُوبٍ ؛۝؛ يَا صَانِعًا غَيْرَ مَصْنُوعٍ ؛۝؛ يَا خَالِقًا غَيْرَ مَخْلُوقٍ ؛۝؛ يَا مَالِكًا غَيْرَ مَمْلُوكٍ ؛۝؛ يَا قَاهِرًا غَيْرَ مَقْهُورٍ ؛۝؛ يَا رَافِعًا غَيْرَ مَرْفُوعٍ ؛۝؛ يَا حَافِظًا غَيْرَ مَحْفُوظٍ ؛۝؛ يَا نَاصِرًا غَيْرَ مَنْصُورٍ ؛۝؛ يَا شَاهِدًا غَيْرَ غَائِبٍ ؛۝؛ يَا قَـرِيـبًا غَـيْـرَ بَـعِيدٍ ؛۝؛`,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -1813,6 +1896,8 @@ const JAWSHAN_DATA = [
   9. О, свет, который выше всякого света,
   10. О, свет, не имеющее равных себе,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Light of lights,\nO Illuminator of light,\nO Creator of light\nO Planner of light,\nO Estimator of light,\nO Light of all lights,\nO Light that precedes in existence every light,\nO Light that will survive all lights,\nO Light that is above every light,\nO Light like of which there is no light.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا نُورَ النُّورِ ؛۝؛ يَا مُنَوِّرَ النُّورِ ؛۝؛ يَا مُصَوِّرَ النُّورِ ؛۝؛ يَا خَالِقَ النُّورِ ؛۝؛ يَا مُقَدِّرَ النُّورِ ؛۝؛ يَا مُدَبِّرَ النُّورِ ؛۝؛ يَا نُورًا قَـبْلَ كُلِّ نُورٍ ؛۝؛ يَا نُورًا بَعْدَ كُلِّ نُورٍ ؛۝؛ يَا نُورًا فَـوْقَ كُلِّ نُورٍ ؛۝؛ يَا نُورًا لَيْسَ مِثْلَهُ نُورٌ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -1850,6 +1935,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, упоминание которого сладостно,
   10. О, Владыка, близость к которому и привычка быть в дружбе с которым - услада сердец,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He Whose gift is noble,\nO He Whose action is subtle,\nO He Whose kindness is persistent,\nO He Whose beneficence is eternal,\nO He Whose word is right,\nO He Whose promise is true,\nO He Whose forgiveness is a grace,\nO He Whose chastisement is justice,\nO He Whose remembrance is sweet,\nO He Whose grace is universal.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ عَطَاؤُهُ شَرِيفٌ ؛۝؛ يَا مَنْ فِعْلُهُ لَطِيفٌ ؛۝؛ يَا مَنْ لُطْفُهُ مُقِيمٌ ؛۝؛ يَا مَنْ إِحْسَانُهُ قَدِيمٌ ؛۝؛ يَا مَنْ قَوْلُهُ حَقٌّ ؛۝؛ يَا مَنْ وَعْدُهُ صِدْقٌ ؛۝؛ يَا مَنْ عَفْوُهُ فَضْلٌ ؛۝؛ يَا مَنْ عَذَابُهُ عَدْلٌ ؛۝؛ يَا مَنْ ذِكْرُهُ حُلْوٌ ؛۝؛ يَا مَنْ أُنْسُهُ لَذِيذٌ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -1888,6 +1975,8 @@ const JAWSHAN_DATA = [
   9. О, доводящий всё и вся до совершенства,
   10. О, возвышающий любого щедротами и благами своими,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I entreat You in Your name:\nO Facilitator, \nO Separator,\nO Alterer, \nO Humiliating of the proud,\nO Degrader, \nO Benefactor,\nO Munificent, \nO Giver of respite,\nO Grantor of respite, \nO Virtuous,`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا مُنَـوِّلُ ؛۝؛ يَا مُفَصِّلُ ؛۝؛ يَا مُبَدِّلُ ؛۝؛ يَا مُسَهِّلُ ؛۝؛ يَا مُذَلِّلُ ؛۝؛ يَا مُنَزِّلُ ؛۝؛ يَا مُحَوِّلُ ؛۝؛ يَا مُجَمِّلُ ؛۝؛ يَا مُكَمِّلُ ؛۝؛ يَا مُفَضِّلُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -1925,6 +2014,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто не рождает и сам не может быть рождён,
   10. О, Владыка мой, которому нет равных,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He Who sees but is not seen,\nO He Who creates and is not created,\nO He Who guides and is not guided,\nO He Who receives to life and is not brought to life,\nO He Who questions and is not questioned,\nO He Who feeds and does not eat,\nO He Who gives protection and is in no need of protection,\nO He Who judges and against Whom no judgement is passed,\nO He Who commands but is not commanded:\nO He Who begets not, nor is He begotten,\nAnd there is none like unto Him.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ يَرَى وَلَا يُرَى ؛۝؛ يَا مَنْ يَخْلُقُ وَلَا يُخْلَقُ ؛۝؛ يَا مَنْ يَهْدِي وَلَا يُهْدَى ؛۝؛ يَا مَنْ يُحْيِي وَلَا يُحْيَى ؛۝؛ يَا مَنْ يُطْعِمُ وَلَا يُطْعَمُ ؛۝؛ يَا مَنْ يُجِيرُ وَلَا يُجَارُ ؛۝؛ يَا مَنْ يَـقْضِي وَلَا يُـقْضَى عَلَيْهِ ؛۝؛ يَا مَنْ يَحْكُمُ وَلَا يُحْكَمُ عَلَيْهِ ؛۝؛ يَا مَنْ لَمْ يَلِدْ وَلَمْ يُولَدْ ؛۝؛ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -1962,6 +2053,8 @@ const JAWSHAN_DATA = [
   9. О, наилучший из хозяев,
   10. О, Владыка мой, наилучший из помогающих,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Best reckoner,\nO Best physician,\nO Best guardian,\nO Best near one,\nO Best responder,\nO Best friend,\nO Best surety,\nO Best protector,\nO Best master,\nO Best helper.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا نِعْمَ الْحَبِيبُ ؛؛ يَا نِعْمَ الطَّبِيبُ ؛؛يَا نِعْمَ الْحَسِيبُ ؛؛ يَا نِعْمَ الْقَرِيبُ ؛؛ يَا نِعْمَ الرَّقِيبُ ؛؛ يَا نِعْمَ الْمُجِيبُ ؛؛ يَا نِعْمَ الْأَنِيسُ ؛؛ يَا نِعْمَ الْوَكِيلُ ؛؛ يَا نِعْمَ الْمَوْلَى ؛؛ يَا نِعْمَ النَّصِيرُ ؛؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -1999,6 +2092,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто обращает печаль горюющих в покой и радость,
   10. О, Владыка мой, Бог всех сущих в прошлом и будущем,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Joy of saints,\nO Desire of friends.\nO Friend of seekers,\nO Friend of penitents,\nO Provider of sustenance to the poor,\nO Hope of sinners,\nO Coolness of worshippers' eyes,\nO Remover Of sufferers' pain,\nO Dispeller of the sorrows of the sorrowful,\nO Allah of the first and the last generation.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا سُرُورَ الْعَارِفِينَ ؛۝؛ يَا أَنِيسَ الْمُرِيدِينَ ؛۝؛ يَا مُغِيثَ الْمُشْتَاقِينَ ؛۝؛ يَا حَبِيبَ التَّوَّابِينَ ؛۝؛ يَا رَازِقَ الْمُقِلِّينَ ؛۝؛ يَا رَجَاءَ الْمُذْنِبِينَ ؛۝؛ يَا كَاشِفَ الْمَكْرُوبِينَ ؛۝؛ يَا مُنَفِّسًا عَنِ الْمَغْمُومِينَ ؛۝؛ يَا مُفَرِّجًا عَنِ الْمَحْزُونِينَ ؛۝؛ يَا إِلٰهَ الْأَوَّلِينَ وَالْأٰخِرِينَ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2036,6 +2131,8 @@ const JAWSHAN_DATA = [
   9. О, Владыка всего явного и тайного,
   10. О, Владыка дней и ночей,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I entreat You in Your name:\nO our Lord, \nO our Allah,\nO our Chief, \nO our Master,\nO our Helper, \nO our Protector,\nO our Guide, \nO our Aider,\nO our Friend, \nO our Physician.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا رَبَّ الْجَنَّةِ وَ؛النَّارِ ؛؛۝؛ يَا رَبَّ النَّبِيِّينَ وَالْأَخْيَارِ ؛۝؛ يَا رَبَّ الصِّدِّيقِينَ وَالْأَبْرَارِ ؛۝؛ يَا رَبَّ الصِّغَارِ وَالْكِبَارِ ؛۝؛ يَا رَبَّ الْحُبُوبِ وَالْأَثْمَارِ ؛۝؛ يَا رَبَّ الْأَنْهَارِ وَالْأَشْجَارِ ؛۝؛ يَا رَبَّ الصَّحَارَى وَالْقِفَارِ ؛۝؛ يَا رَبَّ الْعَبِيدِ وَالْأَحْرَارِ ؛۝؛ يَا رَبَّ الْإِعْلَانِ وَالْإِسْرَارِ ؛۝؛ يَا رَبَّ اللَّيْلِ وَالنَّهَارِ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2073,6 +2170,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, красота сути которого в единовластии и величественности Его,
   10. О, Владыка мой, чье бессмертие неприкосновенно велико,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Lord of the prophets and the virtuous,\nO Lord of the righteous and chosen one,\nO Lord of paradise and hell,\nO Lord of the small and the great,\nO Lord of grains and fruits,\nO Lord of canals and trees,\nO Lord of forest and desert,\nO Lord of lands and seas,\nO Lord of night and day,\nO Lord of the manifest and the hidden.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ لَحِقَ فِي كُلِّ شَيْءٍ عِلْمُهُ ؛۝؛ يَا مَنْ نَفَذَ بِكُلِّ شَيْءٍ بَصَرُهُ ؛۝؛ يَا مَنْ بَلَغَتْ إِلَى كُلِّ شَيْءٍ قُدْرَتُهُ ؛۝؛ يَا مَنْ لَا يُحْصِي الْعِبَادُ نَعْمَاءَهُ ؛۝؛ يَا مَنْ لَا تَـبْلُغُ الْخَلَائِقُ شُكْرَهُ ؛۝؛ يَا مَنْ لَا تُدْرِكُ الْأَفْهَامُ جَلَالَهُ ؛۝؛ يَا مَنْ لَا تَـنَالُ الْأَوْهَامُ كُـنْـهَهُ ؛۝؛ يَا مَنِ الْعَظَمَةُ وَالْكِـبْـرِيَاءُ رِدَاؤُهُ ؛۝؛ يَا مَنِ الْهَـيْـبَـةُ وَالسُّلْطَانُ بَهَاؤُهُ ؛۝؛ يَا مَنْ تَعَزَّزَ بِالْعِزِّ بَقَاؤُهُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2110,6 +2209,8 @@ const JAWSHAN_DATA = [
   9. О, единственный обладатель небес высочайших,
   10. О, Владыка мой, которому принадлежит Земля и Арша (Трон божий),`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Whose command operates in everything,\nO He, Whose knowledge encompasses everything,\nO He, Whose control extends to everything,\nO He, Whose bounties cannot be counted by His slaves,\nO He, Whom His creatures cannot adequately thank,\nO He, Whose grandeur cannot be comprehended by the intellect,\nO He, Whose reality cannot be acquired by the imagination,\nO He, Whose garb is majesty and greatness,\nO He, Whose judgement cannot be reversed by His slave,\nO He, Whose alone is the kingdom and no one else'\nO He, Whose alone is the gift and none else's,`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ لَهُ الْمَثَلُ الْأَعْلَى ؛۝؛ يَا مَنْ لَهُ الصِّفَاتُ الْعُلَى ؛۝؛ يَا مَنْ لَهُ الْأٰخِرَةُ وَالْأُولَى ؛۝؛ يَا مَنْ لَهُ الْجَنَّةُ الْمَأْوَى ؛۝؛ يَا مَنْ لَهُ النَّارُ وَاللَّظَى ؛۝؛ يَا مَنْ لَهُ الْأٰيَاتُ الْكُبْرَى ؛۝؛ يَا مَنْ لَهُ الْأَسْمَاءُ الْحُسْنَى ؛۝؛ يَا مَنْ لَهُ الْحُكْمُ وَالْقَضَا ؛۝؛ يَا مَنْ لَهُ السَّمَاوَاتُ الْعُلَى ؛۝؛ يَا مَنْ لَهُ الْعَرْشُ وَالثَّرَى ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2148,6 +2249,8 @@ const JAWSHAN_DATA = [
   9. О, вечносущий, сама жизнь,
   10. О, существующий благодаря самому себе, постоянный и поддерживающий жизнь во всём сущем,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, for Whom are noblest examples,\nO He, for Whom are high attributes,\nO He, Who is the Master of the beginning and the end,\nO He, Who is the Master of the abode of paradise,\nO He, for Whom are great signs,\nO He, for Whom are beautiful names,\nO He, for Whom is order and judgement,\nO He, Who rules over the atmosphere and the expanse,\nO He, Whose is the Lordship of the highest heaven and the earth,\nO He, Who is the Master of the high heavens.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا عَفُوُّ ؛۝؛ يَا غَفُورُ ؛۝؛ يَا وَدُودُ ؛۝؛ يَا شَكُورُ ؛۝؛ يَا صَبُورُ ؛۝؛ يَا رَؤُوفُ ؛۝؛ يَا عَطُوفُ ؛۝؛ يَا قُـدُّوسُ ؛۝؛ يَا حَـيُّ ؛۝؛ يَا قَـيُّومُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2185,6 +2288,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, чьи блага и щедроты во всём проявляются,
   10. О, Владыка мой, возвещающий о себе всем созданиям своим,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I entreat You in Your name:\nO Pardoner, \nO Forgiver,\nO Patient, \nO Greatest appreciator(of good),\nO Kind, \nO Sympathetic,\nO Besought, \nO Friend,\nO Most Glorified, \nO Most Holy.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ هُوَ فِي السَّمَاءِ عَظَمَتُهُ ؛۝؛ يَا مَنْ هُوَ فِي الْأَرْضِ أٰيَاتُهُ ؛۝؛ يَا مَنْ هُوَ فِي كُلِّ شَيْءٍ دَلَائِلُهُ ؛۝؛ يَا مَنْ هُوَ فِي الْبِحَارِ عَجَائِـبُهُ ؛۝؛ يَا مَنْ هُوَ يَـبْدَؤُ الْخَلْقَ ثُمَّ يُعِيدُهُ ؛۝؛ يَا مَنْ هُوَ فِي الْجِبَالِ خَزَائِـنُهُ ؛۝؛ يَا مَنْ أَحْسَنَ كُلَّ شَيْءٍ خَلَقَهُ ؛۝؛ يَا مَنْ إِلَيْهِ يُرْجَعُ الْأَمْرُ كُلُّهُ ؛۝؛ يَا مَنْ ظَهَرَ فِي كُلِّ شَيْءٍ لُطْفُهُ ؛۝؛ يَا مَنْ يُـعَرِّفُ الْخَلَائِقَ قُدْرَتَـهُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2222,6 +2327,8 @@ const JAWSHAN_DATA = [
   9. О, руководящий теми, кем некому руководить,
   10. О, Владыка мой, милосердный к тем, к кому никто не проявляет милосердие,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Whose greatness is in the heavens,\nO He, Whose signs are on the earth,\nO He, Whose proofs are manifest in everything,\nO He, Whose wonders are in the seas,\nO He, Whose treasures are in the mountains,\nO He, Who originated Creation which then returns to Him,\nO He, towards Whom is the return of every matter,\nO, Whose Kindness is evident in everything,\nO He, Who makes best everything which He has created,\nO He, Whose authority is wielded over all creatures.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا حَبِيبَ مَنْ لَا حَبِيبَ لَهُ ؛۝؛ يَا طَبِيبَ مَنْ لَا طَبِيبَ لَهُ ؛۝؛ يَا مُجِيبَ مَنْ لَا مُجِيبَ لَهُ ؛۝؛ يَا شَفِيقَ مَنْ لَا شَفِيقَ لَهُ ؛۝؛ يَا رَفِيقَ مَنْ لَا رَفِيقَ لَهُ ؛۝؛ يَا شَفِيعَ مَنْ لَا شَفِيعَ لَهُ ؛۝؛ يَا مُغِيثَ مَنْ لَا مُغِيثَ لَهُ ؛۝؛ يَا دَلِيلَ مَنْ لَا دَلِيلَ لَهُ ؛۝؛ يَا قَائِدَ مَنْ لَا قَائِدَ لَهُ ؛۝؛ يَا رَاحِمَ مَنْ لَا رَاحِمَ لَهُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2259,6 +2366,8 @@ const JAWSHAN_DATA = [
   9. О, дарующий силу тем, кто просит Его о силе,
   10. О, Владыка мой, друг и покровитель тех, кто ищет дружбы Его и покровительства,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Friend of he who has no friend,\nO Physician of he who has no physician,\nO Responder to he who has no responder,\nO Affectionate One to he whom none hold in affection,\nO Friend of he who has no friend,\nO Helper of he who has no help,\nO Guide of he who has no guide,\nO Associate of the forlorn,\nO Merciful One towards he on whom no one has mercy,\nO Companion of he who has no companion.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا كَافِيَ مَنِ اسْتَـكْفَاهُ ؛۝؛ يَا هَادِيَ مَنِ اسْتَهْدَاهُ ؛۝؛ يَا كَالِيَ مَنِ اسْتَكْلَاهُ ؛۝؛ يَا دَاعِيَ مَنِ اسْتَدْعَاهُ ؛۝؛ يَا شَافِيَ مَنِ اسْتَشْفَاهُ ؛۝؛ يَا قَاضِيَ مَنِ اسْتَقْضَاهُ ؛۝؛ يَا مُغْنِيَ مَنِ اسْتَغْنَاهُ ؛۝؛ يَا مُوفِيَ مَنِ اسْتَوْفَاهُ ؛۝؛ يَا مُقَوِّيَ مَنِ اسْتَقْوَاهُ ؛۝؛ يَا وَلِـيَّ مَنِ اسْتَوْلَاهُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2287,7 +2396,6 @@ const JAWSHAN_DATA = [
     9. Ey her şeyi mukadder hedefine sevk eden Saik,
     10. Ey tohum ve çekirdekleri yarıp sünbüllendiren Falık,`,
     "russian":`Обращаюсь к тебе и молю;
-  
   1. О, Тот, который был прежде всего сущего и у которого нельзя отнять первенство в бытии,
   2. О, Тот, который будет существовать и после того, когда всё окончит свое существование,
   3. О, Тот, который превосходит всё сущее,
@@ -2299,6 +2407,8 @@ const JAWSHAN_DATA = [
   9. О, ведущей все создания свои к цели их бытия и к вершинам их совершенства,
   10. О, рассекающий семена и зерна и выводящий из них ростки; выводящий из ночи - день и из тьмы - свет,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Sufficer for those who seek sufficiency,\nO Guide for those who seek guidance,\nO Protector for those who seek protection,\nO Granter for concession to those who seek concession,\nO Healer for those who seek cure,\nO Just One for those who seek justice,\nO Bestower of wealth for those who seek wealth,\nO Fulfiller of promises for those who seek fulfillment,\nO Granter of strength for those who seek strength,\nO Aider of those who seek aid.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا أَوَّلُ ؛۝؛ يَا أٰخِرُ ؛۝؛ يَا ظَاهِرُ ؛۝؛ يَا بَاطِنُ ؛۝؛ يَا خَالِقُ ؛۝؛ يَا رَازِقُ ؛۝؛ يَا صَادِقُ ؛۝؛ يَا سَابِقُ ؛۝؛ يَا سَائِقُ ؛۝؛ يَا فَالِقُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2336,6 +2446,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто не нуждается в каком-либо помощнике,
   10. О, Владыка мой, единственный и истинный обладатель силы и мощи,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah , verily I entreat You in Your name:\nO Creator, \nO Provider of sustenance,\nO Creator of speech, \nO Truthful,\nO Splitter, \nO Separator,\nO Breaker, \nO Combiner,\nO Foremost, \nO Most High.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ يُقَلِّبُ اللَّيْلَ وَالنَّهَارَ ؛۝؛ يَا مَنْ خَلَقَ الظُّلُمَاتِ وَالنُّورَ ؛۝؛ يَا مَنْ جَعَلَ الظِّـلَّ وَالْحَرُورَ ؛۝؛ يَا مَنْ سَـخَّـرَ الشَّمْسَ وَالْقَمَرَ ؛۝؛ يَا مَنْ خَلَقَ الْمَوْتَ وَالْحَـيَاةَ ؛۝؛ يَا مَنْ لَهُ الْخَلْقُ وَالْأَمْرُ ؛۝؛ يَا مَنْ لَمْ يَـتَّخِذْ صَاحِبَةً وَلَا وَلَدًا ؛۝؛ يَا مَنْ لَمْ يَكُنْ لَهُ شَرِيكٌ فِي الْمُلْكِ ؛۝؛ يَا مَنْ لَمْ يَكُنْ لَهُ وَلِيٌّ مِنَ الذُّلِّ ؛۝؛ يَا مَنْ لَهُ الْحَوْلُ وَالْقُوَّةُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2373,6 +2485,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто не оставляет без награды тех, кто творит добро,
   10. О, Тот, который не отдален от сердец тех, кто знает Его,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Who changes night and day,\nO He, Who has created darkness and light,\nO He, Who has bestowed shade and heat,\nO He, Who has brought into subjection the sun and the moon,\nO He, Who has ordained virtue and vice,\nO He, Who has created death and life,\nO He, Who has made the body and the soul,\nO He, Who has neither taken a wife nor begotten any child,\nO He, Who has no partner in His sovereignty,\nO He, Who has no friend among the disgraced.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ يَعْلَمُ مُرَادَ الْمُرِيدِينَ ؛۝؛ يَا مَنْ يَمْلِكُ حَوَائِجَ السَّائِلِينَ ؛۝؛ يَا مَنْ يَسْمَعُ أَنِـينَ الْوَالِهِينَ ؛۝؛ يَا مَنْ يَرَى بُكَاءَ الْخَائِفِينَ ؛۝؛ يَا مَنْ يَعْلَمُ ضَمِيرَ الصَّامِتِينَ ؛۝؛ يَا مَنْ يَرَى نَدَمَ النَّادِمِينَ ؛۝؛ يَا مَنْ يَقْبَلُ عُذْرَ التَّائِبِينَ ؛۝؛ يَا مَنْ لَا يُصْلِحُ عَمَلَ الْمُفْسِدِينَ ؛۝؛ يَا مَنْ لَا يُضِيعُ أَجْرَ الْمُحْسِنِينَ ؛۝؛ يَا مَنْ لَا يَـبْعُدُ عَنْ قُلُوبِ الْعَارِفِينَ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2410,6 +2524,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, чья верность не имеет границ,
   10. O, Тот, кто вознаграждает достойнейшим образом рабов своих,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Who knows the desire of the desirous,\nO He, Who knows the conscience of the silent,\nO He, who hears the cries of the weak,\nO He, Who sees the lamentation of the frightened,\nO He, Who satisfies the needs of the petitioner,\nO He, Who accepts the excuse of the repentant,\nO He, Who does not correct the actions of the mischievous,\nO He, Who does not waste the good reward of the virtuous,\nO He, Who is not absent from the mind of the saint,\nO the most Magnanimous of all those who show magnanimity.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا دَائِمَ الْبَقَاءِ ؛۝؛ يَا غَافِرَ الْخَطَاءِ ؛۝؛ يَا سَامِعَ الدُّعَاءِ ؛۝؛ يَا وَاسِعَ الْعَطَاءِ ؛۝؛ يَا رَافِعَ السَّمَاءِ ؛۝؛ يَا كَاشِفَ الْبَلَاءِ ؛۝؛ يَا عَظِيمَ الثَّنَاءِ ؛۝؛ يَا قَدِيمَ السَّنَاءِ ؛۝؛ يَا كَثِيرَ الْوَفَاءِ ؛۝؛ يَا شَرِيفَ الْجَزَاءِ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2438,7 +2554,6 @@ const JAWSHAN_DATA = [
     9. Ey bol bol hediyeler veren Vehhab,
     10. Ey bütün tevbeleri kabul eden Tevvab,`,
     "russian":`Обращаюсь к тебе и молю;
-  
   1. О, прощающий многократно,
   2. О, укрывающий рабов своих от изъянов, ошибок и грехов,
   3. О, силой и властью своей преобладающий, и ведущий создания свои, куда пожелает, независимо от их воли,
@@ -2450,6 +2565,8 @@ const JAWSHAN_DATA = [
   9. О, щедро и многократно дарящий рабам своим желаемое, даже если они не достойны того,
   10. О, принимающий покаяния рабов своих,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Eternal Living,\nO Hearer of prayers,\nO Liberal Bestower\nO Forgiver of sins,\nO Creator of the sky,\nO Best tester of trials,\nO Most Praiseworthy,\nO Eternally Great,\nO Greatest fulfiller of promises,\nO Best Recompenser.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا غَـفَّارُ ؛۝؛ يَا سَـتَّارُ ؛۝؛ يَا قَـهَّارُ ؛۝؛ يَا جَـبَّارُ ؛۝؛ يَا صَبَّارُ ؛۝؛ يَا رَزَّاقُ ؛۝؛ يَا فَـتَّاحُ ؛۝؛ يَا عَلَّامُ ؛۝؛ يَا وَهَّابُ ؛۝؛ يَا تَـوَّابُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2487,6 +2604,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто обрекает меня на смерть и возвращает меня к жизни,
   10. О, Владыка мой, обнимающий великодушием своим и вселяющий в душу мою покой и благодать,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I entreat You in Your name:\nO Best concealer of defects, \nO Best forgiver,\nO Most dominant, \nO Supreme,\nO Most patient, \nO Most virtuous,\nO Most exalted, \nO Best opener,\nO Blower of winds, \nO Bestower of Happiness.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ خَلَقَنِي وَسَوَّانِي ؛۝؛ يَا مَنْ رَزَقَنِي وَرَبَّانِي ؛۝؛ يَا مَنْ أَطْعَمَنِي وَسَقَانِي ؛۝؛ يَا مَنْ قَرَّبَنِي وَأَدْنَانِي ؛۝؛ يَا مَنْ عَصَمَنِي وَكَفَانِي ؛۝؛ يَا مَنْ حَفِظَنِي وَكَلَانِي ؛۝؛ يَا مَنْ وَفَّقَنِي وَهَدَانِي ؛۝؛ يَا مَنْ أَعَزَّنِي وأَغْنَانِي ؛۝؛ يَا مَنْ أَمَاتَنِي وأَحْيَانِي ؛۝؛ يَا مَنْ أٰنَسَنِي وَأٰوَانِي ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2524,6 +2643,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кого славит гром небесный, и кому ангелы в страхе и трепете возносят восхваления свои,
   10. О, Владыка мой, посылающий впереди ветер-глашатай с благой вестью о милости своей,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Who created me and perfected me,\nO He, Who provided me with sustenance and nurtured me,\nO He, Who provided food for me and quenched my thirst,\nO He, Who brought me near Him and brought me most nigh,\nO He, Who protected me and kept me in safety,\nO He, Who saved and guarded me,\nO He, Who honoured me and enriched me,\nO He, Who helped and guided me,\nO He, Who befriended me and sheltered me,\nO He, Who causes me to die and revivifies me.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ يُحِقُّ الْحَقَّ بِكَلِمَاتِه۪ ؛۝؛ يَا مَنْ لَا مُعَقِّبَ لِحُكْمِه۪ ؛۝؛ يَا مَنْ لَا رَادَّ لِقَضَائِه۪ ؛۝؛ يَا مَنْ يَحُولُ بَـيْنَ الْمَرْءِ وَقَـلْبِـه۪ ؛۝؛ يَا مَنْ يَـقْـبَلُ التَّـوْبَـةَ عَنْ عِـبَادِه۪ ؛۝؛ يَا مَنْ لَا تَـنْـفَعُ الشَّفَاعَةُ إِلَّا بِـإِذْنِه۪ ؛۝؛ يَا مَنِ السَّمَاوَاتُ مَطْوِيَّاتٌ بِيَمِينِه۪ ؛۝؛ يَا مَنْ هُوَ أَعْلَمُ بِمَنْ ضَلَّ عَنْ سَبِيلِه۪ ؛۝؛ يَا مَنْ يُسَبِّحُ الرَّعْدُ بِحَمْدِه۪ وَالْمَلَائِكَةُ مِنْ خِيفَتِه۪ ؛۝؛ يَا مَنْ يُـرْسِلُ الرِّيَاحَ بُشْرًا بَـيْنَ يَـدَيْ رَحْمَتِه۪ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2561,6 +2682,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто создал все твари попарно и разнополыми,
   10. О, Владыка мой, который сделал Ад надсмотрщиков над теми, кто войдет туда,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Who maintains truth by His words,\nO He, Who accepts repentance from His slaves,\nO He, Who stands between man and his heart,\nO He, without Whose permission intercession has no benefit,\nO He, Who knows well who is astray from His path,\nO He, Whose order no one can reverse,\nO He, Whose judgement no one can revoke,\nO He, Whose order is obeyed by everything,\nO He, in Whose Right Hand the heavens shall be rolled up,\nO He, Who has made earth a cradle,`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ جَعَلَ الْأَرْضَ مِهَادًا ؛۝؛ يَا مَنْ جَعَلَ الْجِبَالَ أَوْتَادًا ؛۝؛ يَا مَنْ جَعَلَ الشَّمْسَ سِرَاجًا ؛۝؛ يَا مَنْ جَعَلَ الْقَمَرَ نُورًا ؛۝؛ يَا مَنْ جَعَلَ اللَّيْلَ لِبَاسًا ؛۝؛ يَا مَنْ جَعَلَ النَّهَارَ مَعَاشًا ؛۝؛ يَا مَنْ جَعَلَ النَّوْمَ سُبَاتًا ؛۝؛ يَا مَنْ جَعَلَ السَّمَاءَ بِنَاءً ؛۝؛ يَا مَنْ جَعَلَ الْأَشْيَاءَ أَزْوَاجًا ؛۝؛يَا مَنْ جَعَلَ النَّارَ مِرْصَادًا ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2589,7 +2712,6 @@ const JAWSHAN_DATA = [
     9. Ey sonsuz kudret sahibi olan Kadir,
     10. Ey her şeye gücü yeten Muktedir.`,
     "russian":`Обращаюсь к тебе и молю;
-  
   1. О, источник истинного заступничества,
   2. О, всеслышащий,
   3. О, возвышающий, кого пожелает,
@@ -2601,6 +2723,8 @@ const JAWSHAN_DATA = [
   9. О, обладатель могущества безграничного,
   10. О, всесильный,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Who sends forth the winds bearing good tiding before His mercy.\nO He, Who has made the mountains pegs,\nO He, Who has made the sun a lamp,\nO He, Who has made the moon a light,\nO He, Who has made the night a covering,\nO He, Who has made the day for seeking livelihood,\nO He, Who has made sleep a rest,\nO He, Who has made the sky a vault,\nO He, Who has created things in pairs,\nO He, Who has made hell an ambush, barking for sinners.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا شَفِيعُ ؛۝؛ يَا سَمِيعُ ؛۝؛ يَا رَفِيعُ ؛۝؛ يَا مَنِيعُ ؛۝؛ يَا بَدِيعُ ؛۝؛ يَا سَرِيعُ ؛۝؛ يَا بَشِيرُ ؛۝؛ يَا نَذِيرُ ؛۝؛ يَا قَدِيرُ ؛۝؛ يَا مُقْتَدِرُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2638,6 +2762,8 @@ const JAWSHAN_DATA = [
   9. О, Живой, который воскресит всех мертвых,
   10. О, Владыка мой, обладатель жизни, который никогда не умрёт,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I entreat You in Your name:\nO All-hearer, \nO Mediator,\nO Sublime, \nO Invincible,\nO Swift, \nO Originator,\nO Great, \nO Omnipotent,\nO Knowing, \nO Supporter.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا حَيُّ قَبْلَ كُلِّ حَيٍّ ؛۝؛ يَا حَيُّ بَعْدَ كُلِّ حَيٍّ ؛۝؛ يَا حَيُّ الَّذِي لَا يُـشْبِهُهُ شَيْءٌ ؛۝؛ يَا حَيُّ الَّذِي لَيْسَ كَمِثْلِه۪ حَيٌّ ؛۝؛ يَا حَيُّ الَّذِي لَا يُشَارِكُهُ حَـيٌّ ؛۝؛ يَا حَيُّ الَّذِي لَا يَحْتَاجُ إِلَى حَيٍّ ؛۝؛ يَا حَيُّ الَّذِي يُمِيتُ كُلَّ حَيٍّ ؛۝؛ يَا حَيُّ الَّذِي يَرْزُقُ كُلَّ حَيٍّ ؛۝؛ يَا حَيُّ الَّذِي يُحْيِـي الْمَوْتَى ؛۝؛ يَا حَيُّ الَّذِي لَا يَمُوتُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2675,6 +2801,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, чье качества незаменимы,
   10. О, Владыка мой, обладающий совершенством непостижимым,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Everliving, preceding every living being,\nO Everliving, succeeding every living being,\nO Everliving, like unto Whom there is none,\nO Everliving, Who has no living partner,\nO Everliving, Who is not dependent on any living being,\nO Everliving, Who causes every living being to die,\nO Everliving, Who provides sustenance to every living being,\nO Everliving, Who has not inherited life from any living being,\nO Everliving, Who quickens the dead,\nO Everliving, O Self-Subsistent, Slumber seizeth Him not, nor sleep.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ لَهُ ذِكْرٌ لَا يُنْسَى ؛۝؛ يَا مَنْ لَهُ نُورٌ لَا يُطْفَى ؛۝؛ يَا مَنْ لَهُ ثَنَاءٌ لَا يُحْصَى ؛۝؛ يَا مَنْ لَهُ نُعُوتٌ لَا تُغَيَّرُ ؛۝؛ يَا مَنْ لَهُ نِعَمٌ لَا تُعَدُّ ؛۝؛ يَا مَنْ لَهُ مُلْكٌ لَا يَزُولُ ؛۝؛ يَا مَنْ لَهُ جَلَالٌ لَا يُكَيَّفُ ؛۝؛ يَا مَنْ لَهُ قَضَاءٌ لَا يُرَدُّ ؛۝؛ يَا مَنْ لَهُ صِفَاتٌ لَا تُبَدَّلُ ؛۝؛ يَا مَنْ لَهُ كَمَالٌ لَا يُدْرَكُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2712,6 +2840,8 @@ const JAWSHAN_DATA = [
   9. О, наилучший из всех, кто воздает щедро за дела малые,
   10. О, Владыка мой, лучше всех знающий смутьянов,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Whose remembrance is not forgotten,\nO He, Whose light is not extinguished\nO He, Whose bounties are countless,\nO He, Whose grandeur is perpetual,\nO He, Whose praise does not admit of alteration,\nO He, Whose glory is not framed,\nO He, Whose perfection cannot be comprehended,\nO He, Whose order is not rejected,\nO He, Whose attributes do not change,\nO He, Whose attributes do not alter,`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا رَبَّ الْعَالَمِينَ ؛۝؛ يَا مَالِكَ يَوْمِ الدِّينِ ؛۝؛ يَا مَنْ يُحِبُّ الصَّابِرِينَ ؛۝؛ يَا مَنْ يُحِبُّ التَّوَّابِينَ ؛۝؛ يَا مَنْ يُحِبُّ الْمُتَطَهِّرِينَ ؛۝؛ يَا مَنْ يُحِبُّ الْمُحْسِنِينَ ؛۝؛ يَا مَنْ هُوَ خَيْرُ النَّاصِرِينَ ؛۝؛ يَا مَنْ هُوَ خَيْرُ الْفَاصِلِينَ ؛۝؛ يَا مَنْ هُوَ خَيْرُ الشَّاكِرِينَ ؛۝؛ يَا مَنْ هُوَ أَعْلَمُ بِالْمُفْسِدِينَ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2750,6 +2880,8 @@ const JAWSHAN_DATA = [
   9. О, обладатель почёта и величия,
   10. О, низвергающий всякого, кого пожелает,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+   "english": `O Lord of all the worlds,\nO Master of the Day of Judgement,\nO Ultimate Goal of the seeker,\nO Refuge of the seeker of shelter,\nO Overtaker of the fugitive,\nO He Who loves the patient,\nO He, Who loves the repentant,\nO He, Who loves the pure,\nO He, Who loves the virtuous\nO He, Who knows best the guided,`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا مُبْدِئُ ؛۝؛ يَا مُعِيدُ ؛۝؛ يَا حَفِيظُ ؛۝؛ يَا مُحِيطُ ؛۝؛ يَا حَمِيدُ ؛۝؛ يَا مَجِيدُ ؛۝؛ يَا مُقِيتُ ؛۝؛ يَا مُغِيثُ ؛۝؛ يَا مُعِزُّ ؛۝؛ يَا مُذِلُّ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2784,6 +2916,8 @@ const JAWSHAN_DATA = [
   8. О, Царь, бесконечно далекий от немощи и бессилия,
   9. О, Владыка мой, Сущий, не имеющий себе ни равных, не подобных,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO Affectionate, \nO Companion,\nO Protector, \nO Encompasser,\nO Provider of sustenance, \nO Aider of seekers of aid,\nO Honourer, \nO Humiliating,\nO Creator, \nO He Who causes to return.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ هُوَ أَحَدٌ بِلَا ضِدٍّ ؛۝؛ يَا مَنْ هُوَ فَرْدٌ بِلَا نِدٍّ ؛۝؛ يَا مَنْ هُوَ صَمَدٌ بِلَا عَيْبٍ ؛۝؛ يَا مَنْ هُوَ وِتْرٌ بِلَا شَفْعٍ ؛۝؛ يَا مَنْ هُوَ رَبٌّ بِلَا وَزِيرٍ ؛۝؛ يَا مَنْ هُوَ غَنِيٌّ بِلَا فَقْرٍ ؛۝؛ يَا مَنْ هُوَ سُلْطَانٌ بِلَا عَزْلٍ ؛۝؛ يَا مَنْ هُوَ مَلِيكٌ بِلَا عَجْزٍ ؛۝؛ يَا مَنْ هُوَ مَوْجُودٌ بِلَا مِثْلٍ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2821,6 +2955,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, чье прощение - прибежище для грешников,
   10. О, Владыка мой, чья милость близка тем, кто творит добро,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Who is single and without opposite,\nO He, Who is Unique, O He, Who is Peerless,\nO He, Who is Independent and without any defect,\nO He, Who is without changing state,\nO He, Who judges without injustice,\nO He, Who is the Lord Cherisher,\nO He, Who is Mighty without disgrace,\nO He, Who is Independent without any need,\nO He, Who is the King without any censure,\nO He, Whose attributes are matchless.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ هُوَ ذِكْرُهُ شَرَفٌ لِلذَّاكِرِينَ ؛۝؛ يَا مَنْ هُوَ شُكْرُهُ فَوْزٌ للِشَّاكِرِينَ ؛۝؛ يَا مَنْ هُوَ حَمْدُهُ فَخْرٌ لِلْحَامِدِينَ ؛۝؛ يَا مَنْ هُوَ طَاعَتُهُ نَجَاةٌ لِلْمُطِيعِينَ ؛۝؛ يَا مَنْ هُوَ بَابُهُ مَفْتُوحٌ لِلطَّالِبِينَ ؛۝؛ يَا مَنْ هُوَ سَبِيلُهُ وَاضِحٌ لِلْمُؤْمِنِينَ ؛۝؛ يَا مَنْ هُوَ أٰيَاتُهُ بُرْهَانٌ لِلنَّاظِرِينَ ؛۝؛ يَا مَنْ هُوَ كِتَابُهُ تَذْكِرَةٌ لِلْمُوقِنِينَ ؛۝؛ يَا مَنْ هُوَ عَفْوُهُ مَلْجَأٌ لِلْمُذْنِبِينَ ؛۝؛ يَا مَنْ هُوَ رَحْمَتُهُ قَرِيبٌ لِلْمُحْسِنِينَ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2858,6 +2994,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, чьи блага не имеют счета,
   10. О, Владыка мой, чьи блага безграничны и неистощимы,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Whose remembrance is an honour for those who remember Him,\nO He, Whose gratitude is success for the grateful,\nO He, Whose praise is the pride of the praiser,\nO He, the obedience to Whom is salvation for the obedient\nO He, Whose door is open to the seeker,\nO He, the path leading to Whom is clear for the repentant,\nO He, Whose signs are proofs for the observers,\nO He, Whose Book is advice to the pious,\nO He, Whose provision, is love the obedient and disobedient alike,\nO He, Whose mercy is close to the virtuous.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ تَبَارَكَ اسْمُهُ  ؛۝؛ يَا مَنْ تَعَالَى جَدُّهُ ؛۝؛ يَا مَنْ جَلَّ ثَنَاؤُهُ ؛۝؛ يَا مَنْ لَا إِلٰهَ غَيْرُهُ ؛۝؛ يَا مَنْ تَقَدَّسَتْ أَسْمَاؤُهُ ؛۝؛ يَا مَنْ يَدُومُ بَقَاؤُهُ ؛۝؛ يَا مَنِ الْعَظَمَةُ بَهَاؤُهُ ؛۝؛ يَا مَنِ الْكِبْرِيَاءُ رِدَاؤُهُ ؛۝؛ يَا مَنْ لَا يُحْصَى أٰلَاؤُهُ ؛۝؛ يَا مَنْ لَا يُـعَـدُّ نَعْمَاؤُهُ ؛۝؛`,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2886,7 +3024,6 @@ const JAWSHAN_DATA = [
     9. Ey en çok övülen ve en çok övgüye layık olan Hamid,
     10. Ey sonsuz şeref sahibi Mecid,`,
     "russian":`Обращаюсь к тебе и молю;
-  
   1. О, помогающий нуждающимся,
   2. О, выявляющий все правдивое и существующий вне всякого сомнения,
   3. О, Тот, чье слово и обещание надежно, и который дарует созданиям своим покой и безопасность,
@@ -2898,6 +3035,8 @@ const JAWSHAN_DATA = [
   9. О, единственный, кому принадлежат все славословия и похвалы,
   10. О, великий и славный, чьи щедрость и благородство не имеют равных,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Whose name is glorious,\nO He, Whose honour is exalted,\nO He-there is no deity except Him,\nO He-great is His praise,\nO He, Whose names are sacred,\nO He, Whose existence is eternal,\nO He, Whose glory is His ornament,\nO He, Whose greatness is His covering,\nO He, Whose favours are countless,\nO He, Whose bounties cannot be enumerated.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا مُعِينُ ؛۝؛ يَا مُبِينُ ؛۝؛ يَا أَمِينُ ؛۝؛ يَا مَكِينُ ؛۝؛ يَا مَتِينُ ؛۝؛ يَا شَدِيدُ ؛۝؛ يَا شَهِيدُ ؛۝؛ يَا رَشِيدُ ؛۝؛ يَا حَمِيدُ ؛۝؛ يَا مَجِيدُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2935,6 +3074,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто справедлив к рабам своим,
   10. О, Владыка мой, который к рабу своему ближе сердца его,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO Helper, \nO Trustworthy,\nO Manifest, \nO Powerful,\nO Firm, \nO True Guide,\nO Praiseworthy, \nO Glorious,\nO Strong, \nO Witness`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا ذَا الْعَرْشِ الْمَجِيدَ ؛۝؛ يَا ذَا الْقَوْلِ السَّدِيدِ ؛۝؛ يَا ذَا الْفَضْلِ الرَّشِيدِ ؛۝؛ يَا ذَا الْبَطْشِ الشَّدِيدِ ؛۝؛ يَا ذَا الْوَعْدِ وَالْوَعِيدِ ؛۝؛ يَا قَرِيبًا غَيْرَ بَعِيدٍ ؛۝؛ يَا مَنْ هُوَ الْوَلِيُّ الْحَمِيدُ ؛۝؛ يَا مَنْ هُوَ عَلَى كُلِّ شَيْءٍ شَهِيدٌ ؛۝؛ يَا مَنْ هُوَ لَيْسَ بِظَلَّامٍ لِلْعَبِيدِ ؛۝؛ يَا مَنْ هُوَ أَقْرَبُ إِلَيْهِ مِنْ حَبْلِ الْوَرِيدِ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -2972,6 +3113,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто ведает о нуждах рабов своих,
   10. О, Владыка мой, всемогущий,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Lord of the Glorious Throne,\nO He, Whose words are right.\nO Master of great deeds,\nO He, Whose punishment is severe\nO Master of promise and threat,\nO He, Who is guardian and the most praised one,\nO He, Who is the mighty doer of whatever He wills,\nO He, Who is near and not far,\nO He, Who is Witness to everything,\nO He, Who is not the least cruel to his slaves,`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ لَا شَرِيكَ لَهُ وَلَا وَزِيرَ ؛۝؛ يَا مَنْ لَا شَبِيهَ لَهُ وَلَا نَظِيرَ ؛۝؛ يَا خَالِقَ الشَّمْسِ وَالْقَمَرِ الْمُنِيرِ ؛۝؛ يَا مُغْنِيَ الْبَائِسِ الْفَقِيرِ ؛۝؛ يَا رَازِقَ الطِّفْلِ الصَّغِيرِ ؛۝؛ يَا رَاحِمَ الشَّيْخِ الْكَبِيرِ ؛۝؛ يَا عِصْمَةَ الْخَائِـفِ الْمُسْتَجِيرِ ؛۝؛ يَا مَنْ هُوَ بِعِبَادِه۪ بَصِيرٌ ؛۝؛ يَا مَنْ هُوَ بِحَوَائِجِ الْعِبَادِ خَبِيرٌ ؛۝؛ يَا مَنْ هُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3009,6 +3152,8 @@ const JAWSHAN_DATA = [
   9. О, обладатель Байта (Каабы великой) и Харама (священного места),
   10. О, Владыка мой, творящий всё и вся из ничего,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Who has no partner and no adviser,\nO He, Who has no equal and no match,\nO Creator of the sun and the bright moon,\nO Enricher of the poverty stricken,\nO Provider of sustenance to small children,\nO Merciful to the very aged ones,\nO Joiner of broken bones,\nO Protector of the frightened shelter seekers,\nO He , Who is All-Aware and All-Seeing of his slaves,\nO He, Who is Powerful over everything.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا ذَا الْجُودِ وَالنِّعَمِ ؛۝؛ يَا ذَا الْفَضْلِ وَالْكَرَمِ ؛۝؛ يَا ذَا الْبَأْسِ وَالنِّقَمِ ؛۝؛ يَا خَالِقَ اللَّوْحِ وَالْقَلَمِ ؛۝؛ يَا بَارِئَ الذَّرِّ وَالنَّسَمِ ؛۝؛ يَا مُلْهِمَ الْعَرَبِ وَالْعَجَمِ ؛۝؛ يَا كَاشِفَ الضُّرِّ وَالْأَلَمِ ؛۝؛ يَا عَالِمَ السِّرِّ وَالْهِمَمِ ؛۝؛ يَا مَنْ لَهُ الْبَيْتُ وَالْحَرَمُ ؛۝؛ يَا مَنْ يَخْلُقُ الْأَشْيَاءَ مِنَ الْعَدَمِ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3037,7 +3182,6 @@ const JAWSHAN_DATA = [
     9. Ey kulları için hayır murad eden ve onları dergahına çağıran Talib,
     10. Ey kullarının, rızasına ermek ve cemalini görmek için can attığı Matlub,`,
     "russian":`Обращаюсь к тебе и молю;
-  
   1. О, обладатель справедливости истинной,
   2. О, принимающий мольбы и молитвы, просьбы и покаяния рабов своих,
   3. О, достойнейший и высочайший, дарующий щедро, будучи не обязанным это делать,
@@ -3049,6 +3193,8 @@ const JAWSHAN_DATA = [
   9. О, желающий только добра созданиям своим и призывающий их к любви своей,
   10. О, Тот, к которому стремится всё и вся, чтобы удостоиться милости Его, угодить Ему и узреть красоту лика Его,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Master of generosity and the Bestower of the bounties,\nO Gracious and Magnanimous,\nO Creator of the Tablet and the Pen,\nO Creator of ants and men,\nO Inflictor of punishment and retaliator,\nO Inspirer of Arabs and non-Arabs,\nO Expeller of pain and grief,\nO He, Who knows the secrets and the mysteries,\nO Lord of the Kaaba and the Sacred Precinct,\nO He, Who has created everything out of nothingness,`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا عَادِلُ ؛۝؛ يَا قَابِلُ ؛۝؛ يَا فَاضِلُ ؛۝؛ يَا فَاعِلُ ؛۝؛ يَا كَافِلُ ؛۝؛ يَا جَاعِلُ ؛۝؛ يَا كَامِلُ ؛۝؛ يَا فَاطِرُ ؛۝؛ يَا طَالِبُ ؛۝؛ يَا مَطْلُوبُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3086,6 +3232,8 @@ const JAWSHAN_DATA = [
   9. О, при величии своём бесконечном чрезвычайно близкий к созданиям своим,
   10. О, Владыка мой, при чрезвычайной близости своей бесконечно великий и возвышающийся надо всем,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO Doer, \nO Creator\nO Acceptor, \nO Perfect,\nO Gracious, \nO Separator\nO Just, \nO Dominant,\nO Seeker, \nO Generous`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ أَنْعَمَ بِحَوْلِه۪ ؛۝؛ يَا مَنْ أَكْرَمَ بِطَوْلِه۪ ؛۝؛ يَا مَنْ عَادَ بِلُطْفِه۪ ؛۝؛ يَا مَنْ تَعَزَّزَ بِقُدْرَتِه۪ ؛۝؛ يَا مَنْ قَدَّرَ بِحِكْمَتِه۪ ؛۝؛ يَا مَنْ حَكَمَ بِتَدْبِيرِه۪ ؛۝؛ يَا مَنْ دَبَّرَ بِعِلْمِه۪ ؛۝؛ يَا مَنْ تَجَاوَزَ بِحِلْمِه۪ ؛۝؛ يَا مَنْ دَنَا فِي عُلُوِّه۪ ؛۝؛ يَا مَنْ عَلَا فِي دُنُوِّه۪ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3123,6 +3271,8 @@ const JAWSHAN_DATA = [
   9. О, умножающий способности и блага всякого, кого пожелает,
   10. О, Владыка мой, назначающий милость свою, кому пожелает,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Who graciously bestows His bounties on us,\nO He, Who honours us with His charity,\nO He, Who rewards us out of His beneficing,\nO He, Who makes us respectable with His might,\nO He, Who predestines with His wisdom,\nO He, Who judges with His planning,\nO He, Who decrees with His knowledge,\nO He, Who is forbearing with His forbearance,\nO He, Who is near us in spite of His exaltation,\nO He, Who is exalted despite His nearness.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ يَخْلُقُ مَا يَشَاءُ ؛۝؛ يَا مَنْ يَفْعَلُ مَا يَشَاءُ ؛۝؛ يَا مَنْ يَهْدِي مَنْ يَشَاءُ ؛۝؛ يَا مَنْ يُضِلُّ مَنْ يَشَاءُ ؛۝؛ يَا مَنْ يَغْفِرُ لِمَنْ يَشَاءُ ؛۝؛ يَا مَنْ يُعَذِّبُ مَنْ يَشَاءُ ؛۝؛ يَا مَنْ يَتُوبُ عَلَى مَنْ يَشَاءُ ؛۝؛ يَا مَنْ يُصَوِّرُ فِي الْأَرْحَامِ كَيْفَ يَشَاءُ ؛۝؛ يَا مَنْ يَزِيدُ فِي الْخَلْقِ مَا يَشَاءُ ؛۝؛ يَا مَنْ يَخْـتَـصُّ بِرَحْمَتِه۪ مَنْ يَشَاءُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3160,6 +3310,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто знает числа всего и вся, во всех временах,
   10. О, Тот, кто окружил всё знанием своим,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Who creates whatever He wishes,\nO He, Who does whatever He wishes,\nO He, Who guides whomever He wishes,\nO He, Who leaves astray whomever He wishes,\nO He, Who punishes whomever He wishes,\nO He, Who forgives whomever He wishes,\nO He, Who honors whomever He wishes,\nO He, Who dishonors whomever He wishes,\nO He, Who fashions in the womb as He wishes,\nO He, Who chooses for His mercy whoever He wishes.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ لَمْ يَـتَّخِذْ صَاحِبَةً وَلَا وَلَدًا ؛۝؛ يَا مَنْ لَا يُشْرِكُ فِي حُكْمِه۪ أَحَدًا ؛۝؛ يَا مَنْ جَعَلَ لِكُلِّ شَيْءٍ قَدْرًا ؛۝؛ يَا مَنْ لَمْ يَزَلْ رَحِيمًا ؛۝؛ يَا جَاعِلَ الْمَلَائِكَةِ رُسُلًا ؛۝؛ يَا مَنْ جَعَلَ فِي السَّمَاءِ بُـرُوجًا ؛۝؛ يَا مَنْ جَعَلَ الْأَرْضَ قَرَارًا ؛۝؛ يَا مَنْ جَعَلَ مِنَ الْمَاءِ بَشَرًا ؛۝؛ يَا مَنْ أَحْصَى كُلَّ شَيْءٍ عَدَدًا ؛۝؛ يَا مَنْ أَحَاطَ بِكُلِّ شَيْءٍ عِلْمًا ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3188,7 +3340,6 @@ const JAWSHAN_DATA = [
     9. Ey herkesten fazla iyilik yapan Eberr,
     10. Ey varlığının sonu olmayan Ebed,`,
     "russian":`Обращаюсь к тебе и молю;
-  
   1. О, не имеющий ни равного себе, ни подобного,
   2. О, Тот, которому нет ни пары, ни равного Ему, ни в сущности Его, ни в свойствах, ни в именах Его, ни в делах,
   3. О, Тот, которому нет ни сотоварища, ни подобного Ему,
@@ -3200,6 +3351,8 @@ const JAWSHAN_DATA = [
   9. О, самый верный и преданный,
   10. О, Тот, чье бытие бесконечно,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Who has neither wife nor child,\nO He, Who creates everything in a fixed measure,\nO He, Who has no partner in His rule,\nO He, Who appointed angels as messengers,\nO He, Who made constellations in the heaven,\nO He, Who made the earth a place of abode,\nO He, Who created man from water,\nO He, Who fixed a period for everything,\nO He, Who knows the number and quantity of everything.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا فَرْدُ ؛۝؛ يَا وِتْرُ ؛۝؛ يَا أَحَدُ ؛۝؛ يَا صَمَدُ ؛۝؛ يَا أَمْجَدُ ؛۝؛ يَا أَعَزُّ ؛۝؛ يَا أَجَلُّ ؛۝؛ يَا أَحَقُّ ؛۝؛ يَا أَبَرُّ ؛۝؛ يَا أَبَدُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3237,6 +3390,8 @@ const JAWSHAN_DATA = [
   9. О, предпочитаемый теми, кто предпочитает Его,
   10. О, Владыка мой, единственная мечта и цель тех, кто, покаявшись, возвращается к Нему,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO First, \nO Last,\nO Manifest, \nO Hidden,\nO Virtuous, \nO Right,\nO He, \nO Unique,\nO Independent, \nO Eternal`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَعْرُوفَ مَنْ عَرَفَهُ ؛۝؛ يَا مَعْبُودَ مَنْ عَـبَدَهُ ؛۝؛ يَا مَشْكُورَ مَنْ شَكَرَهُ ؛۝؛ يَا مَذْكُورَ مَنْ ذَكَـرَهُ ؛۝؛ يَا مَحْمُودَ مَنْ حَمِدَهُ ؛۝؛ يَا مَوْجُودَ مَنْ طَـلَـبَهُ ؛۝؛ يَا مَوْصُوفَ مَنْ وَحَّدَهُ ؛۝؛ يَا مَحْبُوبَ مَنْ أَحَـبَّهُ ؛۝؛ يَا مَرْغُوبَ مَنْ أَرَادَهُ ؛۝؛يَا مَقْصُودَ مَنْ أَنابَ إِلَيْهِ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3271,6 +3426,8 @@ const JAWSHAN_DATA = [
   8. О, Тот, чьи решения неотвратимы для рабов Его,
   9. О, Владыка мой, доказательствами и знаками бытия и единства которого переполнено всё сущее,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Best recognized of all the recognized,\nO Best of all to be worshipped,\nO Greatest of those to whom thanks are due,\nO Most remembered of all who are remembered,\nO Most praiseworthy of all those who are praised,\nO Eternal Existent who is sought,\nO Highest of those who are praised,\nO Greatest of the purposes which are striven for,\nO Most liberal giver who is requested,\nO Noblest Friend who is known.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ لَا مُلْكَ إِلَّا مُلْكُهُ ؛۝؛ يَا مَنْ لَا يُحْصِي الْعِبَادُ ثَـنَاءَهُ ؛۝؛ يَا مَنْ لَا تَصِفُ الْخَلَائِقُ جَلَالَهُ ؛۝؛ يَا مَنْ لَا يُدْرِكُ الْأَبْصَارُ كَمَالَهُ ؛۝؛ يَا مَنْ لَا يَـبْلُغُ الْأَفْهَامُ صِفَاتِه۪ ؛۝؛ يَا مَنْ لَا يَـنَالُ الْأَفكَارُ كِبْرِيَاءَهُ ؛۝؛ يَا مَنْ لَا يُحْسِنُ الْإِنْسَانُ نُعُوتَهُ ؛۝؛ يَا مَنْ لَا يَرُدُّ الْعِبَادُ قَضَاءَهُ ؛۝؛ يَا مَنْ ظَهَرَ فِي كُلِّ شَيْءٍ أٰيَاتُهُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3308,6 +3465,8 @@ const JAWSHAN_DATA = [
   9. О, прибежище беспомощных, пребывающих в печали,
   10. О, Владыка мой, лучший из всех помощников и чья помощь превыше чьей-либо иной помощи,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Friend of those who weep,\nO Refuge of those who trust in Him,\nO Guide of the misguided,\nO Master of the faithful,\nO Friend of worshippers,\nO Shelter of the sorrowful,\nO Redeemer of the truthful,\nO Mightiest of all,\nO the most Knowledgeable of all beings.\nO Allah of the entire Creation,`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا حَبِيبَ الْبَكَّائِينَ ؛۝؛ يَا سَنَدَ الْمُتَوَكِّلِينَ ؛۝؛ يَا هَادِيَ الْمُضِلِّينَ ؛۝؛ يَا وَلِيَّ الْمُؤْمِنِينَ ؛۝؛ يَا أَنِيسَ الذَّاكِرِينَ ؛۝؛ يَا أَقْدَرَ الْقَادِرِينَ ؛۝؛ يَا أَبْصَرَ النَّاظِرِينَ ؛۝؛ يَا أَعْلَمَ الْعَالِمِينَ ؛۝؛ يَا مَفْزَعَ الْمَلْهُوفِينَ ؛۝؛ يَا أَنْصَرَ النَّاصِرِينَ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3336,7 +3495,6 @@ const JAWSHAN_DATA = [
     9. Ey mahlukatı her türlü tehlikeden kurtaran Münci,
     10. Ey bol bol iyilikte bulunan Muhsin,`,
     "russian":`Обращаюсь к тебе и молю;
-  
   1. О, обладатель истиной щедрости,
   2. О, постоянно превозносимый созданиями своими,
   3. О, дарящий блага несчетные,
@@ -3348,6 +3506,8 @@ const JAWSHAN_DATA = [
   9. О, спасающий создания свои от всякой опасности,
   10. О, обладатель бесконечной щедрости и благородства,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, Who is high and dominant,\nO He, Who is masterful and powerful,\nO He, Who is hidden and aware,\nO He, Who is worshipped and who appreciates,\nO He, Who is disobeyed and yet forgives,\nO He, Whom thought cannot encompass,\nO He, Whom eyes cannot see,\nO He, from Whom nothing is concealed,\nO Provider of Sustenance to mankind,\nO He, Who ordained all destinies.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا مُكْرِمُ ؛۝؛ يَا مُعَظِّمُ ؛۝؛ يَا مُنَعِّمُ ؛۝؛ يَا مُعْطِي ؛۝؛ يَا مُغْنِي ؛۝؛ يَا مُحْيِي ؛۝؛ يَا مُبْدِئُ ؛۝؛ يَا مُرْضِي ؛۝؛ يَا مُنْجِي ؛۝؛ يَا مُحْسِنُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3385,6 +3545,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, чья милость всеохватна,
   10. О, Владыка мой, который останется навечно, даже когда всё остальное погибнет,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO Protector, \nO Maker,\nO Creator, \nO All-generous,\nO Revealer, \nO Victorious,\nO Disclosers, \nO Guarantor,\nO Commander, \nO Prohibiter.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا كَافِيَ كُلِّ شَيْءٍ ؛۝؛ يَا قَائِمًا عَلَى كُلِّ شَيْءٍ ؛۝؛ يَا مَنْ لَا يُشْبِهُهُ شَيْءٌ ؛۝؛ يَا مَنْ لَا يَـزِيـدُ فِي مُلْكِه۪ شَيْءٌ ؛۝؛ يَا مَنْ لَا يَـنْـقُصُ مِنْ خَزَائِـنِه۪ شَيْءٌ ؛۝؛ يَا مَنْ لَا يَخْفَى عَلَيْهِ شَيْءٌ ؛۝؛ يَا مَنْ لَيْسَ كَمِثْلِه۪ شَيْءٌ ؛۝؛ يَا مَنْ بِيَدِه۪ مَقَالِيدُ كُلِّ شَيْءٍ ؛۝؛ يَا مَنْ وَسِعَتْ رَحْمَتُهُ كُلَّ شَيْءٍ ؛۝؛ يَا مَنْ يَـبْقَى وَيَـفْنَى كُلُّ شَيْءٍ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3422,6 +3584,8 @@ const JAWSHAN_DATA = [
   9. О, единственный, кто воскрешает мертвых,
   10. О, единственный, от кого настоящая польза,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He, besides Whom no one knows the secrets,\nO He, besides Whom no one drives away calamities,\nO He, besides Whom no one creates,\nO He, besides Whom no one forgives sins,\nO He, besides Whom no one perfects the bounties,\nO He, besides Whom no one transforms hearts,\nO He, besides Whom no one manages affairs,\nO He, besides Whom no one holds the reins,\nO He, besides Whom no one increases sustenance,\nO He, besides Whom no one revives the dead.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ لَا يَعْلَمُ الْغَـيْبَ إِلَّا هُوَ ؛۝؛ يَا مَنْ لَا يَـصْرِفُ السُّوءَ إِلَّا هُوَ ؛۝؛ يَا مَنْ لَا يُدَبِّرُ الْأَمْرَ إِلَّا هُوَ ؛۝؛ يَا مَنْ لَا يَـغْـفِـرُ الذُّنُوبَ إِلَّا هُوَ ؛۝؛ يَا مَنْ لَا يُـقَلِّبُ الْقُلُوبَ إِلَّا هُوَ ؛۝؛ يَا مَنْ لَا يَخْلُقُ الْخَلْقَ إِلَّا هُوَ ؛۝؛ يَا مَنْ لَا يُـتِـمُّ النِّـعْمَةَ إِلَّا هُوَ ؛۝؛ يَا مَنْ لَا يُـنَـزِّلُ الْغَـيْثَ إِلَّا هُوَ ؛۝؛ يَا مَنْ لَا يُحْيِـي الْمَوْتَى إِلَّا هُوَ ؛۝؛ يَا مَنْ لَا يُغْنِي عَلَى التَّحْقِيقِ إِلَّا هُوَ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3450,7 +3614,6 @@ const JAWSHAN_DATA = [
     9. Ey kullarının ümid beslediği Mürteca,
     10. Ey kendisine büyük ümitler beslenen Azimü\`r Reca,`,
     "russian":`Обращаюсь к тебе и молю;
-  
   1. О, открывающий созданиям своим все тайны мира и загадки, предотвращающий беды, избавляющий от печали и горечи, прекращающий страдания,
   2. О, освобождающий души от печалей и грусти и вселяющий в них покой и радость,
   3. О, открывающий врата милости своей, дарующий победы и успехи, судящий справедливо,
@@ -3462,6 +3625,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, на кого надеются создания Его,
   10. О, величайший из источников надежд,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Helper of the weak,\nO Companion of the strangers,\nO Helper of [His] friends,\nO Overpowerer of the enemies,\nO Elevator of the sky,\nO Genial to the chosen ones,\nO Friend of the pious,\nO Treasure of the indigent,\nO Lord of the rich,\nO Most benign of all.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا كَاشِفُ ؛۝؛ يَا فَارِجُ ؛۝؛ يَا فَاتِحُ ؛۝؛ يَا نَاصِرُ ؛۝؛ يَا ضَامِنُ ؛۝؛ يَا أٰمِرُ ؛۝؛ يَا نَاهِي ؛۝؛ يَا رَجَا ؛۝؛ يَا مُرْتَجَا ؛۝؛ يَا عَظِيمَ الرَّجَا ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3499,6 +3664,8 @@ const JAWSHAN_DATA = [
   9. О, возлюбленный теми, кто убоялся Его,
   10. О, Владыка мой, истинный бог всех богатых и всех богатств,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He Who is self-sufficient from everything,\nO He Who is established over everything,\nO He, nothing is like unto Him,\nO He, nothing extends His Kingdom,\nO He from Whom nothing is hidden,\nO He, nothing decreases His treasure,\nO He, nothing is like unto Him,\nO He, Whose Knowledge encompasses everything,\nO He, Who is All-Aware,\nO He, Whose mercy extends to everything.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مُعِينَ الضُّعَفَاءِ ؛۝؛ يَا كَنْزَ الْفُقَرَاءِ ؛۝؛ يَا صَاحِبَ الْغُرَبَاءِ ؛۝؛ يَا نَاصِرَ الْأَوْلِيَاءِ ؛۝؛ يَا قَاهِرَ الْأَعْدَاءِ ؛۝؛ يَا رَافِعَ السَّمَاءِ ؛۝؛ يَا كَاشِفَ الْبَلَاءِ ؛۝؛ يَا أَنِيسَ الْأَوْلِيَاءِ ؛۝؛ يَا حَبِيبَ الْأَتْقِيَاءِ ؛۝؛ يَا إِلٰهَ الْأَغْنِيَاءِ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3536,6 +3703,8 @@ const JAWSHAN_DATA = [
   9. О, вращающий всё и вся и вводящий из состояния в состояние,
   10. О, Владыка мой, дарующий жизнь всему и вся, и отнимающий у кого пожелает,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I beseech You in Your name:\nO Generous, \nO Provider,\nO Bestower of bounties, \nO Bestower of gifts,\nO Enricher, \nO Giver of Shelter\nO Destroyer, \nO Quickener,\nO Satisfier, \nO Who grants salvation,`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا أَوَّلَ كُلِّ شَيْءٍ وَأٰخِرَهُ ؛۝؛ يَا إِلٰهَ كُلِّ شَيْءٍ وَصَانِعَهُ ؛۝؛ يَا رَازِقَ كُلِّ شَيْءٍ وَخَالِقَهُ ؛۝؛ يَا فَاطِرَ كُلِّ شَيْءٍ وَمَلِيكَهُ ؛۝؛ يَا قَابِضَ كُلِّ شَيْءٍ وَبَاسِطَهُ ؛۝؛ يَا مُبْدِئَ كُلِّ شَيْءٍ وَمُعِيدَهُ ؛۝؛ يَا مُسَبِّبَ كُلِّ شَيْءٍ وَمُقَدِّرَهُ ؛۝؛ يَا مُرَبِّيَ كُلِّ شَيْءٍ وَمُدَبِّرَهُ ؛۝؛ يَا مُكَوِّرَ كُلِّ شَيْءٍ وَمُحَوِّلَهُ ؛۝؛ يَا مُحْيِيَ كُلِّ شَيْءٍ وَمُمِيتَهُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3573,6 +3742,8 @@ const JAWSHAN_DATA = [
   9. О, лучшая из всех целей и лучшее из всех желаний,
   10. О, Владыка мой, лучший из всех, кто любит, и лучший из всех, кого любят,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O First and the Last,\nO Lord of everything and its Master,\nO Lord Cherisher of everything and its Fashioner\nO Creator of everything and its Maker,\nO Controller of everything and its Extender,\nO Origin of everything and its Return,\nO Originator of everything and its estimator,\nO Creator of everything and its destroyer,\nO Quickener of everything and Maker of its death,\nO Author of everything and its inheritor.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا خَيْرَ ذَاكِرٍ وَمَذْكُورٍ ؛۝؛ يَا خَيْرَ شَاكِرٍ وَمَشْكُورٍ ؛۝؛ يَا خَيْرَ حَامِدٍ وَمَحْمُودٍ ؛۝؛ يَا خَيْرَ شاهِدٍ وَمَشْهُودٍ ؛۝؛ يَا خَيْرَ دَاعٍ وَمَدْعُوٍّ ؛۝؛ يَا خَيْرَ مُجِيبٍ وَمُجَابٍ ؛۝؛ يَا خَيْرَ مُونِسٍ وَأَنِيسٍ ؛۝؛ يَا خَيْرَ صَاحِبٍ وَجَلِيسٍ ؛۝؛ يَا خَيْرَ مَقْصُودٍ وَمَطْلُوبٍ ؛۝؛ يَا خَيْرَ حَبِيبٍ وَمَحْبُوبٍ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3610,6 +3781,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, кто и велик, и милосерден,
   10. О, Владыка мой, извечно щедрый и всеблагой,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Best Rememberer and Remembered,\nO Best Appreciator and Appreciated,\nO Best Praiser and Praised,\nO Best Witness and Witnessed,\nO Best Inviter and Invited,\nO Best Responder and Responded,\nO Best Comforter and Counselor,\nO Best Friend and Companion,\nO Most Desired and Sought,\nO Most Affectionate and Loved.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ هُوَ لِمَنْ دَعَاهُ مُجِيبٌ ؛۝؛ يَا مَنْ هُوَ لِمَنْ أَطَاعَهُ حَبِيبٌ ؛۝؛ يَا مَنْ هُوَ لِمَنْ أَحَبَّهُ قَرِيبٌ ؛۝؛ يَا مَنْ هُوَ بِمَنْ أَرَادَهُ عَلِيمٌ ؛۝؛ يَا مَنْ هُوَ لِمَنْ رَجَاهُ كَرِيمٌ ؛۝؛ يَا مَنْ هُوَ بِمَنْ عَصَاهُ حَلِيمٌ ؛۝؛ يَا مَنْ هُوَ فِي حِلْمِه۪ حَكِيمٌ ؛۝؛ يَا مَنْ هُوَ فِي حُكْمِه۪ عَظِيمٌ ؛۝؛ يَا مَنْ هُوَ فِي عَظَمَتِه۪ رَحِيمٌ ؛۝؛ يَا مَنْ هُوَ فِي إِحْسَانِه۪ قَدِيمٌ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3638,7 +3811,6 @@ const JAWSHAN_DATA = [
     9. Ey mahlukatı var eden Mükevvin,
     10. Ey sonsuz büyüklük ve azamet sahibi Mütekebbir,`,
     "russian":`Обращаюсь к тебе и молю;
-  
   1. О, творец всех причин,
   2. О, приближающий к себе всякого, кого пожелает,
   3. О, наблюдающий за всем, что происходит, и мудро складывающий в один ряд все события,
@@ -3650,6 +3822,8 @@ const JAWSHAN_DATA = [
   9. О, творец всего из ничего,
   10. О, всевышний обладатель величия совершенного,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, the Answerer to him who calls Him,\nO Friend of him who obeys Him,\nO He, Who is close to him who loves Him,\nO Protector of one who seeks protection,\nO Allah Who is Generous to him who is hopeful of Him,\nO Allah, Who is Forbearing to one who disobeys Him,\nO Allah, Who is Merciful in spite of His Grandeur,\nO Allah, Who is Great in His Wisdom,\nO Allah, Who is Eternal in his Benevolence,\nO Allah, Who is Aware of one who seeks Him.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا مُسَبِّبُ ؛۝؛ يَا مُقَرِّبُ ؛۝؛ يَا مُعَقِّبُ ؛۝؛ يَا مُقَلِّبُ ؛۝؛ يَا مُقَدِّرُ ؛۝؛ يَا مُرَتِّبُ ؛۝؛ يَا مُرَغِّبُ ؛۝؛ يَا مُذَكِّرُ ؛۝؛ يَا مُكَوِّنُ ؛۝؛ يَا مُتَـكَـبِّـرُ ؛۝؛` ,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3687,6 +3861,8 @@ const JAWSHAN_DATA = [
   9. О, высочайшее из желаний тех, кто ищет Его,
   10. О, Владыка мой, которому нет ничего таинственного во всей вселенной,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Allah, verily I entreat You in Your name:\nO Primal Cause, \nO Creator of desire,\nO Changer, \nO Inflictor, \nO Organizer,\nO Awful, \nO Saver, \nO Reminder,\nO Subjector, \nO Displacer.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ لَا يُشْغِلُهُ سَمْعٌ عَنْ سَمْعٍ ؛۝؛ يَا مَنْ لَا يَـمْـنَـعُهُ فِعْلٌ عَنْ فِعْلٍ ؛۝؛ يَا مَنْ لَا يُلْهِيهِ قَـوْلٌ عَنْ قَـوْلٍ ؛۝؛ يَا مَنْ لَا يُغَلِّطُهُ سُؤَالٌ عَنْ سُؤَالٍ ؛۝؛ يَا مَنْ لَا يُـبْرِمُهُ إِلْحَاحُ الْمُلِحِّينَ ؛۝؛ يَا مَنْ شَرَحَ بِالْإِسْلَامِ صُدُورَ الْمُؤْمِنِينَ ؛۝؛ يَا مَنْ أَطَابَ بِذِكْرِه۪ قُلُوبَ الْمُخْبِـتِينَ ؛۝؛ يَا مَنْ لَا يَغِيبُ عَنْ قُلُوبِ الْمُشْتَاقِينَ ؛۝؛ يَا مَنْ هُوَ غَايَـةُ مُرَادِ الْمُرِيدِينَ ؛۝؛ يَا مَنْ لَا يَخْفَى عَلَيْهِ شَيْءٌ فِي الْعَالَمِينَ ؛۝
   ؛`,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
@@ -3725,6 +3901,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, чья щедрость и благородство непоколебимы,
   10. О, Владыка мой, чей высокий Арш неимоверно велик,`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He Whose Knowledge is eternal,\nO He Whose Promise is true,\nO He Whose Benignity is manifest,\nO He Whose Command is overruling,\nO He Whose Book is clear and final,\nO He Whose Judgement is inevitable,\nO He Whose Qur'an is glorious,\nO He Whose Rule is eternal,\nO He Whose Favour is common to all,\nO He Whose Throne is great.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا مَنْ هُوَ عِلْمُهُ سَابِقٌ ؛۝؛ يَا مَنْ هُوَ وَعْدُهُ صَادِقٌ ؛۝؛ يَا مَنْ هُوَ لُطْفُهُ ظَاهِرٌ ؛۝؛ يَا مَنْ هُوَ أَمْرُهُ غَالِبٌ ؛۝؛ يَا مَنْ هُوَ كِتَابُهُ مُحْكَمٌ ؛۝؛ يَا مَنْ هُوَ قَضَاؤُهُ كَائِنٌ ؛۝؛ يَا مَنْ هُوَ قُرْأٰنُهُ مَجِيدٌ ؛۝؛ يَا مَنْ هُوَ مُلْكُهُ قَدِيمٌ ؛۝؛ يَا مَنْ هُوَ فَضْلُهُ مُقِيمٌ ؛۝؛ يَا مَنْ هُوَ عَرْشُهُ عَظِيمٌ ؛۝`,
   "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{
@@ -3762,6 +3940,8 @@ const JAWSHAN_DATA = [
   9. О, Тот, к кому вернётся всё и вся,
   10. О, Владыка мой, прощающий грехи и принимающий покаяния, `,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O He-listening to one individual does not prevent Him from listening to others simultaneously,\nO He-doing one thing does not prevent Him from doing other things simultaneously,\nO He-the speech of one person does not make Him needless of the simultaneous speech of others,\nO He-one request does not make Him forgetful of other requests,\nO He-the sight of one thing does not prevent him from seeing other things simultaneously,\nO He-the plaintive cries of those who weep and lament do not bother Him,\nO He Who is the ultimate Aim of the efforts of saints,\nO He Who is the Goal of Gnostics,\nO He Who is the Goal of seekers,\nO He from Whom not a single particle in the worlds is hidden.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`يَا رَبَّ الْأَرْبَابِ ؛۝؛ يَا مُفَتِّحَ الْأَبْوَابِ ؛۝؛ يَا مُسَبِّبَ الْأَسْبَابِ ؛۝؛ يَا مُعْطِيَ الثَّوَابِ ؛۝؛ يَا مُلْهِمَ الصَّوَابِ ؛۝؛ يَا مُنْشِئَ السَّحَابِ ؛۝؛ يَا شَدِيدَ الْعِقَابِ ؛۝؛ يَا سَرِيعَ الْحِسَابِ ؛۝؛ يَا مَنْ لَهُ الْإِيَابُ ؛۝؛ يَا غَفُورُ يَا تَوَّابُ ؛۝؛
   `,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
@@ -3801,6 +3981,8 @@ const JAWSHAN_DATA = [
   9. О, Руководящий нами в делах наших!
   10. О, Прибежище наше во всех бедах наших и трудностях!`,
   "russian_dua":`Ты - само совершенство, Владыка наш, о, Аллах! Нет божества кроме Тебя. О милости просим Тебя, упаси нас от геенны огненной!`,
+  "english": `O Forbearing Who does not make haste,\nO Generous Who is never a miser,\nO True Who never breaks the promise\nO Munificent Who never regrets,\nO Dominant Who is never overpowered,\nO Great Who is indescribable\nO Just Who is never oppressive,\nO Bounteous Who is never rapacious,\nO Great Who does not become small,\nO Protector Who does not neglect.`,
+  "english_dua": `Praise be to Thee, there is no god but Thee, The Granter of all Succour, Protect us from the Fire, O Lord.`,
   "arabic":`وَأَسْأَلُكَ بِأَسْمَائِكَ يَا رَبَّـنَا ؛۝؛ يَا إِلٰهَنَا ؛۝؛ يَا سَيِّدَنَا ؛۝؛ يَا مَوْلَانَا ؛۝؛ يَا نَاصِرَنَا ؛۝؛ يَا حَافِظَـنَا ؛۝؛ يَا قَادِرَنا ؛۝؛ يَا رَازِقَـنَا ؛۝؛ يَا دَلِيلَنَا ؛۝؛ يَا مُغِيثَـنَا ؛۝`,
     "arabic_dua":`سُبْحَانَكَ يَا لَا إِلٰهَ إِلَّا أَنْتَ الْأَمَانَ الْأَمَانَ خَلِّصْنَا مِنَ ؛النَّارِ ؛`
   },{

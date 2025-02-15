@@ -76,6 +76,13 @@ body {
     white-space: pre-line;
 }
 
+/* Styling for Latin-script languages (English, Latin, Turkish) */
+.page-text[lang="en"],
+.page-text:not([lang="ar"]) {  /* Default for Latin and other non-Arabic text */
+    line-height: 1.8;  /* Increased line height for better readability */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 .page-text[lang="ar"] {
     direction: rtl;
     font-family: "Traditional Arabic", "Scheherazade New", serif;

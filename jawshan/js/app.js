@@ -48,7 +48,9 @@ class JawshanApp {
     initEventListeners() {
         // Touch events for page sliding
         let startX = 0;
+        let startY = 0;
         let isDragging = false;
+        let isScrolling = false;
 
         // Add click events for page sides
         this.pageContent.addEventListener('click', (e) => {
@@ -73,18 +75,30 @@ class JawshanApp {
 
         this.pageContent.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
             isDragging = true;
+            isScrolling = false;
         });
 
         this.pageContent.addEventListener('touchmove', (e) => {
             if (!isDragging) return;
+            
             const currentX = e.touches[0].clientX;
-            const diff = startX - currentX;
+            const currentY = e.touches[0].clientY;
+            const diffX = startX - currentX;
+            const diffY = Math.abs(startY - e.touches[0].clientY);
 
-            if (Math.abs(diff) > 50) {
-                if (diff > 0 && this.currentPage < 101) {
+            // If vertical scrolling is detected, don't change pages
+            if (diffY > Math.abs(diffX)) {
+                isScrolling = true;
+                return;
+            }
+
+            // Only change pages if the horizontal swipe is significant and not scrolling
+            if (!isScrolling && Math.abs(diffX) > 50) {
+                if (diffX > 0 && this.currentPage < 101) {
                     this.nextPage();
-                } else if (diff < 0 && this.currentPage > 1) {
+                } else if (diffX < 0 && this.currentPage > 1) {
                     this.previousPage();
                 }
                 isDragging = false;
@@ -93,6 +107,7 @@ class JawshanApp {
 
         this.pageContent.addEventListener('touchend', () => {
             isDragging = false;
+            isScrolling = false;
         });
 
         // Settings events
@@ -193,6 +208,7 @@ class JawshanApp {
         let content = page[this.settings.language];
         const dua = page[`${this.settings.language}_dua`];
         const isArabic = this.settings.language === 'arabic';
+        const isEnglish = this.settings.language === 'english';
 
         // Add line breaks after ؛۝؛ for Arabic text
         if (isArabic) {
@@ -200,15 +216,15 @@ class JawshanApp {
         }
 
         this.pageContent.innerHTML = `
-            <div class="page-text" ${isArabic ? 'lang="ar"' : ''}>${content}</div>
-            <div class="page-dua" ${isArabic ? 'lang="ar"' : ''}>${dua}</div>
+            <div class="page-text" ${isArabic ? 'lang="ar"' : isEnglish ? 'lang="en"' : ''}>${content}</div>
+            <div class="page-dua" ${isArabic ? 'lang="ar"' : isEnglish ? 'lang="en"' : ''}>${dua}</div>
         `;
 
         this.currentPageEl.textContent = pageNumber;
         this.store.setSetting('currentPage', pageNumber);
         this.pageSlider.value = pageNumber;
 
-        // Add this line to update audio button visibility
+        // Update audio button visibility
         this.updateAudioButtonVisibility();
 
         // If audio was playing, start the new page's audio
