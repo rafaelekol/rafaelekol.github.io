@@ -1,3 +1,5 @@
+import { initAnalytics } from './analytics.js';
+
 class JawshanApp {
     constructor() {
         this.store = new Store();
@@ -16,11 +18,13 @@ class JawshanApp {
         this.audio = null;
         this.isPlaying = false;
         
-        // Initialize analytics if available
-        this.analytics = window.telegramAnalytics || null;
+        // Initialize analytics
+        this.analytics = initAnalytics();
         
         if (!this.analytics) {
-            console.warn('Telegram Analytics not available');
+            console.warn('Telegram Analytics not available, tracking will be disabled');
+        } else {
+            console.log('Telegram Analytics initialized in app');
         }
     }
 
