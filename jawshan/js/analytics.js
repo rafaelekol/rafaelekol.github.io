@@ -1,4 +1,4 @@
-import TelegramAnalytics from '@telegram-apps/analytics';
+const TelegramAnalytics = window.TelegramAnalytics;
 
 export const initAnalytics = () => {
     try {

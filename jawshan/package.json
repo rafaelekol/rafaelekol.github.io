@@ -1,6 +1,5 @@
 {
   "dependencies": {
     "@telegram-apps/analytics": "latest"
-  },
-  "type": "module"
+  }
 } 
