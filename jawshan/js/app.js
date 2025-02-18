@@ -1,5 +1,3 @@
-import { initAnalytics } from './analytics.js';
-
 class JawshanApp {
     constructor() {
         this.store = new Store();
@@ -17,15 +15,6 @@ class JawshanApp {
         this.initializeApp();
         this.audio = null;
         this.isPlaying = false;
-        
-        // Initialize analytics
-        this.analytics = initAnalytics();
-        
-        if (!this.analytics) {
-            console.warn('Telegram Analytics not available, tracking will be disabled');
-        } else {
-            console.log('Telegram Analytics initialized in app');
-        }
     }
 
     async loadJawshanData() {
@@ -131,32 +120,17 @@ class JawshanApp {
         });
 
         this.languageSelect.addEventListener('change', (e) => {
-            const newLanguage = e.target.value;
-            this.settings.language = newLanguage;
-            this.store.setSetting('language', newLanguage);
+            this.settings.language = e.target.value;
+            this.store.setSetting('language', e.target.value);
             this.loadPage(this.currentPage);
-            
-            // Track language change
-            this.trackEvent('language_change', {
-                from: this.settings.language,
-                to: newLanguage
-            });
         });
 
         this.increaseFontBtn.addEventListener('click', () => {
             this.changeFontSize(2);
-            this.trackEvent('font_size_change', {
-                action: 'increase',
-                new_size: this.settings.fontSize
-            });
         });
 
         this.decreaseFontBtn.addEventListener('click', () => {
             this.changeFontSize(-2);
-            this.trackEvent('font_size_change', {
-                action: 'decrease',
-                new_size: this.settings.fontSize
-            });
         });
 
         // Add theme toggle event listener
@@ -164,12 +138,6 @@ class JawshanApp {
             const currentTheme = this.store.getSetting('theme', 'light');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             this.updateSetting('theme', newTheme);
-            
-            // Track theme change
-            this.trackEvent('theme_change', {
-                from: currentTheme,
-                to: newTheme
-            });
         });
 
         // Add click event for page indicator
@@ -219,14 +187,8 @@ class JawshanApp {
         this.audioBtn.addEventListener('click', () => {
             if (this.isPlaying) {
                 this.stopAudio();
-                this.trackEvent('audio_stop', {
-                    page: this.currentPage
-                });
             } else {
                 this.playAudio();
-                this.trackEvent('audio_play', {
-                    page: this.currentPage
-                });
             }
         });
     }
@@ -242,6 +204,16 @@ class JawshanApp {
     loadPage(pageNumber) {
         const page = this.jawshanData.find(p => p.id === pageNumber);
         if (!page) return;
+
+        // Track page views
+        try {
+            window.telegramAnalytics.track('page_view', {
+                page_number: pageNumber,
+                language: this.settings.language
+            });
+        } catch (error) {
+            console.error('Analytics tracking error:', error);
+        }
 
         let content = page[this.settings.language];
         const dua = page[`${this.settings.language}_dua`];
@@ -269,12 +241,6 @@ class JawshanApp {
         if (this.isPlaying) {
             this.playAudio();
         }
-
-        // Track page view
-        this.trackEvent('page_view', {
-            page_number: pageNumber,
-            language: this.settings.language
-        });
     }
 
     nextPage() {
@@ -311,17 +277,19 @@ class JawshanApp {
     }
 
     initializeApp() {
+        // Add analytics initialization check
+        if (window.Telegram && window.Telegram.WebApp) {
+            try {
+                // Track app launch
+                window.telegramAnalytics.track('app_launched');
+            } catch (error) {
+                console.error('Analytics initialization error:', error);
+            }
+        }
+
         this.applySettings();
         this.loadPage(this.currentPage);
         this.pageSlider.value = this.currentPage;
-        
-        // Track app start
-        this.trackEvent('app_start', {
-            initial_page: this.currentPage,
-            language: this.settings.language,
-            theme: this.store.getSetting('theme', 'light'),
-            font_size: this.settings.fontSize
-        });
     }
 
     changePage(pageNumber) {
@@ -331,6 +299,17 @@ class JawshanApp {
     }
 
     updateSetting(key, value) {
+        if (key === 'language') {
+            try {
+                window.telegramAnalytics.track('language_change', {
+                    from: this.settings.language,
+                    to: value
+                });
+            } catch (error) {
+                console.error('Analytics tracking error:', error);
+            }
+        }
+
         this.store.setSetting(key, value);
         this.applySettings();
     }
@@ -357,6 +336,14 @@ class JawshanApp {
     }
 
     playAudio() {
+        try {
+            window.telegramAnalytics.track('audio_play', {
+                page_number: this.currentPage
+            });
+        } catch (error) {
+            console.error('Analytics tracking error:', error);
+        }
+
         if (this.audio) {
             this.audio.pause();
         }
@@ -389,6 +376,14 @@ class JawshanApp {
     }
 
     stopAudio() {
+        try {
+            window.telegramAnalytics.track('audio_stop', {
+                page_number: this.currentPage
+            });
+        } catch (error) {
+            console.error('Analytics tracking error:', error);
+        }
+
         if (this.audio) {
             this.audio.pause();
             this.audio.currentTime = 0;
@@ -405,13 +400,6 @@ class JawshanApp {
             this.audioBtn.style.display = 'none';
         } else {
             this.audioBtn.style.display = 'block';
-        }
-    }
-
-    // Add a helper method for tracking events
-    trackEvent(eventName, eventData = {}) {
-        if (this.analytics) {
-            this.analytics.track(eventName, eventData);
         }
     }
 }
