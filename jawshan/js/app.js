@@ -15,6 +15,13 @@ class JawshanApp {
         this.initializeApp();
         this.audio = null;
         this.isPlaying = false;
+        
+        // Initialize analytics if available
+        this.analytics = window.telegramAnalytics || null;
+        
+        if (!this.analytics) {
+            console.warn('Telegram Analytics not available');
+        }
     }
 
     async loadJawshanData() {
@@ -120,17 +127,32 @@ class JawshanApp {
         });
 
         this.languageSelect.addEventListener('change', (e) => {
-            this.settings.language = e.target.value;
-            this.store.setSetting('language', e.target.value);
+            const newLanguage = e.target.value;
+            this.settings.language = newLanguage;
+            this.store.setSetting('language', newLanguage);
             this.loadPage(this.currentPage);
+            
+            // Track language change
+            this.trackEvent('language_change', {
+                from: this.settings.language,
+                to: newLanguage
+            });
         });
 
         this.increaseFontBtn.addEventListener('click', () => {
             this.changeFontSize(2);
+            this.trackEvent('font_size_change', {
+                action: 'increase',
+                new_size: this.settings.fontSize
+            });
         });
 
         this.decreaseFontBtn.addEventListener('click', () => {
             this.changeFontSize(-2);
+            this.trackEvent('font_size_change', {
+                action: 'decrease',
+                new_size: this.settings.fontSize
+            });
         });
 
         // Add theme toggle event listener
@@ -138,6 +160,12 @@ class JawshanApp {
             const currentTheme = this.store.getSetting('theme', 'light');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             this.updateSetting('theme', newTheme);
+            
+            // Track theme change
+            this.trackEvent('theme_change', {
+                from: currentTheme,
+                to: newTheme
+            });
         });
 
         // Add click event for page indicator
@@ -187,8 +215,14 @@ class JawshanApp {
         this.audioBtn.addEventListener('click', () => {
             if (this.isPlaying) {
                 this.stopAudio();
+                this.trackEvent('audio_stop', {
+                    page: this.currentPage
+                });
             } else {
                 this.playAudio();
+                this.trackEvent('audio_play', {
+                    page: this.currentPage
+                });
             }
         });
     }
@@ -231,6 +265,12 @@ class JawshanApp {
         if (this.isPlaying) {
             this.playAudio();
         }
+
+        // Track page view
+        this.trackEvent('page_view', {
+            page_number: pageNumber,
+            language: this.settings.language
+        });
     }
 
     nextPage() {
@@ -270,6 +310,14 @@ class JawshanApp {
         this.applySettings();
         this.loadPage(this.currentPage);
         this.pageSlider.value = this.currentPage;
+        
+        // Track app start
+        this.trackEvent('app_start', {
+            initial_page: this.currentPage,
+            language: this.settings.language,
+            theme: this.store.getSetting('theme', 'light'),
+            font_size: this.settings.fontSize
+        });
     }
 
     changePage(pageNumber) {
@@ -353,6 +401,13 @@ class JawshanApp {
             this.audioBtn.style.display = 'none';
         } else {
             this.audioBtn.style.display = 'block';
+        }
+    }
+
+    // Add a helper method for tracking events
+    trackEvent(eventName, eventData = {}) {
+        if (this.analytics) {
+            this.analytics.track(eventName, eventData);
         }
     }
 }
