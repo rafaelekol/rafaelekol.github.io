@@ -9,6 +9,7 @@ class JawshanApp {
         this.jawshanData = [];
         this.loadJawshanData();
         this.initElements();
+        this.initAnalytics();
         this.initEventListeners();
         this.loadPage(this.currentPage);
         this.applySettings();
@@ -205,15 +206,10 @@ class JawshanApp {
         const page = this.jawshanData.find(p => p.id === pageNumber);
         if (!page) return;
 
-        // Track page views
-        try {
-            window.telegramAnalytics.track('page_view', {
-                page_number: pageNumber,
-                language: this.settings.language
-            });
-        } catch (error) {
-            console.error('Analytics tracking error:', error);
-        }
+        this.trackEvent('page_view', {
+            page_number: pageNumber,
+            language: this.settings.language
+        });
 
         let content = page[this.settings.language];
         const dua = page[`${this.settings.language}_dua`];
@@ -277,16 +273,6 @@ class JawshanApp {
     }
 
     initializeApp() {
-        // Add analytics initialization check
-        if (window.Telegram && window.Telegram.WebApp) {
-            try {
-                // Track app launch
-                window.telegramAnalytics.track('app_launched');
-            } catch (error) {
-                console.error('Analytics initialization error:', error);
-            }
-        }
-
         this.applySettings();
         this.loadPage(this.currentPage);
         this.pageSlider.value = this.currentPage;
@@ -300,14 +286,10 @@ class JawshanApp {
 
     updateSetting(key, value) {
         if (key === 'language') {
-            try {
-                window.telegramAnalytics.track('language_change', {
-                    from: this.settings.language,
-                    to: value
-                });
-            } catch (error) {
-                console.error('Analytics tracking error:', error);
-            }
+            this.trackEvent('language_change', {
+                from: this.settings.language,
+                to: value
+            });
         }
 
         this.store.setSetting(key, value);
@@ -336,13 +318,9 @@ class JawshanApp {
     }
 
     playAudio() {
-        try {
-            window.telegramAnalytics.track('audio_play', {
-                page_number: this.currentPage
-            });
-        } catch (error) {
-            console.error('Analytics tracking error:', error);
-        }
+        this.trackEvent('audio_play', {
+            page_number: this.currentPage
+        });
 
         if (this.audio) {
             this.audio.pause();
@@ -376,13 +354,9 @@ class JawshanApp {
     }
 
     stopAudio() {
-        try {
-            window.telegramAnalytics.track('audio_stop', {
-                page_number: this.currentPage
-            });
-        } catch (error) {
-            console.error('Analytics tracking error:', error);
-        }
+        this.trackEvent('audio_stop', {
+            page_number: this.currentPage
+        });
 
         if (this.audio) {
             this.audio.pause();
@@ -400,6 +374,49 @@ class JawshanApp {
             this.audioBtn.style.display = 'none';
         } else {
             this.audioBtn.style.display = 'block';
+        }
+    }
+
+    // Add this new method
+    async initAnalytics() {
+        try {
+            // Load the analytics SDK
+            const script = document.createElement('script');
+            script.src = 'https://tganalytics.xyz/index.js';
+            script.async = true;
+            
+            // Create a promise to wait for script load
+            const scriptLoaded = new Promise((resolve, reject) => {
+                script.onload = resolve;
+                script.onerror = reject;
+            });
+
+            document.head.appendChild(script);
+            await scriptLoaded;
+
+            // Initialize analytics
+            if (window.telegramAnalytics) {
+                window.telegramAnalytics.init({
+                    token: 'eyJhcHBfbmFtZSI6Imphd3NoYW5fYm90X2FuYWx5dGljcyIsImFwcF91cmwiOiJodHRwczovL3QubWUvamF3c2hhbl9ib3QiLCJhcHBfZG9tYWluIjoiaHR0cHM6Ly9yYWZhZWxla29sLmdpdGh1Yi5pby9qYXdzaGFuL2luZGV4Lmh0bWwifQ==!kr9UQz6R6+FyKQPWPx61usE0S/LtKtUyPFJB/Ne3vQQ=',
+                    appName: 'jawshan_bot_analytics',
+                });
+                console.log('Analytics initialized successfully');
+            } else {
+                console.warn('Telegram Analytics SDK not loaded');
+            }
+        } catch (error) {
+            console.error('Failed to initialize analytics:', error);
+        }
+    }
+
+    // Helper method for tracking events
+    trackEvent(eventName, params = {}) {
+        try {
+            if (window.telegramAnalytics) {
+                window.telegramAnalytics.track(eventName, params);
+            }
+        } catch (error) {
+            console.error(`Error tracking ${eventName}:`, error);
         }
     }
 }
