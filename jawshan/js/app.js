@@ -415,18 +415,21 @@ class JawshanApp {
     }
 
     // Update tracking method
-    trackEvent(eventName, params = {}) {
+    trackEvent(type, params = {}) {
         if (!this.analyticsReady) {
-            console.warn('Analytics not ready, skipping event:', eventName);
+            console.warn('Analytics not ready, skipping event:', type);
             return;
         }
 
         try {
             if (window.telegramAnalytics?.track) {
-                window.telegramAnalytics.track(eventName, params);
+                window.telegramAnalytics.track('custom-event', {
+                    event_type: type,
+                    ...params
+                });
             }
         } catch (error) {
-            console.error(`Error tracking ${eventName}:`, error);
+            console.error(`Error tracking ${type}:`, error);
         }
     }
 }
