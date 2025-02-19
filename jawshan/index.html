@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jawshan App</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add Telegram Analytics script to HTML head -->
+    <script>
+        function initAnalytics() {
+          window.telegramAnalytics.init({
+            token: 'eyJhcHBfbmFtZSI6Imphd3NoYW5fYm90X2FuYWx5dGljcyIsImFwcF91cmwiOiJodHRwczovL3QubWUvamF3c2hhbl9ib3QiLCJhcHBfZG9tYWluIjoiaHR0cHM6Ly9yYWZhZWxla29sLmdpdGh1Yi5pby9qYXdzaGFuL2luZGV4Lmh0bWwifQ==!kr9UQz6R6+FyKQPWPx61usE0S/LtKtUyPFJB/Ne3vQQ=',
+            appName: 'jawshan_bot_analytics',
+          });
+        }
+    </script>
+    <script async src="https://tganalytics.xyz/index.js" onload="initAnalytics()" type="text/javascript"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>

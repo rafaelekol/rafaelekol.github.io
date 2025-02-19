@@ -7,10 +7,8 @@ class JawshanApp {
         };
         this.currentPage = this.store.getSetting('currentPage', 1);
         this.jawshanData = [];
-        this.analyticsReady = false;
         this.loadJawshanData();
         this.initElements();
-        this.initAnalytics();
         this.initEventListeners();
         this.loadPage(this.currentPage);
         this.applySettings();
@@ -122,8 +120,9 @@ class JawshanApp {
         });
 
         this.languageSelect.addEventListener('change', (e) => {
-            this.settings.language = e.target.value;
-            this.store.setSetting('language', e.target.value);
+            const newLanguage = e.target.value;
+            this.settings.language = newLanguage;
+            this.store.setSetting('language', newLanguage);
             this.loadPage(this.currentPage);
         });
 
@@ -207,11 +206,6 @@ class JawshanApp {
         const page = this.jawshanData.find(p => p.id === pageNumber);
         if (!page) return;
 
-        this.trackEvent('page_view', {
-            page_number: pageNumber,
-            language: this.settings.language
-        });
-
         let content = page[this.settings.language];
         const dua = page[`${this.settings.language}_dua`];
         const isArabic = this.settings.language === 'arabic';
@@ -231,10 +225,8 @@ class JawshanApp {
         this.store.setSetting('currentPage', pageNumber);
         this.pageSlider.value = pageNumber;
 
-        // Update audio button visibility
         this.updateAudioButtonVisibility();
 
-        // If audio was playing, start the new page's audio
         if (this.isPlaying) {
             this.playAudio();
         }
@@ -286,13 +278,6 @@ class JawshanApp {
     }
 
     updateSetting(key, value) {
-        if (key === 'language') {
-            this.trackEvent('language_change', {
-                from: this.settings.language,
-                to: value
-            });
-        }
-
         this.store.setSetting(key, value);
         this.applySettings();
     }
@@ -319,10 +304,6 @@ class JawshanApp {
     }
 
     playAudio() {
-        this.trackEvent('audio_play', {
-            page_number: this.currentPage
-        });
-
         if (this.audio) {
             this.audio.pause();
         }
@@ -355,10 +336,6 @@ class JawshanApp {
     }
 
     stopAudio() {
-        this.trackEvent('audio_stop', {
-            page_number: this.currentPage
-        });
-
         if (this.audio) {
             this.audio.pause();
             this.audio.currentTime = 0;
@@ -375,61 +352,6 @@ class JawshanApp {
             this.audioBtn.style.display = 'none';
         } else {
             this.audioBtn.style.display = 'block';
-        }
-    }
-
-    // Update analytics initialization
-    async initAnalytics() {
-        try {
-            // Load the analytics SDK
-            const script = document.createElement('script');
-            script.src = 'https://tganalytics.xyz/index.js';
-            script.async = true;
-            
-            // Create a promise to wait for script load
-            const scriptLoaded = new Promise((resolve, reject) => {
-                script.onload = () => {
-                    // Wait a bit for SDK to initialize
-                    setTimeout(() => {
-                        if (window.telegramAnalytics) {
-                            window.telegramAnalytics.init({
-                                token: 'eyJhcHBfbmFtZSI6Imphd3NoYW5fYm90X2FuYWx5dGljcyIsImFwcF91cmwiOiJodHRwczovL3QubWUvamF3c2hhbl9ib3QiLCJhcHBfZG9tYWluIjoiaHR0cHM6Ly9yYWZhZWxla29sLmdpdGh1Yi5pby9qYXdzaGFuL2luZGV4Lmh0bWwifQ==!kr9UQz6R6+FyKQPWPx61usE0S/LtKtUyPFJB/Ne3vQQ=',
-                                appName: 'jawshan_bot_analytics',
-                            });
-                            this.analyticsReady = true;
-                            console.log('Analytics initialized successfully');
-                            resolve();
-                        } else {
-                            reject(new Error('Telegram Analytics not available'));
-                        }
-                    }, 500);
-                };
-                script.onerror = reject;
-            });
-
-            document.head.appendChild(script);
-            await scriptLoaded;
-        } catch (error) {
-            console.error('Failed to initialize analytics:', error);
-        }
-    }
-
-    // Update tracking method
-    trackEvent(type, params = {}) {
-        if (!this.analyticsReady) {
-            console.warn('Analytics not ready, skipping event:', type);
-            return;
-        }
-
-        try {
-            if (window.telegramAnalytics?.track) {
-                window.telegramAnalytics.track('custom-event', {
-                    event_type: type,
-                    ...params
-                });
-            }
-        } catch (error) {
-            console.error(`Error tracking ${type}:`, error);
         }
     }
 }
