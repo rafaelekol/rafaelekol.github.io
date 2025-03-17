@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timezone</title>
+</head>
+<body>
+    <h2>Setting Your Timezone...</h2>
+    <script>
+        async function sendTimezone() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const userId = urlParams.get("user_id");
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            
+            // Log timezone information to console
+            console.log("Detected timezone:", timezone);
+            console.log("Current date in local timezone:", new Date().toString());
+            console.log("UTC offset:", new Date().getTimezoneOffset() / -60, "hours");
+            console.log("User ID:", userId || "Missing");
+            
+            if (!userId) {
+                console.error("User ID missing, cannot proceed!");
+                alert("User ID missing!");
+                return;
+            }
+            
+            console.log("Sending timezone data to server:", {
+                user_id: userId,
+                timezone: timezone
+            });
+            
+            try {
+                const response = await fetch("https://yourbackend.com/set_timezone", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ user_id: userId, timezone: timezone })
+                });
+                
+                console.log("Server response status:", response.status);
+                document.body.innerHTML = "<h2>Timezone Set Successfully!</h2>";
+                console.log("Timezone set successfully!");
+            } catch (error) {
+                console.error("Failed to set timezone:", error);
+                document.body.innerHTML = "<h2>Failed to Set Timezone.</h2>";
+            }
+        }
+        sendTimezone();
+    </script>
+</body>
+</html>
