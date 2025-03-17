@@ -19,11 +19,11 @@
             console.log("UTC offset:", new Date().getTimezoneOffset() / -60, "hours");
             console.log("User ID:", userId || "Missing");
             
-            // if (!userId) {
-            //     console.error("User ID missing, cannot proceed!");
-            //     alert("User ID missing!");
-            //     return;
-            // }
+            if (!userId) {
+                console.error("User ID missing, cannot proceed!");
+                alert("User ID missing!");
+                return;
+            }
             
             console.log("Sending timezone data to server:", {
                 user_id: userId,
@@ -31,13 +31,13 @@
             });
             
             try {
-                // const response = await fetch("https://yourbackend.com/set_timezone", {
-                //     method: "POST",
-                //     headers: { "Content-Type": "application/json" },
-                //     body: JSON.stringify({ user_id: userId, timezone: timezone })
-                // });
+                const response = await fetch("https://yourbackend.com/set_timezone", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ user_id: userId, timezone: timezone })
+                });
                 
-                //console.log("Server response status:", response.status);
+                console.log("Server response status:", response.status);
                 
                 // Show success message after 3 seconds and then close the page
                 document.body.innerHTML = "<h2>Setting Timezone...</h2>";
