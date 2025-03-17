@@ -38,8 +38,19 @@
                 });
                 
                 console.log("Server response status:", response.status);
-                document.body.innerHTML = "<h2>Timezone Set Successfully!</h2>";
-                console.log("Timezone set successfully!");
+                
+                // Show success message after 3 seconds and then close the page
+                document.body.innerHTML = "<h2>Setting Timezone...</h2>";
+                setTimeout(() => {
+                    document.body.innerHTML = "<h2>Timezone Set Successfully!</h2>";
+                    console.log("Timezone set successfully!");
+                    
+                    // Close the page after showing success message
+                    setTimeout(() => {
+                        console.log("Closing page...");
+                        window.close();
+                    }, 3000);
+                }, 3000);
             } catch (error) {
                 console.error("Failed to set timezone:", error);
                 document.body.innerHTML = "<h2>Failed to Set Timezone.</h2>";
