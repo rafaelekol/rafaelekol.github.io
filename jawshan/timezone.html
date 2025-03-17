@@ -19,11 +19,11 @@
             console.log("UTC offset:", new Date().getTimezoneOffset() / -60, "hours");
             console.log("User ID:", userId || "Missing");
             
-            if (!userId) {
-                console.error("User ID missing, cannot proceed!");
-                alert("User ID missing!");
-                return;
-            }
+            // if (!userId) {
+            //     console.error("User ID missing, cannot proceed!");
+            //     alert("User ID missing!");
+            //     return;
+            // }
             
             console.log("Sending timezone data to server:", {
                 user_id: userId,
