@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Workout Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Workout Player</h1>
+        
+        <div id="workout-container">
+            <div id="video-container" class="video-container">
+                <div class="player-placeholder">
+                    <div>
+                        <p>Select an exercise or start your workout</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="status-message" class="status-message"></div>
+            <div id="timer" class="timer"></div>
+            
+            <button id="auto-play-button" class="auto-play-button" onclick="startWorkout()">
+                Auto Play Workout
+            </button>
+            
+            <div id="control-buttons" class="control-buttons">
+                <button id="pause-button" class="pause-button" onclick="pauseWorkout()">
+                    Pause
+                </button>
+                <button id="checkmark-button" class="checkmark-button" onclick="completeExercise()">
+                    <span>✓</span> Done
+                </button>
+                <button id="skip-button" class="skip-button" onclick="skipExercise()">
+                    Skip
+                </button>
+            </div>
+            
+            <div id="workout-list" class="workout-list"></div>
+        </div>
+        
+        <div id="no-workout" class="no-workout">
+            <p>No workout routine found in URL parameters.</p>
+            <p>Example URL: ?exercise0=pushUps:30:seconds&exercise1=squats:15:reps</p>
+        </div>
+    </div>
+
+    <script src="workout.js" type="module"></script>
+</body>
+</html> 

@@ -1,0 +1,1071 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.workout-list {
+    margin-top: 15px;
+}
+.exercise-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.exercise-title {
+    font-weight: bold;
+    font-size: 16px;
+    word-break: break-word;
+}
+.exercise-details {
+    color: #666;
+    font-size: 14px;
+}
+.video-container {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    background-color: #eee;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px; /* Static height instead of viewport-based calculation */
+    max-height: 450px;
+}
+.player-placeholder {
+    width: 100%;
+    max-width: 640px;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.player-placeholder > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.player-placeholder h2 {
+    color: #27ae60;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+.player-placeholder p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+.rest-placeholder {
+    width: 100%;
+    max-width: 640px;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    background-color: #e8f7f0;
+    border-radius: 8px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.rest-placeholder > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #27ae60;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#youtube-api-player {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+.no-workout {
+    text-align: center;
+    color: #666;
+    padding: 15px;
+    font-size: 14px;
+    display: none;
+}
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+button:hover {
+    background-color: #2980b9;
+}
+.auto-play-button {
+    background-color: #27ae60;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    width: 100%;
+    margin: 12px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    border: none;
+}
+.auto-play-button:hover {
+    background-color: #219653;
+}
+.current-exercise {
+    border-left: 4px solid #27ae60;
+    background-color: #e8f7f0;
+}
+.control-buttons {
+    display: none;
+    justify-content: space-between;
+    margin: 12px 0;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.control-buttons button {
+    flex: 1;
+    min-width: 80px;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.pause-button {
+    background-color: #e74c3c;
+}
+.pause-button:hover {
+    background-color: #c0392b;
+}
+.skip-button {
+    background-color: #f39c12;
+}
+.skip-button:hover {
+    background-color: #d35400;
+}
+.checkmark-button {
+    background-color: #27ae60;
+}
+.checkmark-button:hover {
+    background-color: #219653;
+}
+.status-message {
+    text-align: center;
+    font-size: 16px;
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    display: none;
+}
+.timer {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin: 12px 0;
+    color: #2c3e50;
+    display: none;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+    .exercise-item {
+        padding: 10px;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .exercise-item > div {
+        flex: 1;
+        min-width: 0;
+        margin-right: 10px;
+    }
+    .exercise-item button:not(.play-button) {
+        margin-top: 0;
+        min-width: 70px;
+    }
+    .video-container {
+        padding: 8px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    .player-placeholder > div,
+    .rest-placeholder > div {
+        font-size: 14px;
+        padding: 15px;
+    }
+    
+    .player-placeholder h2,
+    .rest-placeholder h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .player-placeholder p,
+    .rest-placeholder p {
+        margin: 5px 0;
+    }
+    
+    .rest-placeholder h2 {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+    
+    #rest-countdown {
+        font-size: 36px !important;
+        margin-top: 10px !important;
+    }
+    .control-buttons button {
+        padding: 8px 5px;
+        font-size: 12px;
+        min-width: 70px;
+    }
+    .auto-play-button {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .timer {
+        font-size: 18px;
+        margin: 8px 0;
+    }
+    .status-message {
+        font-size: 14px;
+        padding: 6px;
+    }
+    .play-button {
+        min-width: 32px;
+        height: 32px;
+        padding: 6px;
+    }
+    
+    .play-button img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* For medium and large screens */
+@media (min-width: 768px) {
+    .video-container {
+        padding: 5px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+    .exercise-item {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative; /* For absolute positioning of the play button */
+        padding-right: 50px; /* Make room for the absolutely positioned play button */
+    }
+    
+    .exercise-item > div {
+        margin-right: 0;
+        margin-bottom: 8px;
+        width: 100%;
+    }
+    
+    .exercise-item button:not(.play-button) {
+        align-self: flex-end;
+    }
+    
+    .exercise-item .play-button {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 0;
+    }
+}
+
+/* Notification Styles */
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 300px;
+    width: calc(100% - 40px);
+}
+
+.notification {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    max-width: 280px;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notification-icon {
+    margin-right: 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+}
+
+.notification-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.notification-message {
+    flex: 1;
+    word-wrap: break-word;
+}
+
+.notification-info {
+    background-color: rgba(52, 152, 219, 0.9);
+}
+
+.notification-success {
+    background-color: rgba(46, 204, 113, 0.9);
+}
+
+.notification-warning {
+    background-color: rgba(243, 156, 18, 0.9);
+}
+
+.notification-error {
+    background-color: rgba(231, 76, 60, 0.9);
+}
+
+/* Voice recognition active notification with grey color */
+.notification-voice-active {
+    background-color: rgba(80, 80, 80, 0.8);
+    color: #e0e0e0;
+    opacity: 0.9;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 8px 12px;
+}
+
+.notification-voice, 
+.notification-voice-active {
+    background-color: rgba(80, 80, 80, 0.8);
+    color: #e0e0e0;
+}
+
+.notification-voice .notification-message,
+.notification-voice-active .notification-message {
+    color: #e0e0e0;
+}
+
+/* Add subtle pulse animation for audio notifications */
+@keyframes subtle-pulse {
+    0% { opacity: 0.9; }
+    50% { opacity: 1; }
+    100% { opacity: 0.9; }
+}
+
+.notification-voice.show,
+.notification-voice-active.show {
+    animation: subtle-pulse 2s infinite;
+}
+
+/* Microphone Level Indicator Styles */
+.mic-level-container {
+    width: 60px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: auto;
+}
+
+.mic-level-indicator {
+    height: 100%;
+    width: 0%;
+    background-color: #28a745;
+    transition: width 0.1s ease;
+}
+
+/* Microphone Instructions Modal Styles */
+.mic-instructions-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.mic-instructions-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mic-instructions-content h3 {
+    margin-top: 0;
+    color: #dc3545;
+}
+
+.mic-instructions-content button {
+    padding: 8px 16px;
+    margin-top: 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#close-mic-instructions {
+    background-color: #6c757d;
+    color: white;
+}
+
+#refresh-page {
+    background-color: #17a2b8;
+    color: white;
+}
+
+/* Voice Recognition Transcript Styles */
+.interim-transcript {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    max-width: 80%;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.interim-transcript.visible {
+    opacity: 1;
+}
+
+/* Voice Command Indicator Styles */
+.voice-indicator {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.voice-toggle-btn, .voice-help-btn, .mic-test-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.voice-toggle-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.voice-toggle-btn.active {
+    background-color: #28a745;
+}
+
+.voice-help-btn {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.mic-test-btn {
+    background-color: #6610f2;
+    color: white;
+}
+
+.voice-commands-list {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.voice-commands-list h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.voice-commands-list ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.voice-commands-list li {
+    margin-bottom: 5px;
+}
+
+.voice-tips {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/* Mobile collapsed audio controls */
+.voice-icon-container {
+    display: none;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.voice-icon {
+    background-color: #6610f2;
+    color: white;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.voice-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.voice-icon:hover {
+    transform: none;
+}
+
+.voice-icon.active {
+    background-color: #28a745;
+    animation: none;
+}
+
+/* Remove the dot by setting opacity to 0 */
+.voice-icon::after {
+    display: none;
+}
+
+.voice-icon.active::after {
+    display: none;
+}
+
+/* Pulse animation for active microphone icon - keeping the keyframes but not using them */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.voice-icon.active:hover {
+    transform: none;
+}
+
+/* Mobile-specific styles for voice commands */
+@media (max-width: 480px) {
+    /* Base voice indicator styles */
+    .voice-indicator {
+        padding: 12px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+    
+    /* Voice icon container - always show regardless of collapsed state */
+    .voice-icon-container {
+        display: flex !important;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+    }
+    
+    /* Collapsed state specific layout */
+    .voice-indicator.collapsed .voice-icon-container {
+        justify-content: center;
+    }
+    
+    /* When collapsed, hide the status label to give more room for the icon */
+    .voice-indicator.collapsed .voice-status-label {
+        display: none;
+    }
+    
+    /* Center the mic level indicator in collapsed mode */
+    .voice-indicator.collapsed .mic-level-container {
+        margin: 0 10px;
+        flex-grow: 0;
+        width: 80px;
+    }
+    
+    /* Show status label on mobile */
+    .voice-status-label {
+        display: block;
+    }
+    
+    /* Mic level container - base styles for both states */
+    .mic-level-container {
+        height: 8px;
+        flex-grow: 1;
+        max-width: none;
+        margin: 0;
+    }
+    
+    /* Collapsed state */
+    .voice-indicator.collapsed {
+        flex-wrap: nowrap;
+        justify-content: center;
+        background-color: rgba(240, 240, 240, 0.9);
+        backdrop-filter: blur(5px);
+        cursor: pointer;
+        padding: 12px 38px 12px 12px; /* Reduced right padding for smaller arrows */
+        position: relative; /* For absolute positioning of the arrow */
+    }
+    
+    .voice-indicator.collapsed:hover {
+        background-color: rgba(230, 230, 230, 0.95);
+    }
+    
+    /* Hide elements in collapsed state */
+    .voice-indicator.collapsed .voice-toggle-btn,
+    .voice-indicator.collapsed .voice-help-btn,
+    .voice-indicator.collapsed .mic-test-btn,
+    .voice-indicator.collapsed .voice-commands-list {
+        display: none;
+    }
+    
+    /* Replace SVG arrows with keyboard arrows */
+    .voice-indicator.collapsed::after {
+        content: '';
+        background-image: url("assets/keyboard_arrow_down_24dp.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px 24px;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .voice-indicator:not(.collapsed)::after {
+        content: '';
+        background-image: url("assets/keyboard_arrow_up_24dp.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px 24px;
+        width: 24px;
+        height: 24px;
+        margin-left: auto;
+    }
+    
+    /* Expanded state animations and layout */
+    @keyframes expand {
+        0% { max-height: 50px; overflow: hidden; }
+        100% { max-height: 500px; overflow: visible; }
+    }
+    
+    .voice-indicator:not(.collapsed) {
+        animation: expand 0.3s ease-out forwards;
+        padding: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* Button layout in expanded state */
+    .voice-indicator:not(.collapsed) .voice-toggle-btn,
+    .voice-indicator:not(.collapsed) .voice-help-btn,
+    .voice-indicator:not(.collapsed) .mic-test-btn {
+        margin-top: 10px;
+        width: 100%;
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+    
+    /* Command list in expanded state */
+    .voice-commands-list {
+        font-size: 0.9rem;
+        margin-top: 8px;
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Center the mic level indicator in collapsed mode */
+.voice-indicator.collapsed .mic-level-container {
+    margin: 0 auto;
+    flex-grow: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Microphone Test Dialog Styles */
+.mic-test-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.mic-test-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mic-test-content h3 {
+    margin-top: 0;
+    color: #17a2b8;
+}
+
+.mic-test-visualizer {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.mic-test-level-container {
+    width: 100%;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.mic-test-level-indicator {
+    height: 100%;
+    width: 0%;
+    background-color: #28a745;
+    transition: width 0.1s ease;
+}
+
+.mic-test-status {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.mic-test-transcript {
+    min-height: 60px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.mic-test-close {
+    padding: 8px 16px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+}
+
+/* YouTube Player Wrapper Styles */
+.youtube-wrapper {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.youtube-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.youtube-iframe, .youtube-api-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Error Message Styles */
+.youtube-error {
+    text-align: center;
+    width: 100%;
+}
+
+/* Exercise Item Styles */
+.exercise-item-content {
+    flex: 1;
+    min-width: 0;
+    margin-right: 10px;
+}
+
+/* Rest Countdown Styles */
+.rest-countdown {
+    font-size: 48px;
+    margin-top: 15px;
+}
+
+@media (max-width: 480px) {
+    .voice-toggle-btn, .voice-help-btn, .mic-test-btn {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .voice-commands-list {
+        font-size: 0.9rem;
+    }
+    
+    .voice-commands-list li {
+        margin-bottom: 8px;
+    }
+    
+    .rest-countdown {
+        font-size: 36px !important;
+        margin-top: 10px !important;
+    }
+}
+
+/* Utility Classes */
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.control-buttons.show {
+    display: flex !important;
+}
+
+/* For status message and timer */
+.status-message.show {
+    display: block;
+}
+
+.timer.show {
+    display: block;
+}
+
+/* For no-workout section */
+.no-workout.show {
+    display: block;
+}
+
+/* Update for hide/show exercise buttons */
+.exercise-item .hide {
+    display: none;
+}
+
+/* Add new class for index.html no-workout div */
+.no-workout {
+    display: none;
+}
+
+/* Responsive notifications */
+@media (max-width: 480px) {
+    #notification-container {
+        top: 10px;
+        right: 10px;
+        max-width: 280px;
+        width: calc(100% - 20px);
+    }
+    
+    .notification {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+    
+    .notification-icon {
+        font-size: 16px;
+        min-width: 20px;
+    }
+}
+
+.voice-status-label {
+    font-size: 13px;
+    color: #666;
+    margin-left: 0;
+    flex-grow: 0;
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    /* Animation for expanding the voice indicator */
+    @keyframes expand {
+        0% { max-height: 50px; overflow: hidden; }
+        100% { max-height: 500px; overflow: visible; }
+    }
+    
+    .voice-indicator:not(.collapsed) {
+        animation: expand 0.3s ease-out forwards;
+        padding: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .voice-indicator:not(.collapsed) .voice-toggle-btn,
+    .voice-indicator:not(.collapsed) .voice-help-btn,
+    .voice-indicator:not(.collapsed) .mic-test-btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+/* Show status label on mobile */
+.voice-status-label {
+    display: block;
+}
+
+/* Mic level container - base styles for both states */
+.mic-level-container {
+    height: 8px;
+    flex-grow: 1;
+    max-width: none;
+    margin: 0;
+}
+
+.play-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    align-self: center; /* Ensure vertical centering */
+}
+
+.play-button:hover {
+    background-color: #2980b9;
+}
+
+.play-button img {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 480px) {
+    .play-button {
+        min-width: 32px;
+        height: 32px;
+        padding: 6px;
+    }
+    
+    .play-button img {
+        width: 18px;
+        height: 18px;
+    }
+} 
