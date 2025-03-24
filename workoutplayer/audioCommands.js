@@ -98,8 +98,8 @@ function processVoiceCommand(command, workoutCallbacks) {
     } = workoutCallbacks;
     
     // Start workout commands
-    if ((command.includes('start workout') || 
-         command.includes('begin workout') ||
+    if ((command.includes('start') || 
+         command.includes('begin') ||
          command.includes('let\'s go') ||
          command.includes('let\'s start') ||
          command.includes('begin exercise') ||
