@@ -20,7 +20,12 @@
             </div>
             
             <div id="status-message" class="status-message"></div>
-            <div id="timer" class="timer"></div>
+            <div id="timer" class="timer">
+                <span class="timer-label">Time Remaining: </span>
+                <span id="timer-value">00:00</span>
+            </div>
+            
+            <input type="hidden" id="rest-duration" value="10">
             
             <button id="auto-play-button" class="auto-play-button" onclick="startWorkout()">
                 Auto Play Workout

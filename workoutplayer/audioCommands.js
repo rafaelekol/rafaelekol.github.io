@@ -9,10 +9,29 @@ let recognitionInstance = null;
  */
 const speakText = (text) => {
     if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.rate = 1.0;
-        utterance.pitch = 1.0;
-        window.speechSynthesis.speak(utterance);
+        // Always cancel previous speech first
+        window.speechSynthesis.cancel();
+        
+        // Create a small delay to ensure the cancel has taken effect
+        setTimeout(() => {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.rate = 1.0;
+            utterance.pitch = 1.0;
+            utterance.voice = window.speechSynthesis.getVoices()[1];
+            
+            // Store the utterance in window object to keep track of speaking state
+            window.currentUtterance = utterance;
+            
+            // Add event listener to track when speech ends
+            utterance.onend = function() {
+                window.isSpeaking = false;
+            };
+            
+            // Set speaking state to true
+            window.isSpeaking = true;
+            
+            window.speechSynthesis.speak(utterance);
+        }, 50);
     } else {
         console.warn("Speech synthesis not supported in this browser");
     }
@@ -24,6 +43,7 @@ const speakText = (text) => {
 const cancelSpeech = () => {
     if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
+        window.isSpeaking = false;
     }
 };
 
@@ -56,6 +76,12 @@ function processVoiceCommand(command, workoutCallbacks) {
         command.includes('next') || 
         command.includes('next exercise')) {
         skipExercise();
+        
+        // Announce the new exercise with duration/reps after a short delay
+        setTimeout(() => {
+            announceCurrentExercise(workoutExercises, currentExerciseIndex + 1); // +1 because we just skipped
+        }, 1000);
+        
         speakText('Skipping to next exercise');
         showNotification('Command: Skip exercise', 'voice');
         return true;
@@ -94,6 +120,12 @@ function processVoiceCommand(command, workoutCallbacks) {
             if (exercise && exercise.durationType !== 'seconds') {
                 completeExercise();
                 speakText('Exercise completed');
+                
+                // Announce the next exercise after a brief delay
+                setTimeout(() => {
+                    announceCurrentExercise(workoutExercises, currentExerciseIndex + 1); // +1 because we just completed one
+                }, 1000);
+                
                 showNotification('Command: Complete exercise', 'voice');
                 return true;
             } else {
@@ -132,6 +164,26 @@ function processVoiceCommand(command, workoutCallbacks) {
 }
 
 /**
+ * Announce current exercise with duration or repetition details
+ */
+function announceCurrentExercise(exercises, index) {
+    // Check if the index is valid
+    if (exercises && index >= 0 && index < exercises.length) {
+        const exercise = exercises[index];
+        let announcement = '';
+        
+        if (exercise.durationType === 'seconds') {
+            announcement = `${exercise.title}, ${exercise.duration} seconds. You'll hear a countdown for the last 5 seconds.`;
+        } else {
+            announcement = `${exercise.title}, ${exercise.duration} repetitions. Complete at your own pace.`;
+        }
+        
+        speakText(announcement);
+        showNotification(`Now: ${exercise.title} (${exercise.duration} ${exercise.durationType})`, 'voice');
+    }
+}
+
+/**
  * Setup speech recognition for voice commands
  */
 function setupSpeechRecognition(workoutCallbacks) {
@@ -143,6 +195,20 @@ function setupSpeechRecognition(workoutCallbacks) {
 
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
+    
+    // Create a modified callbacks object with wrapped functions to handle announcements
+    const wrappedCallbacks = { ...workoutCallbacks };
+    
+    // Wrap the startWorkout function to announce the first exercise
+    const originalStartWorkout = workoutCallbacks.startWorkout;
+    wrappedCallbacks.startWorkout = function() {
+        originalStartWorkout();
+        
+        // Announce the first exercise after a brief delay
+        setTimeout(() => {
+            announceCurrentExercise(workoutCallbacks.workoutExercises, 0); // Start with the first exercise
+        }, 1000);
+    };
     
     // Configure recognition settings
     recognition.continuous = true;
@@ -171,8 +237,8 @@ function setupSpeechRecognition(workoutCallbacks) {
             const command = event.results[last][0].transcript.trim().toLowerCase();
             console.log('Voice command recognized:', command);
             
-            // Process the command
-            const commandProcessed = processVoiceCommand(command, workoutCallbacks);
+            // Process the command using wrapped callbacks
+            const commandProcessed = processVoiceCommand(command, wrappedCallbacks);
             
             if (!commandProcessed) {
                 console.log('Command not recognized:', command);
@@ -627,7 +693,7 @@ function addVoiceCommandIndicator() {
         commandList.innerHTML = `
             <h4>Available Voice Commands</h4>
             <ul>
-                <li><strong>Start Workout/Begin Workout:</strong> Start the workout sequence</li>
+                <li><strong>Start/Begin:</strong> Start the workout sequence</li>
                 <li><strong>Skip/Next:</strong> Skip to next exercise</li>
                 <li><strong>Pause/Stop/Wait:</strong> Pause the workout</li>
                 <li><strong>Resume/Play/Continue/Go:</strong> Resume the workout</li>
@@ -884,6 +950,15 @@ function toggleSpeechRecognition(workoutCallbacks) {
  * Initialize speech recognition
  */
 function initSpeechRecognition(workoutCallbacks) {
+    // Add an event listener to announce exercises when they change
+    if (workoutCallbacks.onExerciseChange) {
+        const originalOnExerciseChange = workoutCallbacks.onExerciseChange;
+        workoutCallbacks.onExerciseChange = function(index) {
+            originalOnExerciseChange(index);
+            announceCurrentExercise(workoutCallbacks.workoutExercises, index);
+        };
+    }
+    
     // Initialize speech recognition for voice commands
     recognitionInstance = setupSpeechRecognition(workoutCallbacks);
     return recognitionInstance;
@@ -897,5 +972,6 @@ export {
     cancelSpeech,
     showNotification,
     initSpeechRecognition,
-    toggleSpeechRecognition
+    toggleSpeechRecognition,
+    announceCurrentExercise
 }; 
