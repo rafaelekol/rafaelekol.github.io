@@ -387,8 +387,8 @@ function startExerciseTimer(duration) {
             speakText("Halfway point");
         }
         
-        // Announce countdown for the last 5 seconds with improved timing
-        if (currentExerciseTimeRemaining <= 5 && currentExerciseTimeRemaining > 0) {
+        // Announce countdown for the last 3 seconds with improved timing
+        if (currentExerciseTimeRemaining <= 3 && currentExerciseTimeRemaining > 0) {
             // Only announce if we haven't announced this number yet
             if (currentExerciseTimeRemaining !== lastAnnouncedTime) {
                 lastAnnouncedTime = currentExerciseTimeRemaining;
@@ -507,8 +507,8 @@ function startRestPeriod() {
             restCountdown.textContent = formatTime(currentRestTimeRemaining);
         }
         
-        // Announce countdown for the last 5 seconds with improved timing
-        if (currentRestTimeRemaining <= 5 && currentRestTimeRemaining > 0) {
+        // Announce countdown for the last 3 seconds with improved timing
+        if (currentRestTimeRemaining <= 3 && currentRestTimeRemaining > 0) {
             // Only announce if we haven't announced this number yet
             // This prevents duplicate announcements if speech is slow
             if (currentRestTimeRemaining !== lastAnnouncedTime) {
@@ -766,8 +766,8 @@ function resumeExerciseTimer() {
             speakText("Halfway point");
         }
         
-        // Announce countdown for the last 5 seconds with improved timing
-        if (currentExerciseTimeRemaining <= 5 && currentExerciseTimeRemaining > 0) {
+        // Announce countdown for the last 3 seconds with improved timing
+        if (currentExerciseTimeRemaining <= 3 && currentExerciseTimeRemaining > 0) {
             // Only announce if we haven't announced this number yet
             if (currentExerciseTimeRemaining !== lastAnnouncedTime) {
                 lastAnnouncedTime = currentExerciseTimeRemaining;
@@ -829,8 +829,8 @@ function resumeRestTimer() {
             restCountdown.textContent = formatTime(currentRestTimeRemaining);
         }
         
-        // Announce countdown for the last 5 seconds with improved timing
-        if (currentRestTimeRemaining <= 5 && currentRestTimeRemaining > 0) {
+        // Announce countdown for the last 3 seconds with improved timing
+        if (currentRestTimeRemaining <= 3 && currentRestTimeRemaining > 0) {
             // Only announce if we haven't announced this number yet
             if (currentRestTimeRemaining !== lastAnnouncedTime) {
                 lastAnnouncedTime = currentRestTimeRemaining;
