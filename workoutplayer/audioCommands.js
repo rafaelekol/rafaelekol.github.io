@@ -48,6 +48,45 @@ const cancelSpeech = () => {
 };
 
 /**
+ * Handle speech functionality when page visibility changes
+ * This can be called from the main visibility change handler
+ * @param {boolean} isHidden - Whether the page is hidden or visible
+ */
+const handleSpeechVisibilityChange = (isHidden) => {
+    if (isHidden) {
+        // Cancel any ongoing speech when page is hidden
+        cancelSpeech();
+        
+        // Also pause speech recognition if it's active
+        if (speechRecognitionActive && recognitionInstance) {
+            try {
+                // We don't want to fully stop recognition, just pause it
+                recognitionInstance.stop();
+                console.log('Speech recognition paused due to page visibility change');
+            } catch (e) {
+                console.error('Error pausing speech recognition:', e);
+            }
+        }
+    } else {
+        // When page becomes visible again, try to restart speech recognition
+        // if it was previously active
+        if (speechRecognitionActive && recognitionInstance) {
+            try {
+                recognitionInstance.start();
+                console.log('Speech recognition resumed after page visibility change');
+            } catch (e) {
+                console.error('Error resuming speech recognition:', e);
+                
+                // If we couldn't resume, try to recreate the recognition instance
+                if (recognitionInstance.workoutCallbacks) {
+                    recognitionInstance = setupSpeechRecognition(recognitionInstance.workoutCallbacks);
+                }
+            }
+        }
+    }
+};
+
+/**
  * Process voice commands
  */
 function processVoiceCommand(command, workoutCallbacks) {
@@ -173,7 +212,7 @@ function announceCurrentExercise(exercises, index) {
         let announcement = '';
         
         if (exercise.durationType === 'seconds') {
-            announcement = `${exercise.title}, ${exercise.duration} seconds. You'll hear a countdown for the last 5 seconds.`;
+            announcement = `${exercise.title}, ${exercise.duration} seconds.`;
         } else {
             announcement = `${exercise.title}, ${exercise.duration} repetitions. Complete at your own pace.`;
         }
@@ -192,29 +231,18 @@ function setupSpeechRecognition(workoutCallbacks) {
         showNotification("Speech recognition not supported in this browser", "error");
         return null;
     }
-
+    
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
     
-    // Create a modified callbacks object with wrapped functions to handle announcements
-    const wrappedCallbacks = { ...workoutCallbacks };
-    
-    // Wrap the startWorkout function to announce the first exercise
-    const originalStartWorkout = workoutCallbacks.startWorkout;
-    wrappedCallbacks.startWorkout = function() {
-        originalStartWorkout();
-        
-        // Announce the first exercise after a brief delay
-        setTimeout(() => {
-            announceCurrentExercise(workoutCallbacks.workoutExercises, 0); // Start with the first exercise
-        }, 1000);
-    };
+    // Store workoutCallbacks on the recognition instance for later use
+    recognition.workoutCallbacks = workoutCallbacks;
     
     // Configure recognition settings
     recognition.continuous = true;
-    recognition.interimResults = true; // Changed to true to get feedback sooner
+    recognition.interimResults = true;
     recognition.lang = 'en-US';
-    recognition.maxAlternatives = 3; // Get multiple possible interpretations
+    recognition.maxAlternatives = 3;
     
     // Attempt to access microphone and show level indicator
     tryAccessMicrophone();
@@ -238,7 +266,7 @@ function setupSpeechRecognition(workoutCallbacks) {
             console.log('Voice command recognized:', command);
             
             // Process the command using wrapped callbacks
-            const commandProcessed = processVoiceCommand(command, wrappedCallbacks);
+            const commandProcessed = processVoiceCommand(command, workoutCallbacks);
             
             if (!commandProcessed) {
                 console.log('Command not recognized:', command);
@@ -973,5 +1001,6 @@ export {
     showNotification,
     initSpeechRecognition,
     toggleSpeechRecognition,
-    announceCurrentExercise
+    announceCurrentExercise,
+    handleSpeechVisibilityChange
 }; 

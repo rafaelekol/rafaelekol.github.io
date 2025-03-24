@@ -8,7 +8,8 @@ import {
     showNotification,
     initSpeechRecognition,
     toggleSpeechRecognition,
-    announceCurrentExercise
+    announceCurrentExercise,
+    handleSpeechVisibilityChange
 } from './audioCommands.js';
 
 // Global variables for workout state
@@ -369,11 +370,6 @@ function startExerciseTimer(duration) {
     
     // Flag to track if we're in the final countdown
     let lastAnnouncedTime = -1;
-    
-    // Announce the initial time if greater than 15 seconds
-    if (duration > 15) {
-        speakText(`${duration} seconds`);
-    }
     
     // Set up countdown
     window.exerciseTimer = setInterval(() => {
@@ -1012,7 +1008,7 @@ function startWorkout() {
         }
         
         // Announce workout beginning with countdown
-        speakText("Starting workout in 5");
+        speakText("Starting workout");
         
         // Show countdown in the video container
         const videoContainer = document.getElementById('video-container');
@@ -1124,6 +1120,72 @@ function formatTime(seconds) {
 
 // Initialize the app when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', init);
+
+// Add event listeners for page visibility changes to handle speech synthesis
+document.addEventListener('visibilitychange', handleVisibilityChange);
+
+// Add iOS-specific event listeners for when the app goes to background
+window.addEventListener('pagehide', () => handleVisibilityChange(true));
+window.addEventListener('pageshow', () => handleVisibilityChange(false));
+
+// Handle blur/focus events as a fallback for older browsers
+window.addEventListener('blur', () => handleVisibilityChange(true));
+window.addEventListener('focus', () => handleVisibilityChange(false));
+
+/**
+ * Handle page visibility changes to control speech synthesis
+ * This ensures speech is stopped when user navigates away and can be resumed when they return
+ * @param {boolean} [forceHidden] - Force the hidden state for event handlers that don't rely on document.hidden
+ */
+function handleVisibilityChange(forceHidden) {
+    // Use the forced value if provided, otherwise check document.hidden
+    const isHidden = forceHidden !== undefined ? forceHidden : document.hidden;
+    
+    if (isHidden) {
+        // User has navigated away from the page
+        console.log('Page is now hidden - stopping speech synthesis');
+        
+        // Handle speech and recognition via the audio commands module
+        handleSpeechVisibilityChange(true);
+        
+        // Pause workout if it's active and not already paused
+        if (workoutActive && !workoutPaused) {
+            // Don't announce the pause since we're in background
+            workoutPaused = true;
+            
+            // Update pause button text for when user returns
+            const pauseButton = document.getElementById('pause-button');
+            if (pauseButton) {
+                pauseButton.textContent = 'Resume';
+            }
+            
+            // Pause YouTube player if it exists
+            if (window.player && typeof window.player.pauseVideo === 'function') {
+                window.player.pauseVideo();
+            }
+            
+            // Clear the loop timer if it exists
+            if (window.currentLoopTimer) {
+                clearInterval(window.currentLoopTimer);
+                window.currentLoopTimer = null;
+            }
+        }
+    } else {
+        // User has returned to the page
+        console.log('Page is now visible again');
+        
+        // Handle speech and recognition via the audio commands module
+        handleSpeechVisibilityChange(false);
+        
+        // We don't automatically resume the workout or speech synthesis here
+        // because the user might not want it to resume immediately
+        
+        // Display a notification to inform the user that the workout was paused
+        if (workoutActive && workoutPaused) {
+            showNotification('Workout was paused while you were away. Press Resume to continue.', 'info');
+        }
+    }
+}
 
 // Make functions globally available
 window.playVideo = playVideo;
