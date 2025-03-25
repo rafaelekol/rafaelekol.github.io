@@ -31,6 +31,9 @@ let currentExerciseTimeRemaining = 0;
 let currentRestTimeRemaining = 0;
 let initialExerciseDuration = 0;
 
+// Add this to the global variables section at the top of the file
+let countdownTimeout = null;
+
 /**
  * ExerciseRoutine class represents an exercise with duration and type
  */
@@ -475,6 +478,13 @@ function startRestPeriod() {
         </div>
     `;
     
+    // Ensure control buttons are visible
+    document.getElementById('control-buttons').classList.add('show');
+    
+    // Show pause button, hide checkmark button during rest
+    document.getElementById('pause-button').classList.remove('hide');
+    document.getElementById('checkmark-button').classList.add('hide');
+    
     // Get and show timer element
     const timerElement = document.getElementById('timer');
     const timerValueElement = document.getElementById('timer-value');
@@ -496,9 +506,17 @@ function startRestPeriod() {
     // Set up countdown
     window.restTimer = setInterval(() => {
         // Skip updating if workout is paused
-        if (workoutPaused) return;
+        if (workoutPaused) {
+            console.log("Rest timer paused, skipping update");
+            return;
+        }
         
         currentRestTimeRemaining--;
+        
+        // Debug rest timer state
+        if (currentRestTimeRemaining % 5 === 0 || currentRestTimeRemaining <= 3) {
+            console.log(`Rest timer update: ${currentRestTimeRemaining} seconds remaining`);
+        }
         
         // Update UI
         timerValueElement.textContent = formatTime(currentRestTimeRemaining);
@@ -563,6 +581,12 @@ function skipExercise() {
         window.restTimer = null;
     }
     
+    // Clear any countdown timeout
+    if (countdownTimeout) {
+        clearTimeout(countdownTimeout);
+        countdownTimeout = null;
+    }
+    
     // Reset saved timer values
     savedExerciseTimeRemaining = 0;
     savedRestTimeRemaining = 0;
@@ -612,6 +636,12 @@ function completeExercise() {
         window.restTimer = null;
     }
     
+    // Clear any countdown timeout
+    if (countdownTimeout) {
+        clearTimeout(countdownTimeout);
+        countdownTimeout = null;
+    }
+    
     // Reset saved timer values
     savedExerciseTimeRemaining = 0;
     currentExerciseTimeRemaining = 0;
@@ -654,8 +684,19 @@ function completeExercise() {
 function pauseWorkout() {
     const pauseButton = document.getElementById('pause-button');
     
+    // Add debugging
+    console.log(`pauseWorkout called. Current state: workoutPaused=${workoutPaused}, workoutActive=${workoutActive}`);
+    console.log(`Current timers: exerciseTimer=${window.exerciseTimer !== null}, restTimer=${window.restTimer !== null}, countdownActive=${countdownTimeout !== null}`);
+    
+    // Check if the pause button exists - this is critical
+    if (!pauseButton) {
+        console.error("Pause button not found in the DOM! This could be why pause isn't working.");
+        return; // Exit early to prevent errors
+    }
+    
     if (workoutPaused) {
         // Resuming from pause
+        console.log("Resuming workout from pause");
         workoutPaused = false;
         pauseButton.textContent = 'Pause';
         
@@ -663,14 +704,61 @@ function pauseWorkout() {
         cancelSpeech();
         speakText("Resuming workout");
         
+        // Check if we're in the initial countdown phase
+        const startCountdownElement = document.getElementById('start-countdown');
+        if (startCountdownElement && document.querySelector('.player-placeholder')) {
+            console.log("Resuming initial countdown");
+            
+            // Extract the current countdown value
+            let currentCountValue = parseInt(startCountdownElement.textContent) || 0;
+            console.log("Current countdown value:", currentCountValue);
+            
+            // Create a recursive countdown function that properly decrements
+            const continueCountdown = () => {
+                // If workout is paused again, don't continue
+                if (workoutPaused) {
+                    console.log("Countdown paused at", currentCountValue);
+                    return;
+                }
+                
+                // Announce current number
+                speakText(currentCountValue.toString());
+                
+                // Update the display
+                startCountdownElement.textContent = currentCountValue;
+                
+                // Check if we should continue or finish
+                if (currentCountValue > 1) {
+                    // Decrement the counter for the next iteration
+                    currentCountValue--;
+                    
+                    // Schedule the next number announcement
+                    countdownTimeout = setTimeout(() => {
+                        continueCountdown();
+                    }, 1500);
+                } else {
+                    // Countdown finished after "1", start the exercise without announcing "0"
+                    countdownTimeout = setTimeout(() => {
+                        playVideoForExercise(0, true);
+                    }, 1000);
+                }
+            };
+            
+            // Start the continued countdown
+            continueCountdown();
+            return;
+        }
+        
         // Resume appropriate timer based on workout state
         if (window.exerciseTimer === null && window.restTimer === null) {
             // If both timers are null, determine which one to restart
             if (document.querySelector('.rest-placeholder')) {
                 // We're in a rest period
+                console.log("Resuming rest timer after pause");
                 resumeRestTimer();
             } else {
                 // We're in an exercise
+                console.log("Resuming exercise timer after pause");
                 resumeExerciseTimer();
             }
         } else {
@@ -707,12 +795,19 @@ function pauseWorkout() {
         }
     } else {
         // Pausing
+        console.log("Pausing workout");
         workoutPaused = true;
         pauseButton.textContent = 'Resume';
         
         // Cancel any speech and announce pause
         cancelSpeech();
         speakText("Workout paused");
+        
+        // If we're in the initial countdown, clear the timeout
+        if (countdownTimeout) {
+            console.log("Pausing initial countdown");
+            clearTimeout(countdownTimeout);
+        }
         
         // Pause YouTube player
         if (window.player && typeof window.player.pauseVideo === 'function') {
@@ -803,6 +898,13 @@ function resumeRestTimer() {
     timerElement.classList.add('show');
     timerValueElement.textContent = formatTime(currentRestTimeRemaining);
     
+    // Ensure control buttons are visible
+    document.getElementById('control-buttons').classList.add('show');
+    
+    // Show pause button, hide checkmark button during rest
+    document.getElementById('pause-button').classList.remove('hide');
+    document.getElementById('checkmark-button').classList.add('hide');
+    
     // Update rest countdown in UI
     const restCountdown = document.getElementById('rest-countdown');
     if (restCountdown) {
@@ -882,6 +984,12 @@ function endWorkout() {
     savedRestTimeRemaining = 0;
     currentExerciseTimeRemaining = 0;
     currentRestTimeRemaining = 0;
+    
+    // Clear any countdown timeout
+    if (countdownTimeout) {
+        clearTimeout(countdownTimeout);
+        countdownTimeout = null;
+    }
     
     // Clear any looping timer
     if (window.currentLoopTimer) {
@@ -996,6 +1104,10 @@ function startWorkout() {
         document.getElementById('auto-play-button').classList.add('hide');
         document.getElementById('control-buttons').classList.add('show');
         
+        // Show pause button, hide checkmark button during countdown
+        document.getElementById('pause-button').classList.remove('hide');
+        document.getElementById('checkmark-button').classList.add('hide');
+        
         // Reset any existing timers
         if (window.exerciseTimer) {
             clearInterval(window.exerciseTimer);
@@ -1005,6 +1117,12 @@ function startWorkout() {
         if (window.restTimer) {
             clearInterval(window.restTimer);
             window.restTimer = null;
+        }
+        
+        // Clear any existing countdown timeout
+        if (countdownTimeout) {
+            clearTimeout(countdownTimeout);
+            countdownTimeout = null;
         }
         
         // Announce workout beginning with countdown
@@ -1023,27 +1141,41 @@ function startWorkout() {
         
         // Create a countdown before starting the first exercise with longer duration
         let countdownValue = 5; // Start from 5 instead of 3
+        
+        // Update the countdown display initially
+        const countdownElement = document.getElementById('start-countdown');
+        if (countdownElement) {
+            countdownElement.textContent = countdownValue;
+        }
+        
         const announceNextNumber = () => {
-            // Update visual countdown
-            const countdownElement = document.getElementById('start-countdown');
+            // If workout is paused, don't continue the countdown
+            if (workoutPaused) {
+                console.log("Countdown paused at", countdownValue);
+                return;
+            }
+            
+            // Announce current number
+            speakText(countdownValue.toString());
+            
+            // Update the countdown display
             if (countdownElement) {
                 countdownElement.textContent = countdownValue;
             }
             
-            // Announce countdown with proper cancellation of previous speech
-            if (countdownValue > 0) {
-                // Cancel any previous speech before announcing the countdown
-                speakText(countdownValue.toString());
-                
-                // Decrement counter after announcement
+            // Check if we should continue counting down or start the workout
+            if (countdownValue > 1) {
+                // Decrement counter for next iteration
                 countdownValue--;
                 
                 // Schedule next announcement with sufficient delay for speech to complete
                 // Wait 1.5 seconds between announcements to ensure speech completes
-                setTimeout(announceNextNumber, 1500);
+                countdownTimeout = setTimeout(announceNextNumber, 1500);
             } else {
-                // Start first exercise after countdown completes
-                playVideoForExercise(0, true);
+                // Start first exercise after announcing "1" - no need to announce "0"
+                countdownTimeout = setTimeout(() => {
+                    playVideoForExercise(0, true);
+                }, 1000);
             }
         };
         
@@ -1148,6 +1280,13 @@ function handleVisibilityChange(forceHidden) {
         // Handle speech and recognition via the audio commands module
         handleSpeechVisibilityChange(true);
         
+        // Clear any countdown timeout when navigating away
+        if (countdownTimeout) {
+            clearTimeout(countdownTimeout);
+            countdownTimeout = null;
+            console.log('Cleared countdown timeout due to page visibility change');
+        }
+        
         // Pause workout if it's active and not already paused
         if (workoutActive && !workoutPaused) {
             // Don't announce the pause since we're in background
@@ -1196,6 +1335,19 @@ window.skipExercise = skipExercise;
 window.completeExercise = completeExercise;
 window.setupYouTubePlayer = setupYouTubePlayer;
 window.toggleSpeechRecognition = function() {
+    // Import the isMobileDevice function from audioCommands.js
+    const { isMobileDevice } = window.audioCommands || {};
+    
+    // Check if this is a mobile device - if so, don't allow toggling
+    if (isMobileDevice && isMobileDevice()) {
+        console.log("Mobile device detected - voice commands not available");
+        // Use the imported showNotification if available
+        if (window.audioCommands && window.audioCommands.showNotification) {
+            window.audioCommands.showNotification('Voice commands are not available on mobile devices', 'info');
+        }
+        return;
+    }
+    
     // Create a fresh workout callbacks object with current state
     const workoutCallbacks = {
         // Use getter functions to ensure we always have the current values

@@ -226,6 +226,12 @@ function announceCurrentExercise(exercises, index) {
  * Setup speech recognition for voice commands
  */
 function setupSpeechRecognition(workoutCallbacks) {
+    // Don't set up speech recognition on mobile devices
+    if (isMobileDevice()) {
+        console.log("Mobile device detected - speech recognition disabled");
+        return null;
+    }
+    
     if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
         console.warn("Speech recognition not supported in this browser");
         showNotification("Speech recognition not supported in this browser", "error");
@@ -290,9 +296,11 @@ function setupSpeechRecognition(workoutCallbacks) {
             checkMicrophoneStatus();
         } else if (event.error === 'audio-capture') {
             showNotification("No microphone detected - enable your microphone", "error");
+            // Only show instructions popup on desktop
             showMicrophoneInstructions();
         } else if (event.error === 'not-allowed') {
             showNotification("Microphone access denied - check permissions", "error");
+            // Only show instructions popup on desktop
             showMicrophoneInstructions();
         } else if (event.error === 'network') {
             showNotification("Network error with speech recognition", "error");
@@ -412,6 +420,12 @@ function showNotification(message, type = 'info') {
  * Try to access the microphone to ensure permissions are granted
  */
 function tryAccessMicrophone() {
+    // Don't try to access microphone on mobile devices
+    if (isMobileDevice()) {
+        console.log("Mobile device detected - skipping microphone access");
+        return;
+    }
+    
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({ audio: true })
             .then(function(stream) {
@@ -427,6 +441,8 @@ function tryAccessMicrophone() {
             .catch(function(err) {
                 console.error("Error accessing microphone:", err);
                 showNotification("Microphone access error - check browser settings", "error");
+                
+                // Only show the detailed instructions popup on desktop devices
                 showMicrophoneInstructions();
             });
     } else {
@@ -548,10 +564,37 @@ function stopAudioLevelVisualization() {
 }
 
 /**
+ * Check if the current device is a mobile device
+ * Returns true for phones, false for desktops/laptops
+ */
+function isMobileDevice() {
+    // Check for common mobile user agent patterns
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    
+    // Check if viewport width is phone-sized (matches our mobile media query)
+    const isMobileWidth = window.innerWidth <= 480;
+    
+    // Check for mobile device patterns in user agent
+    const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+    const isMobileUserAgent = mobileRegex.test(userAgent);
+    
+    // Return true if either condition is met
+    return isMobileUserAgent || isMobileWidth;
+}
+
+/**
  * Show instructions for enabling microphone access
+ * Only shows on desktop devices, not on mobile
  */
 function showMicrophoneInstructions() {
-    // Create and show a modal with instructions
+    // Check if this is a mobile device - if so, just show a notification instead of modal
+    if (isMobileDevice()) {
+        console.log("Mobile device detected, showing notification instead of microphone instructions modal");
+        showNotification("Microphone access required. Please check browser settings.", "error");
+        return;
+    }
+    
+    // Create and show a modal with instructions (desktop only)
     const modal = document.createElement('div');
     modal.className = 'mic-instructions-modal';
     modal.innerHTML = `
@@ -661,6 +704,12 @@ function clearInterimTranscript() {
  * Add voice command indicator to UI
  */
 function addVoiceCommandIndicator() {
+    // Don't add voice UI on mobile devices
+    if (isMobileDevice()) {
+        console.log("Mobile device detected - voice UI not added");
+        return;
+    }
+    
     const container = document.querySelector('.container');
     
     // Create the voice indicator if it doesn't exist
@@ -782,6 +831,13 @@ function addVoiceCommandIndicator() {
  * Test microphone functionality
  */
 function testMicrophone() {
+    // Check if this is a mobile device - if so, don't allow microphone testing
+    if (isMobileDevice()) {
+        console.log("Mobile device detected - microphone testing not available");
+        showNotification('Microphone testing is not available on mobile devices', 'info');
+        return;
+    }
+    
     // First check if we have microphone access
     if (!window.microphoneStream) {
         tryAccessMicrophone();
@@ -946,6 +1002,13 @@ function updateVoiceIcon(active) {
  * Toggle speech recognition on/off
  */
 function toggleSpeechRecognition(workoutCallbacks) {
+    // Check if this is a mobile device - if so, don't allow toggling
+    if (isMobileDevice()) {
+        console.log("Mobile device detected - voice commands not available");
+        showNotification('Voice commands are not available on mobile devices', 'info');
+        return;
+    }
+    
     if (speechRecognitionActive) {
         // Stop recognition
         if (recognitionInstance) {
@@ -978,6 +1041,12 @@ function toggleSpeechRecognition(workoutCallbacks) {
  * Initialize speech recognition
  */
 function initSpeechRecognition(workoutCallbacks) {
+    // Check if this is a mobile device - if so, don't initialize microphone functionality
+    if (isMobileDevice()) {
+        console.log("Mobile device detected - voice commands disabled");
+        return null;
+    }
+    
     // Add an event listener to announce exercises when they change
     if (workoutCallbacks.onExerciseChange) {
         const originalOnExerciseChange = workoutCallbacks.onExerciseChange;
@@ -1002,5 +1071,6 @@ export {
     initSpeechRecognition,
     toggleSpeechRecognition,
     announceCurrentExercise,
-    handleSpeechVisibilityChange
+    handleSpeechVisibilityChange,
+    isMobileDevice
 }; 

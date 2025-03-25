@@ -540,6 +540,21 @@ button:hover {
     color: white;
 }
 
+/* Responsive styles for the microphone modal */
+@media (min-width: 481px) and (max-width: 768px) {
+    .mic-instructions-content {
+        max-width: 400px;
+        padding: 15px;
+    }
+}
+
+/* Error notification styling */
+.notification-error {
+    background-color: #dc3545; 
+    color: white;
+    border-left: 4px solid #a71d2a;
+}
+
 /* Voice Recognition Transcript Styles */
 .interim-transcript {
     position: fixed;
@@ -1154,5 +1169,12 @@ button:hover {
     .play-button img {
         width: 18px;
         height: 18px;
+    }
+}
+
+/* Hide voice control UI completely on mobile */
+@media (max-width: 480px) {
+    #voice-indicator {
+        display: none !important;
     }
 } 
