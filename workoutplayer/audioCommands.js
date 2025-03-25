@@ -4,6 +4,42 @@
 let speechRecognitionActive = false;
 let recognitionInstance = null;
 
+// Add a variable to store available voices
+let availableVoices = [];
+
+// Initialize voices when they become available
+function initVoices() {
+    availableVoices = window.speechSynthesis.getVoices();
+    console.log(`Loaded ${availableVoices.length} speech synthesis voices`);
+    
+    // Log all available US English voices for debugging
+    const usVoices = availableVoices.filter(voice => voice.lang === 'en-US');
+    if (usVoices.length > 0) {
+        console.log('Available US English voices:');
+        usVoices.forEach(voice => {
+            console.log(`- ${voice.name} (${voice.localService ? 'local' : 'remote'})`);
+        });
+    } else {
+        console.log('No US English voices found, available voices:');
+        availableVoices.slice(0, 5).forEach(voice => {
+            console.log(`- ${voice.name} (${voice.lang}, ${voice.localService ? 'local' : 'remote'})`);
+        });
+        if (availableVoices.length > 5) {
+            console.log(`... and ${availableVoices.length - 5} more`);
+        }
+    }
+}
+
+// Call initVoices() once when the list of voices becomes available
+if (window.speechSynthesis) {
+    // Chrome loads voices asynchronously
+    if (window.speechSynthesis.onvoiceschanged !== undefined) {
+        window.speechSynthesis.onvoiceschanged = initVoices;
+    }
+    // Try to get voices right away (works in Firefox)
+    initVoices();
+}
+
 /**
  * Speech synthesis for voice commands
  */
@@ -17,7 +53,51 @@ const speakText = (text) => {
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.rate = 1.0;
             utterance.pitch = 1.0;
-            utterance.voice = window.speechSynthesis.getVoices()[1];
+            
+            // Set language explicitly to US English
+            utterance.lang = 'en-US';
+            
+            // Use the stored voices list
+            if (availableVoices.length > 0) {
+                let selectedVoice = null;
+                
+                // Priority 1: Premium US English voices (often sound better)
+                const premiumVoices = [
+                    'Google US English', 'Microsoft Zira - English (United States)',
+                    'Microsoft David - English (United States)', 'Google UK English Female',
+                    'Google UK English Male'
+                ];
+                
+                for (const voiceName of premiumVoices) {
+                    const voice = availableVoices.find(v => v.name === voiceName);
+                    if (voice) {
+                        selectedVoice = voice;
+                        break;
+                    }
+                }
+                
+                // Priority 2: Any remote/premium US English voice
+                if (!selectedVoice) {
+                    selectedVoice = availableVoices.find(voice => 
+                        voice.lang === 'en-US' && !voice.localService);
+                }
+                
+                // Priority 3: Any US English voice
+                if (!selectedVoice) {
+                    selectedVoice = availableVoices.find(voice => voice.lang === 'en-US');
+                }
+                
+                // Priority 4: Any English voice
+                if (!selectedVoice) {
+                    selectedVoice = availableVoices.find(voice => voice.lang.startsWith('en'));
+                }
+                
+                // Use the selected voice
+                if (selectedVoice) {
+                    utterance.voice = selectedVoice;
+                    console.log(`Using voice: ${selectedVoice.name} (${selectedVoice.lang})`);
+                }
+            }
             
             // Store the utterance in window object to keep track of speaking state
             window.currentUtterance = utterance;
