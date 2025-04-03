@@ -147,55 +147,105 @@ function playVideo(videoPath, autoStart = false) {
         window.player = null;
     }
     
+    // Clean up any existing video player
+    if (window.videoPlayer) {
+        try {
+            // For video element, pause it
+            if (window.videoPlayer.pause) {
+                window.videoPlayer.pause();
+            }
+            
+            // Remove the element
+            const oldElement = window.videoPlayer;
+            if (oldElement.parentNode) {
+                oldElement.parentNode.removeChild(oldElement);
+            }
+            window.videoPlayer = null;
+        } catch (e) {
+            console.error("Error cleaning up video/image player:", e);
+        }
+    }
+    
+    // Ensure we have a video-wrapper
+    let videoWrapper = videoContainer.querySelector('.video-wrapper');
+    if (!videoWrapper) {
+        videoContainer.innerHTML = `
+            <div class="video-wrapper">
+                <!-- Placeholder to maintain size while loading -->
+            </div>
+        `;
+        videoWrapper = videoContainer.querySelector('.video-wrapper');
+    }
+    
     // Check if the path is a GIF file
     if (videoPath.toLowerCase().endsWith('.gif')) {
-        // Display the GIF in an image tag
-        videoContainer.innerHTML = `
-            <div class="video-wrapper">
-                <img id="exercise-video" class="exercise-video" src="${videoPath}" alt="Exercise demonstration">
-            </div>
-        `;
-        
-        // Store reference to the image element
-        window.videoPlayer = document.getElementById('exercise-video');
-        
-        // No need for event listeners or controls for GIFs as they auto-play
-    } else {
-        // For video files, create HTML5 video player
-        videoContainer.innerHTML = `
-            <div class="video-wrapper">
-                <video id="exercise-video" class="exercise-video" ${autoStart ? 'autoplay' : ''} loop controls>
-                    <source src="${videoPath}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        `;
-        
-        // Get reference to the video element
-        window.videoPlayer = document.getElementById('exercise-video');
-        
-        // Add event listeners for the video
-        if (window.videoPlayer) {
-            // Play the video when it's loaded if autoStart is true
-            window.videoPlayer.addEventListener('loadedmetadata', () => {
-                if (autoStart) {
-                    window.videoPlayer.play().catch(error => {
-                        console.error('Error autostarting video:', error);
-                        showNotification('Video autoplay failed. Click play to start.', 'warning');
-                    });
-                }
-            });
+        if (videoWrapper) {
+            // Create a new image element
+            const img = new Image();
             
-            // Error handling
-            window.videoPlayer.addEventListener('error', () => {
-                console.error('Error loading video:', videoPath);
-                videoContainer.innerHTML = `
+            // Set up load event handler
+            img.onload = () => {
+                // Once loaded, insert into the wrapper (but keep the wrapper itself)
+                videoWrapper.innerHTML = ''; // Clear any previous content
+                img.id = 'exercise-video';
+                img.className = 'exercise-video';
+                img.alt = 'Exercise demonstration';
+                videoWrapper.appendChild(img);
+                
+                // Store reference to the image element
+                window.videoPlayer = img;
+            };
+            
+            // Set up error handler
+            img.onerror = () => {
+                console.error('Error loading GIF:', videoPath);
+                videoWrapper.innerHTML = `
                     <div class="video-error">
                         <p>Error: Could not load file.</p>
                         <p>Path: ${videoPath}</p>
                     </div>
                 `;
-            });
+            };
+            
+            // Start loading the image
+            img.src = videoPath;
+        }
+    } else {
+        // For video files, create HTML5 video player
+        if (videoWrapper) {
+            videoWrapper.innerHTML = `
+                <video id="exercise-video" class="exercise-video" ${autoStart ? 'autoplay' : ''} loop controls>
+                    <source src="${videoPath}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            `;
+            
+            // Get reference to the video element
+            window.videoPlayer = document.getElementById('exercise-video');
+            
+            // Add event listeners for the video
+            if (window.videoPlayer) {
+                // Play the video when it's loaded if autoStart is true
+                window.videoPlayer.addEventListener('loadedmetadata', () => {
+                    if (autoStart) {
+                        window.videoPlayer.play().catch(error => {
+                            console.error('Error autostarting video:', error);
+                            showNotification('Video autoplay failed. Click play to start.', 'warning');
+                        });
+                    }
+                });
+                
+                // Error handling
+                window.videoPlayer.addEventListener('error', () => {
+                    console.error('Error loading video:', videoPath);
+                    videoWrapper.innerHTML = `
+                        <div class="video-error">
+                            <p>Error: Could not load file.</p>
+                            <p>Path: ${videoPath}</p>
+                        </div>
+                    `;
+                });
+            }
         }
     }
 }
@@ -417,8 +467,9 @@ function startRestPeriod() {
             // Remove event listeners by cloning and replacing the element
             const oldElement = window.videoPlayer;
             if (oldElement.parentNode) {
-                const clone = oldElement.cloneNode(false);
-                oldElement.parentNode.replaceChild(clone, oldElement);
+                // Instead of replacing with clone, just remove the element
+                // This keeps the wrapper intact
+                oldElement.parentNode.removeChild(oldElement);
             }
             window.videoPlayer = null;
             console.log("Successfully cleaned up video/image player");
@@ -427,16 +478,30 @@ function startRestPeriod() {
         }
     }
     
-    // Immediately replace the video container contents
-    // to prevent any error messages from showing
-    videoContainer.innerHTML = `
-        <div class="rest-placeholder">
-            <div>
-                <h2>Rest Time</h2>
-                <p>Next exercise in <span id="rest-countdown">00:00</span></p>
+    // Keep the video-wrapper for consistent dimensions, but update its content
+    const videoWrapper = videoContainer.querySelector('.video-wrapper');
+    if (videoWrapper) {
+        videoWrapper.innerHTML = `
+            <div class="rest-placeholder">
+                <div>
+                    <h2>Rest Time</h2>
+                    <p>Next exercise in <span id="rest-countdown">00:00</span></p>
+                </div>
             </div>
-        </div>
-    `;
+        `;
+    } else {
+        // If no wrapper exists, create it with the rest placeholder
+        videoContainer.innerHTML = `
+            <div class="video-wrapper">
+                <div class="rest-placeholder">
+                    <div>
+                        <h2>Rest Time</h2>
+                        <p>Next exercise in <span id="rest-countdown">00:00</span></p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
     
     // Get the rest period duration
     let restDuration = 10; // Default to 10 seconds
@@ -581,51 +646,52 @@ function startRestPeriod() {
  */
 function skipExercise() {
     // Add detailed logging to debug the issue
-    console.log(`skipExercise called. Current state: workoutPaused=${workoutPaused}, workoutActive=${workoutActive}, currentExerciseIndex=${currentExerciseIndex}`);
+    console.log(`Skipping exercise: current index=${currentExerciseIndex}`);
+    console.log(`Workout active: ${workoutActive}, Workout paused: ${workoutPaused}`);
     
-    // Cancel any active speech synthesis
-    cancelSpeech();
-    
-    // Clear any active timers
-    if (window.exerciseTimer) {
-        clearInterval(window.exerciseTimer);
-        window.exerciseTimer = null;
-        console.log("Cleared exercise timer");
+    // Ensure workout is active
+    if (!workoutActive) {
+        console.log("Cannot skip: workout not active");
+        return;
     }
     
-    if (window.restTimer) {
-        clearInterval(window.restTimer);
-        window.restTimer = null;
-        console.log("Cleared rest timer");
-    }
-    
-    // Clear any countdown timeout
-    if (countdownTimeout) {
-        clearTimeout(countdownTimeout);
-        countdownTimeout = null;
-        console.log("Cleared countdown timeout");
-    }
-    
-    // Reset saved timer values
-    savedExerciseTimeRemaining = 0;
-    savedRestTimeRemaining = 0;
-    currentExerciseTimeRemaining = 0;
-    currentRestTimeRemaining = 0;
-    
-    // IMPORTANT: Reset the paused state
-    // This needs to happen before playing the next exercise
+    // Always ensure workout is unpaused when skipping
     if (workoutPaused) {
-        console.log("Workout was paused, resetting state to unpaused");
+        console.log("Resetting paused state while skipping");
         workoutPaused = false;
         
-        // Update the pause button text explicitly
+        // Update the pause button text
         const pauseButton = document.getElementById('pause-button');
         if (pauseButton) {
             pauseButton.textContent = 'Pause';
             console.log("Updated pause button text to 'Pause'");
         } else {
-            console.log("WARNING: Could not find pause button to update text");
+            console.log("Could not find pause button to update text");
         }
+    }
+    
+    // Cancel any active speech synthesis
+    cancelSpeech();
+    
+    // Clear any active exercise timer
+    if (window.exerciseTimer) {
+        clearInterval(window.exerciseTimer);
+        window.exerciseTimer = null;
+        console.log("Cleared exercise timer");
+    }
+
+    // Clear any active speech timeout
+    if (window.speechTimeout) {
+        clearTimeout(window.speechTimeout);
+        window.speechTimeout = null;
+        console.log("Cleared speech timeout");
+    }
+    
+    // Clear any active countdown timeout
+    if (window.countdownTimeout) {
+        clearTimeout(window.countdownTimeout);
+        window.countdownTimeout = null;
+        console.log("Cleared countdown timeout");
     }
     
     // Clean up the video/image player to prevent errors
@@ -636,11 +702,12 @@ function skipExercise() {
                 window.videoPlayer.pause();
             }
             
-            // Remove event listeners by cloning and replacing the element
+            // Remove the element
             const oldElement = window.videoPlayer;
             if (oldElement.parentNode) {
-                const clone = oldElement.cloneNode(false);
-                oldElement.parentNode.replaceChild(clone, oldElement);
+                // Instead of replacing with clone, just remove the element
+                // This keeps the wrapper intact
+                oldElement.parentNode.removeChild(oldElement);
             }
             window.videoPlayer = null;
             console.log("Successfully cleaned up video/image player");
@@ -652,36 +719,11 @@ function skipExercise() {
     // Check if there are more exercises to play
     if (currentExerciseIndex < workoutExercises.length - 1) {
         console.log(`Moving to next exercise: ${currentExerciseIndex + 1}`);
-        
-        // Store the next exercise index
-        const nextExerciseIndex = currentExerciseIndex + 1;
-        
-        // IMPORTANT: Force the next exercise to play in unpaused state
-        // by directly updating state variables before calling playVideoForExercise
-        workoutPaused = false;
-        
-        // Play the next exercise (announcement will be made in playVideoForExercise)
-        playVideoForExercise(nextExerciseIndex, workoutActive);
-        
-        // Double-check after playVideoForExercise that we're still unpaused
-        if (workoutPaused) {
-            console.log("WARNING: workoutPaused was set to true after playVideoForExercise - forcing to false");
-            workoutPaused = false;
-            
-            // Update the pause button text one more time to be certain
-            const pauseButton = document.getElementById('pause-button');
-            if (pauseButton) {
-                pauseButton.textContent = 'Pause';
-                console.log("Re-updated pause button text to 'Pause'");
-            }
-        }
+        // Skip rest period and go directly to next exercise
+        playVideoForExercise(currentExerciseIndex + 1, true);
     } else {
-        // This was the last exercise, end the workout
-        console.log("This was the last exercise, ending workout");
-        
-        // Ensure any previous speech is cancelled
-        cancelSpeech();
-        speakText('Workout complete!');
+        console.log("Reached end of workout, ending workout");
+        // End workout if we're on the last exercise
         endWorkout();
     }
 }
@@ -691,49 +733,52 @@ function skipExercise() {
  */
 function completeExercise() {
     // Add detailed logging to debug the issue
-    console.log(`completeExercise called. Current state: workoutPaused=${workoutPaused}, workoutActive=${workoutActive}, currentExerciseIndex=${currentExerciseIndex}`);
+    console.log(`Completing exercise: current index=${currentExerciseIndex}`);
+    console.log(`Workout active: ${workoutActive}, Workout paused: ${workoutPaused}`);
+    
+    // Ensure workout is active
+    if (!workoutActive) {
+        console.log("Cannot complete: workout not active");
+        return;
+    }
+    
+    // Always ensure workout is unpaused when completing
+    if (workoutPaused) {
+        console.log("Resetting paused state while completing exercise");
+        workoutPaused = false;
+        
+        // Update the pause button text
+        const pauseButton = document.getElementById('pause-button');
+        if (pauseButton) {
+            pauseButton.textContent = 'Pause';
+            console.log("Updated pause button text to 'Pause'");
+        } else {
+            console.log("Could not find pause button to update text");
+        }
+    }
     
     // Cancel any active speech synthesis
     cancelSpeech();
     
-    // Clear any active timers first
+    // Clear any active exercise timer
     if (window.exerciseTimer) {
         clearInterval(window.exerciseTimer);
         window.exerciseTimer = null;
         console.log("Cleared exercise timer");
     }
     
-    if (window.restTimer) {
-        clearInterval(window.restTimer);
-        window.restTimer = null;
-        console.log("Cleared rest timer");
+    // Clear any active speech timeout
+    if (window.speechTimeout) {
+        clearTimeout(window.speechTimeout);
+        window.speechTimeout = null;
+        console.log("Cleared speech timeout");
     }
     
-    // Clear any countdown timeout
-    if (countdownTimeout) {
-        clearTimeout(countdownTimeout);
-        countdownTimeout = null;
+    // Clear any active countdown timeout
+    if (window.countdownTimeout) {
+        clearTimeout(window.countdownTimeout);
+        window.countdownTimeout = null;
         console.log("Cleared countdown timeout");
-    }
-    
-    // Reset saved timer values
-    savedExerciseTimeRemaining = 0;
-    currentExerciseTimeRemaining = 0;
-    
-    // IMPORTANT: Reset the paused state
-    // This needs to happen before starting the rest period or next exercise
-    if (workoutPaused) {
-        console.log("Workout was paused, resetting state to unpaused");
-        workoutPaused = false;
-        
-        // Update the pause button text explicitly
-        const pauseButton = document.getElementById('pause-button');
-        if (pauseButton) {
-            pauseButton.textContent = 'Pause';
-            console.log("Updated pause button text to 'Pause'");
-        } else {
-            console.log("WARNING: Could not find pause button to update text");
-        }
     }
     
     // Clean up the video/image player to prevent errors
@@ -744,11 +789,12 @@ function completeExercise() {
                 window.videoPlayer.pause();
             }
             
-            // Remove event listeners by cloning and replacing the element
+            // Remove the element
             const oldElement = window.videoPlayer;
             if (oldElement.parentNode) {
-                const clone = oldElement.cloneNode(false);
-                oldElement.parentNode.replaceChild(clone, oldElement);
+                // Instead of replacing with clone, just remove the element
+                // This keeps the wrapper intact
+                oldElement.parentNode.removeChild(oldElement);
             }
             window.videoPlayer = null;
             console.log("Successfully cleaned up video/image player");
@@ -760,37 +806,22 @@ function completeExercise() {
     // Reset timer display immediately
     const timerElement = document.getElementById('timer');
     timerElement.classList.add('hide');
-    timerElement.classList.remove('show'); // Remove the 'show' class to hide the timer
+    timerElement.classList.remove('show');
     
-    // Only start rest period if workout is active
-    if (workoutActive) {
-        // Force unpaused state again to be safe
-        workoutPaused = false;
-        
-        // Check if this was the last exercise
-        if (currentExerciseIndex >= workoutExercises.length - 1) {
-            // This was the last exercise, end the workout
-            console.log("This was the last exercise, ending workout");
-            speakText('Workout complete!');
-            endWorkout();
-        } else {
-            // Start rest period before next exercise
-            console.log("Starting rest period for next exercise");
+    // Check if there are more exercises to play
+    if (currentExerciseIndex < workoutExercises.length - 1) {
+        console.log(`Moving to next exercise: ${currentExerciseIndex + 1}`);
+        // Start rest period before next exercise
+        if (isRestEnabled()) {
             startRestPeriod();
-            
-            // Double-check paused state after startRestPeriod
-            if (workoutPaused) {
-                console.log("WARNING: workoutPaused was set to true after startRestPeriod - forcing to false");
-                workoutPaused = false;
-                
-                // Update the pause button text one more time to be certain
-                const pauseButton = document.getElementById('pause-button');
-                if (pauseButton) {
-                    pauseButton.textContent = 'Pause';
-                    console.log("Re-updated pause button text to 'Pause'");
-                }
-            }
+        } else {
+            // Skip rest period and go directly to next exercise
+            playVideoForExercise(currentExerciseIndex + 1, true);
         }
+    } else {
+        console.log("Reached end of workout, ending workout");
+        // End workout if we're on the last exercise
+        endWorkout();
     }
 }
 
@@ -1087,11 +1118,10 @@ function endWorkout() {
                 window.videoPlayer.pause();
             }
             
-            // Remove event listeners by cloning and replacing the element
+            // Remove the element without replacing it, to keep the wrapper intact
             const oldElement = window.videoPlayer;
             if (oldElement.parentNode) {
-                const clone = oldElement.cloneNode(false);
-                oldElement.parentNode.replaceChild(clone, oldElement);
+                oldElement.parentNode.removeChild(oldElement);
             }
             window.videoPlayer = null;
         } catch (e) {
@@ -1133,14 +1163,31 @@ function endWorkout() {
     
     // Show completion placeholder in video container
     const videoContainer = document.getElementById('video-container');
-    videoContainer.innerHTML = `
-        <div class="player-placeholder">
-            <div>
-                <h2>WORKOUT COMPLETE!</h2>
-                <p>Great job!</p>
+    const videoWrapper = videoContainer.querySelector('.video-wrapper');
+    
+    if (videoWrapper) {
+        // Keep the wrapper, just update its content
+        videoWrapper.innerHTML = `
+            <div class="player-placeholder">
+                <div>
+                    <h2>WORKOUT COMPLETE!</h2>
+                    <p>Great job!</p>
+                </div>
             </div>
-        </div>
-    `;
+        `;
+    } else {
+        // If no wrapper exists, create a new one
+        videoContainer.innerHTML = `
+            <div class="video-wrapper">
+                <div class="player-placeholder">
+                    <div>
+                        <h2>WORKOUT COMPLETE!</h2>
+                        <p>Great job!</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
 }
 
 /**
@@ -1159,9 +1206,6 @@ function updateCurrentExerciseHighlight(index) {
     const currentElement = document.getElementById(`exercise-${index}`);
     if (currentElement) {
         currentElement.classList.add('current-exercise');
-        
-        // Scroll to the current exercise
-        currentElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 }
 
@@ -1202,19 +1246,54 @@ function startWorkout() {
             countdownTimeout = null;
         }
         
+        // Clean up any existing video player
+        if (window.videoPlayer) {
+            try {
+                // Pause video if it's a video element
+                if (window.videoPlayer.pause) {
+                    window.videoPlayer.pause();
+                }
+                
+                // Remove the element without replacing
+                if (window.videoPlayer.parentNode) {
+                    window.videoPlayer.parentNode.removeChild(window.videoPlayer);
+                }
+                window.videoPlayer = null;
+            } catch (e) {
+                console.error("Error cleaning up existing video player:", e);
+            }
+        }
+        
         // Announce workout beginning with countdown
         speakText("Starting workout");
         
         // Show countdown in the video container
         const videoContainer = document.getElementById('video-container');
-        videoContainer.innerHTML = `
-            <div class="player-placeholder">
-                <div>
-                    <h2>GET READY!</h2>
-                    <div id="start-countdown" class="rest-countdown">5</div>
+        const videoWrapper = videoContainer.querySelector('.video-wrapper');
+        
+        if (videoWrapper) {
+            // Keep the wrapper, just update its content
+            videoWrapper.innerHTML = `
+                <div class="player-placeholder">
+                    <div>
+                        <h2>GET READY!</h2>
+                        <div id="start-countdown" class="rest-countdown">5</div>
+                    </div>
                 </div>
-            </div>
-        `;
+            `;
+        } else {
+            // If no wrapper exists, create a new one
+            videoContainer.innerHTML = `
+                <div class="video-wrapper">
+                    <div class="player-placeholder">
+                        <div>
+                            <h2>GET READY!</h2>
+                            <div id="start-countdown" class="rest-countdown">5</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
         
         // Create a countdown before starting the first exercise with longer duration
         let countdownValue = 5; // Start from 5 instead of 3
@@ -1319,6 +1398,24 @@ function init() {
 }
 
 /**
+ * Check if rest periods are enabled for the workout
+ * @returns {boolean} True if rest periods are enabled
+ */
+function isRestEnabled() {
+    // Get the rest duration element
+    const restDurationElement = document.getElementById('rest-duration');
+    
+    // If the element exists and has a positive value, rest is enabled
+    if (restDurationElement) {
+        const restDuration = parseInt(restDurationElement.value) || 0;
+        return restDuration > 0;
+    }
+    
+    // Default to enabled if no element is found
+    return true;
+}
+
+/**
  * Formats a time in seconds to minutes:seconds display (00:00)
  */
 function formatTime(seconds) {
@@ -1404,6 +1501,7 @@ window.startWorkout = startWorkout;
 window.pauseWorkout = pauseWorkout;
 window.skipExercise = skipExercise;
 window.completeExercise = completeExercise;
+window.isRestEnabled = isRestEnabled;
 window.toggleSpeechRecognition = function() {
     // Import the isMobileDevice function from audioCommands.js
     const { isMobileDevice } = window.audioCommands || {};
