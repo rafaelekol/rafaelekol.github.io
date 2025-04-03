@@ -15,7 +15,6 @@ import {
 // Global variables for workout state
 let workoutExercises = [];
 let currentExerciseIndex = -1;
-let youtubePlayer = null;
 let workoutActive = false;
 let workoutPaused = false;
 
@@ -131,18 +130,10 @@ function displayWorkout(exercises) {
 }
 
 /**
- * Play YouTube video for an exercise
+ * Play GIF animation or video for an exercise
  */
-function playVideo(youtubeLink, startSeconds, endSeconds, autoStart = false) {
+function playVideo(videoPath, autoStart = false) {
     const videoContainer = document.getElementById('video-container');
-    
-    // Extract YouTube video ID
-    const videoId = extractYouTubeVideoId(youtubeLink);
-    
-    if (!videoId) {
-        videoContainer.innerHTML = '<div class="youtube-error"><p>Error: Invalid YouTube link</p></div>';
-        return;
-    }
     
     // Clear any existing loop timer
     if (window.currentLoopTimer) {
@@ -150,123 +141,85 @@ function playVideo(youtubeLink, startSeconds, endSeconds, autoStart = false) {
         window.currentLoopTimer = null;
     }
     
-    // Calculate video duration
-    const videoDuration = endSeconds - startSeconds;
-    
-    // Create YouTube player with time parameters and API
-    const embedUrl = `https://www.youtube.com/embed/${videoId}?start=${startSeconds}&autoplay=1&enablejsapi=1&mute=1&controls=1&rel=0`;
-    
-    videoContainer.innerHTML = `
-        <div class="youtube-wrapper">
-            <div class="youtube-container">
-                <iframe 
-                    id="youtube-player"
-                    class="youtube-iframe"
-                    src="${embedUrl}" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-    `;
-    
-    // Create a script to load the YouTube API if not already loaded
-    if (!window.YT) {
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        
-        // Set up a callback for when the API is ready
-        window.onYouTubeIframeAPIReady = function() {
-            setupYouTubePlayer(videoId, startSeconds, endSeconds, autoStart);
-        };
-    } else {
-        // YouTube API already loaded, set up player directly
-        setupYouTubePlayer(videoId, startSeconds, endSeconds, autoStart);
-    }
-}
-
-/**
- * Set up YouTube player with API controls for proper looping
- */
-function setupYouTubePlayer(videoId, startSeconds, endSeconds, autoStart) {
-    // If there's an existing player, destroy it
+    // Destroy any existing YouTube player if it exists
     if (window.player) {
         window.player.destroy();
+        window.player = null;
     }
     
-    // Clear any existing loop timer
-    if (window.currentLoopTimer) {
-        clearInterval(window.currentLoopTimer);
-        window.currentLoopTimer = null;
-    }
-    
-    // Replace the iframe with a div that the YouTube API can target
-    const videoContainer = document.getElementById('video-container');
-    videoContainer.innerHTML = `
-        <div class="youtube-wrapper">
-            <div class="youtube-container">
-                <div id="youtube-api-player" class="youtube-api-player"></div>
+    // Check if the path is a GIF file
+    if (videoPath.toLowerCase().endsWith('.gif')) {
+        // Display the GIF in an image tag
+        videoContainer.innerHTML = `
+            <div class="video-wrapper">
+                <img id="exercise-video" class="exercise-video" src="${videoPath}" alt="Exercise demonstration">
             </div>
-        </div>
-    `;
-    
-    // Create a new YouTube player
-    window.player = new YT.Player('youtube-api-player', {
-        videoId: videoId,
-        playerVars: {
-            'autoplay': 1,
-            'mute': 1,
-            'start': startSeconds,
-            'controls': 1,
-            'rel': 0
-        },
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
-    });
-    
-    function onPlayerReady(event) {
-        event.target.playVideo();
-        event.target.seekTo(startSeconds);
+        `;
         
-        // Set up interval to check video progress and loop if needed
-        window.currentLoopTimer = setInterval(() => {
-            if (window.player && window.player.getCurrentTime) {
-                const currentTime = window.player.getCurrentTime();
-                
-                // If video has reached or exceeded the end point, loop back to start point
-                if (currentTime >= endSeconds) {
-                    window.player.seekTo(startSeconds);
+        // Store reference to the image element
+        window.videoPlayer = document.getElementById('exercise-video');
+        
+        // No need for event listeners or controls for GIFs as they auto-play
+    } else {
+        // For video files, create HTML5 video player
+        videoContainer.innerHTML = `
+            <div class="video-wrapper">
+                <video id="exercise-video" class="exercise-video" ${autoStart ? 'autoplay' : ''} loop controls>
+                    <source src="${videoPath}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        `;
+        
+        // Get reference to the video element
+        window.videoPlayer = document.getElementById('exercise-video');
+        
+        // Add event listeners for the video
+        if (window.videoPlayer) {
+            // Play the video when it's loaded if autoStart is true
+            window.videoPlayer.addEventListener('loadedmetadata', () => {
+                if (autoStart) {
+                    window.videoPlayer.play().catch(error => {
+                        console.error('Error autostarting video:', error);
+                        showNotification('Video autoplay failed. Click play to start.', 'warning');
+                    });
                 }
-                
-                // If the video has ended, restart it
-                if (window.player.getPlayerState() === YT.PlayerState.ENDED) {
-                    window.player.seekTo(startSeconds);
-                    window.player.playVideo();
-                }
-            }
-        }, 1000);
-    }
-    
-    function onPlayerStateChange(event) {
-        // If the video has ended, restart it from the startSeconds point
-        if (event.data === YT.PlayerState.ENDED) {
-            window.player.seekTo(startSeconds);
-            window.player.playVideo();
+            });
+            
+            // Error handling
+            window.videoPlayer.addEventListener('error', () => {
+                console.error('Error loading video:', videoPath);
+                videoContainer.innerHTML = `
+                    <div class="video-error">
+                        <p>Error: Could not load file.</p>
+                        <p>Path: ${videoPath}</p>
+                    </div>
+                `;
+            });
         }
     }
 }
 
 /**
- * Play YouTube video for a specific exercise index
+ * Play video for a specific exercise index
  */
 function playVideoForExercise(index, autoStart = false) {
-    console.log(`Playing video for exercise ${index}, autoStart: ${autoStart}`);
+    console.log(`Playing video for exercise ${index}, autoStart: ${autoStart}, workoutPaused: ${workoutPaused}`);
+    
+    // Always ensure workout is unpaused when playing a new exercise
+    if (workoutPaused) {
+        console.log("Resetting paused state while playing new exercise");
+        workoutPaused = false;
+        
+        // Update the pause button text
+        const pauseButton = document.getElementById('pause-button');
+        if (pauseButton) {
+            pauseButton.textContent = 'Pause';
+            console.log("Updated pause button text to 'Pause'");
+        } else {
+            console.log("Could not find pause button to update text");
+        }
+    }
     
     // Clear any existing loop timer
     if (window.currentLoopTimer) {
@@ -299,7 +252,7 @@ function playVideoForExercise(index, autoStart = false) {
             speakText(startAnnouncement);
         }
         
-        playVideo(exercise.youtubeLink, exercise.startSeconds, exercise.endSeconds, autoStart);
+        playVideo(exercise.videoPath, autoStart);
         currentExerciseIndex = index;
         
         // If this is part of auto-play sequence, setup timers and voice commands
@@ -416,12 +369,27 @@ function startExerciseTimer(duration) {
  */
 function startRestPeriod() {
     // Debug logging
-    console.log(`Starting rest period. Workout active: ${workoutActive}, Current exercise index: ${currentExerciseIndex}`);
+    console.log(`Starting rest period. Workout active: ${workoutActive}, Current exercise index: ${currentExerciseIndex}, workoutPaused: ${workoutPaused}`);
     
     // Ensure workout is still active
     if (!workoutActive) {
         console.log("Workout not active, skipping rest period");
         return;
+    }
+    
+    // IMPORTANT: Always ensure we're unpaused when starting a rest period
+    if (workoutPaused) {
+        console.log("Workout was paused, resetting state to unpaused");
+        workoutPaused = false;
+        
+        // Update the pause button text explicitly
+        const pauseButton = document.getElementById('pause-button');
+        if (pauseButton) {
+            pauseButton.textContent = 'Pause';
+            console.log("Updated pause button text to 'Pause'");
+        } else {
+            console.log("WARNING: Could not find pause button to update text");
+        }
     }
     
     // Cancel any active speech synthesis
@@ -431,7 +399,44 @@ function startRestPeriod() {
     if (window.restTimer) {
         clearInterval(window.restTimer);
         window.restTimer = null;
+        console.log("Cleared rest timer");
     }
+    
+    // IMPORTANT: First deal with the video container and player
+    // before doing any other operations
+    const videoContainer = document.getElementById('video-container');
+    
+    // First, remove the video/image player from the global context
+    if (window.videoPlayer) {
+        try {
+            // Pause video if it's a video element
+            if (window.videoPlayer.pause) {
+                window.videoPlayer.pause();
+            }
+            
+            // Remove event listeners by cloning and replacing the element
+            const oldElement = window.videoPlayer;
+            if (oldElement.parentNode) {
+                const clone = oldElement.cloneNode(false);
+                oldElement.parentNode.replaceChild(clone, oldElement);
+            }
+            window.videoPlayer = null;
+            console.log("Successfully cleaned up video/image player");
+        } catch (e) {
+            console.error("Error cleaning up video/image player:", e);
+        }
+    }
+    
+    // Immediately replace the video container contents
+    // to prevent any error messages from showing
+    videoContainer.innerHTML = `
+        <div class="rest-placeholder">
+            <div>
+                <h2>Rest Time</h2>
+                <p>Next exercise in <span id="rest-countdown">00:00</span></p>
+            </div>
+        </div>
+    `;
     
     // Get the rest period duration
     let restDuration = 10; // Default to 10 seconds
@@ -467,16 +472,11 @@ function startRestPeriod() {
         speakText(`Rest for ${restDuration} seconds. This is the last exercise.`);
     }
     
-    // Show rest image or message in video container
-    const videoContainer = document.getElementById('video-container');
-    videoContainer.innerHTML = `
-        <div class="rest-placeholder">
-            <div>
-                <h2>Rest Time</h2>
-                <p>Next exercise in <span id="rest-countdown">${formatTime(currentRestTimeRemaining)}</span></p>
-            </div>
-        </div>
-    `;
+    // Update the rest countdown display with the correct time
+    const restCountdown = document.getElementById('rest-countdown');
+    if (restCountdown) {
+        restCountdown.textContent = formatTime(currentRestTimeRemaining);
+    }
     
     // Ensure control buttons are visible
     document.getElementById('control-buttons').classList.add('show');
@@ -484,6 +484,13 @@ function startRestPeriod() {
     // Show pause button, hide checkmark button during rest
     document.getElementById('pause-button').classList.remove('hide');
     document.getElementById('checkmark-button').classList.add('hide');
+    
+    // Double-check pause button text to be absolutely certain
+    const pauseButton = document.getElementById('pause-button');
+    if (pauseButton && pauseButton.textContent !== 'Pause') {
+        pauseButton.textContent = 'Pause';
+        console.log("Had to fix pause button text in startRestPeriod");
+    }
     
     // Get and show timer element
     const timerElement = document.getElementById('timer');
@@ -552,6 +559,12 @@ function startRestPeriod() {
             
             // If there's a next exercise, play it
             if (hasNextExercise) {
+                // Ensure we're still unpaused before moving to the next exercise
+                if (workoutPaused) {
+                    console.log("WARNING: workoutPaused was set to true before next exercise - forcing to false");
+                    workoutPaused = false;
+                }
+                
                 // Cancel any previous speech before announcing the rest completion
                 // speakText("Rest complete. Starting next exercise.");
                 playVideoForExercise(nextExerciseIndex, true);
@@ -567,6 +580,9 @@ function startRestPeriod() {
  * Skip to the next exercise in the workout
  */
 function skipExercise() {
+    // Add detailed logging to debug the issue
+    console.log(`skipExercise called. Current state: workoutPaused=${workoutPaused}, workoutActive=${workoutActive}, currentExerciseIndex=${currentExerciseIndex}`);
+    
     // Cancel any active speech synthesis
     cancelSpeech();
     
@@ -574,17 +590,20 @@ function skipExercise() {
     if (window.exerciseTimer) {
         clearInterval(window.exerciseTimer);
         window.exerciseTimer = null;
+        console.log("Cleared exercise timer");
     }
     
     if (window.restTimer) {
         clearInterval(window.restTimer);
         window.restTimer = null;
+        console.log("Cleared rest timer");
     }
     
     // Clear any countdown timeout
     if (countdownTimeout) {
         clearTimeout(countdownTimeout);
         countdownTimeout = null;
+        console.log("Cleared countdown timeout");
     }
     
     // Reset saved timer values
@@ -593,24 +612,73 @@ function skipExercise() {
     currentExerciseTimeRemaining = 0;
     currentRestTimeRemaining = 0;
     
-    // Clear any existing loop timer
-    if (window.currentLoopTimer) {
-        clearInterval(window.currentLoopTimer);
-        window.currentLoopTimer = null;
+    // IMPORTANT: Reset the paused state
+    // This needs to happen before playing the next exercise
+    if (workoutPaused) {
+        console.log("Workout was paused, resetting state to unpaused");
+        workoutPaused = false;
+        
+        // Update the pause button text explicitly
+        const pauseButton = document.getElementById('pause-button');
+        if (pauseButton) {
+            pauseButton.textContent = 'Pause';
+            console.log("Updated pause button text to 'Pause'");
+        } else {
+            console.log("WARNING: Could not find pause button to update text");
+        }
     }
     
-    // Destroy YouTube player if it exists
-    if (window.player) {
-        window.player.destroy();
-        window.player = null;
+    // Clean up the video/image player to prevent errors
+    if (window.videoPlayer) {
+        try {
+            // For video element, pause it
+            if (window.videoPlayer.pause) {
+                window.videoPlayer.pause();
+            }
+            
+            // Remove event listeners by cloning and replacing the element
+            const oldElement = window.videoPlayer;
+            if (oldElement.parentNode) {
+                const clone = oldElement.cloneNode(false);
+                oldElement.parentNode.replaceChild(clone, oldElement);
+            }
+            window.videoPlayer = null;
+            console.log("Successfully cleaned up video/image player");
+        } catch (e) {
+            console.error("Error cleaning up video/image player:", e);
+        }
     }
     
     // Check if there are more exercises to play
     if (currentExerciseIndex < workoutExercises.length - 1) {
+        console.log(`Moving to next exercise: ${currentExerciseIndex + 1}`);
+        
+        // Store the next exercise index
+        const nextExerciseIndex = currentExerciseIndex + 1;
+        
+        // IMPORTANT: Force the next exercise to play in unpaused state
+        // by directly updating state variables before calling playVideoForExercise
+        workoutPaused = false;
+        
         // Play the next exercise (announcement will be made in playVideoForExercise)
-        playVideoForExercise(currentExerciseIndex + 1, workoutActive);
+        playVideoForExercise(nextExerciseIndex, workoutActive);
+        
+        // Double-check after playVideoForExercise that we're still unpaused
+        if (workoutPaused) {
+            console.log("WARNING: workoutPaused was set to true after playVideoForExercise - forcing to false");
+            workoutPaused = false;
+            
+            // Update the pause button text one more time to be certain
+            const pauseButton = document.getElementById('pause-button');
+            if (pauseButton) {
+                pauseButton.textContent = 'Pause';
+                console.log("Re-updated pause button text to 'Pause'");
+            }
+        }
     } else {
         // This was the last exercise, end the workout
+        console.log("This was the last exercise, ending workout");
+        
         // Ensure any previous speech is cancelled
         cancelSpeech();
         speakText('Workout complete!');
@@ -622,6 +690,9 @@ function skipExercise() {
  * Called when user completes a rep-based exercise or when a timed exercise finishes
  */
 function completeExercise() {
+    // Add detailed logging to debug the issue
+    console.log(`completeExercise called. Current state: workoutPaused=${workoutPaused}, workoutActive=${workoutActive}, currentExerciseIndex=${currentExerciseIndex}`);
+    
     // Cancel any active speech synthesis
     cancelSpeech();
     
@@ -629,33 +700,61 @@ function completeExercise() {
     if (window.exerciseTimer) {
         clearInterval(window.exerciseTimer);
         window.exerciseTimer = null;
+        console.log("Cleared exercise timer");
     }
     
     if (window.restTimer) {
         clearInterval(window.restTimer);
         window.restTimer = null;
+        console.log("Cleared rest timer");
     }
     
     // Clear any countdown timeout
     if (countdownTimeout) {
         clearTimeout(countdownTimeout);
         countdownTimeout = null;
+        console.log("Cleared countdown timeout");
     }
     
     // Reset saved timer values
     savedExerciseTimeRemaining = 0;
     currentExerciseTimeRemaining = 0;
     
-    // Clear any looping timer
-    if (window.currentLoopTimer) {
-        clearInterval(window.currentLoopTimer);
-        window.currentLoopTimer = null;
+    // IMPORTANT: Reset the paused state
+    // This needs to happen before starting the rest period or next exercise
+    if (workoutPaused) {
+        console.log("Workout was paused, resetting state to unpaused");
+        workoutPaused = false;
+        
+        // Update the pause button text explicitly
+        const pauseButton = document.getElementById('pause-button');
+        if (pauseButton) {
+            pauseButton.textContent = 'Pause';
+            console.log("Updated pause button text to 'Pause'");
+        } else {
+            console.log("WARNING: Could not find pause button to update text");
+        }
     }
     
-    // Destroy YouTube player if it exists
-    if (window.player) {
-        window.player.destroy();
-        window.player = null;
+    // Clean up the video/image player to prevent errors
+    if (window.videoPlayer) {
+        try {
+            // For video element, pause it
+            if (window.videoPlayer.pause) {
+                window.videoPlayer.pause();
+            }
+            
+            // Remove event listeners by cloning and replacing the element
+            const oldElement = window.videoPlayer;
+            if (oldElement.parentNode) {
+                const clone = oldElement.cloneNode(false);
+                oldElement.parentNode.replaceChild(clone, oldElement);
+            }
+            window.videoPlayer = null;
+            console.log("Successfully cleaned up video/image player");
+        } catch (e) {
+            console.error("Error cleaning up video/image player:", e);
+        }
     }
     
     // Reset timer display immediately
@@ -665,15 +764,32 @@ function completeExercise() {
     
     // Only start rest period if workout is active
     if (workoutActive) {
+        // Force unpaused state again to be safe
+        workoutPaused = false;
+        
         // Check if this was the last exercise
         if (currentExerciseIndex >= workoutExercises.length - 1) {
             // This was the last exercise, end the workout
+            console.log("This was the last exercise, ending workout");
             speakText('Workout complete!');
             endWorkout();
         } else {
             // Start rest period before next exercise
-            console.log("Starting rest period...");
+            console.log("Starting rest period for next exercise");
             startRestPeriod();
+            
+            // Double-check paused state after startRestPeriod
+            if (workoutPaused) {
+                console.log("WARNING: workoutPaused was set to true after startRestPeriod - forcing to false");
+                workoutPaused = false;
+                
+                // Update the pause button text one more time to be certain
+                const pauseButton = document.getElementById('pause-button');
+                if (pauseButton) {
+                    pauseButton.textContent = 'Pause';
+                    console.log("Re-updated pause button text to 'Pause'");
+                }
+            }
         }
     }
 }
@@ -765,33 +881,11 @@ function pauseWorkout() {
             console.log("Timers already active, no need to resume");
         }
         
-        // Resume YouTube player if it exists
-        if (window.player && typeof window.player.playVideo === 'function') {
-            window.player.playVideo();
-            
-            // Restart loop checking if we have a current exercise
-            if (currentExerciseIndex !== -1) {
-                const currentExercise = workoutExercises[currentExerciseIndex];
-                if (currentExercise) {
-                    // Get the current startSeconds and endSeconds
-                    const startSeconds = currentExercise.startSeconds || 0;
-                    const endSeconds = currentExercise.endSeconds;
-                    
-                    if (endSeconds) {
-                        // Restart the loop timer
-                        window.currentLoopTimer = setInterval(() => {
-                            if (window.player && window.player.getCurrentTime && !workoutPaused) {
-                                const currentTime = window.player.getCurrentTime();
-                                
-                                // If video has reached or exceeded the end point, loop back to start point
-                                if (currentTime >= endSeconds) {
-                                    window.player.seekTo(startSeconds);
-                                }
-                            }
-                        }, 1000);
-                    }
-                }
-            }
+        // Resume HTML5 video player if it exists and is a video element
+        if (window.videoPlayer && window.videoPlayer.play) {
+            window.videoPlayer.play().catch(error => {
+                console.error('Error resuming video:', error);
+            });
         }
     } else {
         // Pausing
@@ -809,15 +903,9 @@ function pauseWorkout() {
             clearTimeout(countdownTimeout);
         }
         
-        // Pause YouTube player
-        if (window.player && typeof window.player.pauseVideo === 'function') {
-            window.player.pauseVideo();
-        }
-        
-        // Clear the loop timer if it exists
-        if (window.currentLoopTimer) {
-            clearInterval(window.currentLoopTimer);
-            window.currentLoopTimer = null;
+        // Pause HTML5 video player if it exists and is a video element
+        if (window.videoPlayer && window.videoPlayer.pause) {
+            window.videoPlayer.pause();
         }
         
         // Note: We don't clear the exercise/rest timers here because they check the workoutPaused flag
@@ -991,16 +1079,24 @@ function endWorkout() {
         countdownTimeout = null;
     }
     
-    // Clear any looping timer
-    if (window.currentLoopTimer) {
-        clearInterval(window.currentLoopTimer);
-        window.currentLoopTimer = null;
-    }
-    
-    // Destroy YouTube player if it exists
-    if (window.player) {
-        window.player.destroy();
-        window.player = null;
+    // Clean up the video/image player to prevent errors
+    if (window.videoPlayer) {
+        try {
+            // Pause video if it's a video element
+            if (window.videoPlayer.pause) {
+                window.videoPlayer.pause();
+            }
+            
+            // Remove event listeners by cloning and replacing the element
+            const oldElement = window.videoPlayer;
+            if (oldElement.parentNode) {
+                const clone = oldElement.cloneNode(false);
+                oldElement.parentNode.replaceChild(clone, oldElement);
+            }
+            window.videoPlayer = null;
+        } catch (e) {
+            console.error("Error cleaning up video/image player:", e);
+        }
     }
     
     // Clear any active timers
@@ -1067,25 +1163,6 @@ function updateCurrentExerciseHighlight(index) {
         // Scroll to the current exercise
         currentElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
-}
-
-/**
- * Extract YouTube video ID from various URL formats
- */
-function extractYouTubeVideoId(url) {
-    // If the URL is already an embed URL, extract the video ID
-    if (url.includes('/embed/')) {
-        const parts = url.split('/embed/');
-        return parts[1].split('?')[0];
-    }
-    
-    // Handle regular YouTube URLs
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-    const match = url.match(regExp);
-    
-    return (match && match[2].length === 11)
-        ? match[2]
-        : null;
 }
 
 /**
@@ -1298,15 +1375,9 @@ function handleVisibilityChange(forceHidden) {
                 pauseButton.textContent = 'Resume';
             }
             
-            // Pause YouTube player if it exists
-            if (window.player && typeof window.player.pauseVideo === 'function') {
-                window.player.pauseVideo();
-            }
-            
-            // Clear the loop timer if it exists
-            if (window.currentLoopTimer) {
-                clearInterval(window.currentLoopTimer);
-                window.currentLoopTimer = null;
+            // Pause video player if it exists
+            if (window.videoPlayer) {
+                window.videoPlayer.pause();
             }
         }
     } else {
@@ -1333,7 +1404,6 @@ window.startWorkout = startWorkout;
 window.pauseWorkout = pauseWorkout;
 window.skipExercise = skipExercise;
 window.completeExercise = completeExercise;
-window.setupYouTubePlayer = setupYouTubePlayer;
 window.toggleSpeechRecognition = function() {
     // Import the isMobileDevice function from audioCommands.js
     const { isMobileDevice } = window.audioCommands || {};

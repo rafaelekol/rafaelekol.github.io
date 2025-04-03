@@ -923,7 +923,43 @@ button:hover {
     margin: 0 auto;
 }
 
-/* YouTube Player Wrapper Styles */
+/* HTML5 Video Player and GIF Styles */
+.video-wrapper {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.exercise-video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    /* For GIFs, ensure proper sizing */
+    object-fit: contain;
+    background-color: #f8f9fa;
+}
+
+/* Video Error Styles */
+.video-error {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 640px;
+}
+
+.video-error p {
+    margin: 5px 0;
+}
+
+/* Existing YouTube Player Wrapper Styles - keeping for reference but they'll be replaced */
 .youtube-wrapper {
     width: 100%;
     max-width: 640px;
