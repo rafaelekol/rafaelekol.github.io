@@ -30781,7 +30781,7 @@ case"student":return A.c(b).ax.y
 default:return A.c(b).ax.b}},
 Qq(){var s,r
 try{s=$.aOy().gZM().h(0,"OPENAI_API_KEY")
-if(s!=null&&J.hl(s))return s}catch(r){}return"sk-test123456789abcdef"},
+if(s!=null&&J.hl(s))return s}catch(r){}return"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"},
 b49(){if(A.Qq()!=="YOUR_OPENAI_API_KEY"&&A.Qq().length!==0)return A.Qq()
 return null},
 b48(){var s,r
