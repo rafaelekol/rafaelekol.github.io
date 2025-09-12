@@ -19,6 +19,24 @@
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="A Flutter app for teachers to create online courses using YouTube videos">
+  
+  <script>
+    // Handle GitHub Pages client-side routing
+    // This script processes URLs redirected from 404.html
+    (function() {
+      var pathSegmentsToKeep = 1; // Number of path segments to keep (for /ekolmaker/)
+      
+      var l = window.location;
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    })();
+  </script>
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
