@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ekol/static/css/main.fee362e6.css",
+    "main.js": "/ekol/static/js/main.cc324833.js",
+    "static/js/453.a599d407.chunk.js": "/ekol/static/js/453.a599d407.chunk.js",
+    "index.html": "/ekol/index.html",
+    "main.fee362e6.css.map": "/ekol/static/css/main.fee362e6.css.map",
+    "main.cc324833.js.map": "/ekol/static/js/main.cc324833.js.map",
+    "453.a599d407.chunk.js.map": "/ekol/static/js/453.a599d407.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fee362e6.css",
+    "static/js/main.cc324833.js"
+  ]
+}
