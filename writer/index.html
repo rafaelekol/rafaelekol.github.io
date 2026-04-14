@@ -37,6 +37,17 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <script>
+    // If a GitHub Pages 404 redirected here, restore the original route so the
+    // client-side router can render it.
+    (function () {
+      var redirect = sessionStorage.redirect;
+      if (redirect) {
+        sessionStorage.removeItem("redirect");
+        history.replaceState(null, "", redirect);
+      }
+    })();
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
