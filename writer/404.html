@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // GitHub Pages serves this file on 404. Redirect to the app root so
+      // Flutter can handle the route client-side.
+      (function () {
+        var base = "/writer/";
+        var path = window.location.pathname;
+        if (path && path.indexOf(base) === 0) {
+          var rest = path.slice(base.length);
+          var search = window.location.search || "";
+          var hash = window.location.hash || "";
+          sessionStorage.redirect = rest + search + hash;
+        }
+        window.location.replace(base);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=./" />
+    <script>
+      // GitHub Pages serves this file on 404. Redirect to the app root so
+      // Flutter can handle the route client-side.
+      (function () {
+        var base = "/writer/";
+        var path = window.location.pathname;
+        if (path && path.indexOf(base) === 0) {
+          var rest = path.slice(base.length);
+          var search = window.location.search || "";
+          var hash = window.location.hash || "";
+          sessionStorage.redirect = rest + search + hash;
+        }
+        window.location.replace(base);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
+
