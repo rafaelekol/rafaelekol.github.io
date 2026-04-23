@@ -37,6 +37,29 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <script>
+    // Mobile browsers sometimes lose the WebGL surface (CanvasKit) after the tab/app is
+    // backgrounded, resulting in a black screen until reload. Nudging a resize on resume
+    // is a low-impact way to trigger a redraw.
+    (function () {
+      function nudge() {
+        // Trigger Flutter's resize handling.
+        window.dispatchEvent(new Event('resize'));
+      }
+
+      document.addEventListener('visibilitychange', function () {
+        if (!document.hidden) setTimeout(nudge, 50);
+      });
+
+      window.addEventListener('pageshow', function () {
+        setTimeout(nudge, 50);
+      });
+
+      window.addEventListener('focus', function () {
+        setTimeout(nudge, 50);
+      });
+    })();
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
