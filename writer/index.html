@@ -48,40 +48,47 @@
       }
 
       // If the WebGL context is lost (CanvasKit), the safest recovery is a reload.
-      // We attach a listener once the Flutter canvas is created.
-      function attachWebglLossHandler() {
-        var canvas =
-          document.querySelector('flutter-view canvas') ||
-          document.querySelector('flt-glass-pane canvas') ||
-          document.querySelector('canvas');
-        if (!canvas) return false;
-        if (canvas.__writerWebglHandlerAttached) return true;
-        canvas.__writerWebglHandlerAttached = true;
-        canvas.addEventListener(
-          'webglcontextlost',
-          function (e) {
-            try {
-              e.preventDefault();
-            } catch (_) {}
-            // Give the browser a tick, then reload to recover.
-            setTimeout(function () {
-              location.reload();
-            }, 50);
-          },
-          false
-        );
-        return true;
+      // Use a *capturing* listener so we don't depend on finding the right canvas.
+      var reloadScheduled = false;
+      function scheduleReload(reason) {
+        if (reloadScheduled) return;
+        reloadScheduled = true;
+        // Small delay to allow logs to flush.
+        setTimeout(function () {
+          try {
+            console.warn("[writer] Reloading after:", reason);
+          } catch (_) {}
+          location.reload();
+        }, 80);
       }
 
-      // Poll briefly for canvas creation.
-      var tries = 0;
-      var t = setInterval(function () {
-        tries++;
-        if (attachWebglLossHandler() || tries > 40) clearInterval(t);
-      }, 250);
+      document.addEventListener(
+        "webglcontextlost",
+        function (e) {
+          try {
+            // Prevent the browser default, then reload to recover.
+            e.preventDefault();
+          } catch (_) {}
+          scheduleReload("webglcontextlost");
+        },
+        true
+      );
 
       document.addEventListener('visibilitychange', function () {
-        if (!document.hidden) setTimeout(nudge, 50);
+        if (!document.hidden) {
+          setTimeout(nudge, 50);
+          // If we resume and CanvasKit is in a bad state, a quick reload is better than a black screen.
+          setTimeout(function () {
+            var hasFlutterView =
+              document.querySelector("flutter-view") ||
+              document.querySelector("flt-glass-pane");
+            if (hasFlutterView && !reloadScheduled) {
+              // Heuristic: if there's no canvas yet, it may be stuck booting.
+              var hasCanvas = document.querySelector("canvas");
+              if (!hasCanvas) scheduleReload("resume-no-canvas");
+            }
+          }, 1200);
+        }
       });
 
       window.addEventListener('pageshow', function () {
