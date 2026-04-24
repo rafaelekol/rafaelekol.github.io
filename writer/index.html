@@ -47,6 +47,39 @@
         window.dispatchEvent(new Event('resize'));
       }
 
+      // If the WebGL context is lost (CanvasKit), the safest recovery is a reload.
+      // We attach a listener once the Flutter canvas is created.
+      function attachWebglLossHandler() {
+        var canvas =
+          document.querySelector('flutter-view canvas') ||
+          document.querySelector('flt-glass-pane canvas') ||
+          document.querySelector('canvas');
+        if (!canvas) return false;
+        if (canvas.__writerWebglHandlerAttached) return true;
+        canvas.__writerWebglHandlerAttached = true;
+        canvas.addEventListener(
+          'webglcontextlost',
+          function (e) {
+            try {
+              e.preventDefault();
+            } catch (_) {}
+            // Give the browser a tick, then reload to recover.
+            setTimeout(function () {
+              location.reload();
+            }, 50);
+          },
+          false
+        );
+        return true;
+      }
+
+      // Poll briefly for canvas creation.
+      var tries = 0;
+      var t = setInterval(function () {
+        tries++;
+        if (attachWebglLossHandler() || tries > 40) clearInterval(t);
+      }, 250);
+
       document.addEventListener('visibilitychange', function () {
         if (!document.hidden) setTimeout(nudge, 50);
       });
