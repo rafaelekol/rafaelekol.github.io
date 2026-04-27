@@ -39,9 +39,14 @@
 <body>
   <script>
     // Mobile browsers sometimes lose the WebGL surface (CanvasKit) after the tab/app is
-    // backgrounded, resulting in a black screen. The only reliable recovery is a reload
-    // *when* the browser reports a WebGL context loss.
+    // backgrounded, resulting in a black screen until reload. Nudging a resize on resume
+    // is a low-impact way to trigger a redraw.
     (function () {
+      function nudge() {
+        // Trigger Flutter's resize handling.
+        window.dispatchEvent(new Event('resize'));
+      }
+
       // If the WebGL context is lost (CanvasKit), the safest recovery is a reload.
       // Use a *capturing* listener so we don't depend on finding the right canvas.
       var reloadScheduled = false;
@@ -69,8 +74,19 @@
         true
       );
 
-      // Intentionally avoid resume heuristics (resize nudges / reload-on-resume),
-      // since they can cause visible flicker even when the app would have resumed fine.
+      document.addEventListener('visibilitychange', function () {
+        if (!document.hidden) {
+          setTimeout(nudge, 50);
+        }
+      });
+
+      window.addEventListener('pageshow', function () {
+        setTimeout(nudge, 50);
+      });
+
+      window.addEventListener('focus', function () {
+        setTimeout(nudge, 50);
+      });
     })();
   </script>
   <script src="flutter_bootstrap.js" defer></script>
