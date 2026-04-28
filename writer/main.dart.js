@@ -36159,7 +36159,7 @@ k=(l==null?$.bq=$.d2():l).dt("[DEFAULT]")
 l=$.d6()
 A.bY(k,l,!0)
 j=A.rv(new A.cE(k))
-j.gkc().syB(j.gkc().gyB().aJd(null,null,null,null,!0,!0,null))
+j.gkc().syB(j.gkc().gyB().aJd(null,null,null,null,null,!0,null))
 j=$.bq
 k=(j==null?$.bq=$.d2():j).dt("[DEFAULT]")
 A.bY(k,l,!0)
@@ -54660,14 +54660,14 @@ r.k(0,"webExperimentalAutoDetectLongPolling",s.r)
 r.k(0,"webExperimentalLongPollingOptions",null)
 r.k(0,"ignoreUndefinedProperties",!1)
 return r},
-a7T(a,b,c,d,e,f,g,h){var s=this,r=g==null?s.f:g,q=f==null?s.r:f
-return new A.D8(s.a,s.b,s.c,s.d,c===!0,r,q,s.w)},
+a7T(a,b,c,d,e,f,g,h){var s=this,r=g==null?s.f:g
+return new A.D8(s.a,s.b,s.c,s.d,c===!0,r,s.r,s.w)},
 aJd(a,b,c,d,e,f,g){return this.a7T(a,b,null,c,d,e,f,g)},
 aJb(a,b,c,d,e){return this.a7T(a,b,c,d,e,null,null,null)},
 l(a,b){var s
 if(b==null)return!1
 s=!1
-if(b instanceof A.D8)if(A.A(b)===A.A(this))if(b.f==this.f)s=b.r==this.r
+if(b instanceof A.D8)if(A.A(b)===A.A(this))s=b.f==this.f
 return s},
 gB(a){var s=this
 return A.U(A.A(s),s.a,s.b,s.c,s.d,s.f,s.r,s.w,!1,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)},
@@ -54709,15 +54709,13 @@ $.df().k(0,r,q)
 return r},
 cn(a){return A.b8v(this,this.gEa(),a)},
 gyB(){return this.e},
-syB(a){var s,r,q
+syB(a){var s,r
 this.e=this.e.aJb(a.d,a.b,!1,a.a,a.c)
 s=v.G.firebase_firestore
 r=s.memoryLocalCache(null)
 s=a.f
 if(s==null)s=null
-q=a.r
-if(q==null)q=null
-this.d=t.SF.a({ignoreUndefinedProperties:!1,experimentalForceLongPolling:s,experimentalAutoDetectLongPolling:q,localCache:r})}}
+this.d=t.SF.a({ignoreUndefinedProperties:!1,experimentalForceLongPolling:s,experimentalAutoDetectLongPolling:null,localCache:r})}}
 A.W9.prototype={
 geE(a){return this.y.a.path},
 cn(a){var s=v.G,r=this.y.a
