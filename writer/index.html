@@ -47,32 +47,9 @@
         window.dispatchEvent(new Event('resize'));
       }
 
-      // If the WebGL context is lost (CanvasKit), the safest recovery is a reload.
-      // Use a *capturing* listener so we don't depend on finding the right canvas.
-      var reloadScheduled = false;
-      function scheduleReload(reason) {
-        if (reloadScheduled) return;
-        reloadScheduled = true;
-        // Small delay to allow logs to flush.
-        setTimeout(function () {
-          try {
-            console.warn("[writer] Reloading after:", reason);
-          } catch (_) {}
-          location.reload();
-        }, 80);
-      }
-
-      document.addEventListener(
-        "webglcontextlost",
-        function (e) {
-          try {
-            // Prevent the browser default, then reload to recover.
-            e.preventDefault();
-          } catch (_) {}
-          scheduleReload("webglcontextlost");
-        },
-        true
-      );
+      // Note: We intentionally do NOT auto-reload on `webglcontextlost`.
+      // Reloading is disruptive on desktop (switching apps/tabs can cause a full reload).
+      // Instead we rely on Flutter-side resume rebuild + a resize nudge.
 
       document.addEventListener('visibilitychange', function () {
         if (!document.hidden) {
