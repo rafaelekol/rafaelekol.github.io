@@ -41,13 +41,29 @@
     // Mobile browsers may lose WebGL context after backgrounding. Keep render-loop control
     // here so behavior is centralized and we don't duplicate Flutter/WebGL init logic.
     (function () {
+      var DEBUG_RENDER_RECOVERY = false;
       var isContextLost = false;
       var isPageHidden = false;
-      var lastRafCallback = null;
+      var pausedRafQueue = [];
+      var MAX_QUEUED_RAF = 16;
       var observedCanvases = new WeakSet();
       var activeGlContext = null;
       var originalRequestAnimationFrame =
         window.requestAnimationFrame.bind(window);
+      var pauseSinceMs = 0;
+      var resumeAttempts = 0;
+      var pauseReason = '';
+      var reloadOverlayShown = false;
+
+      function nowMs() {
+        return (window.performance && performance.now) ? performance.now() : Date.now();
+      }
+
+      function debugLog(msg) {
+        if (!DEBUG_RENDER_RECOVERY) return;
+        // Keep logs short; avoid allocating big strings.
+        console.log('[render-recovery]', msg);
+      }
 
       function nudge() {
         // Trigger Flutter resize/layout pass.
@@ -55,17 +71,43 @@
       }
 
       function shouldPauseRendering() {
-        if (isContextLost || isPageHidden) return true;
-        if (activeGlContext && activeGlContext.isContextLost()) return true;
+        if (isPageHidden) return true;
+        if (isContextLost) return true;
+        if (activeGlContext && activeGlContext.isContextLost && activeGlContext.isContextLost()) return true;
+        return false;
+      }
+
+      function updatePauseState() {
+        var paused = shouldPauseRendering();
+        if (paused) {
+          if (!pauseSinceMs) pauseSinceMs = nowMs();
+          if (isPageHidden) pauseReason = 'hidden';
+          else if (isContextLost) pauseReason = 'contextLostFlag';
+          else if (activeGlContext && activeGlContext.isContextLost && activeGlContext.isContextLost()) pauseReason = 'gl.isContextLost()';
+          else pauseReason = 'unknown';
+          return true;
+        }
+        if (pauseSinceMs) {
+          debugLog('unpaused after ' + Math.round(nowMs() - pauseSinceMs) + 'ms (reason=' + pauseReason + ', queued=' + pausedRafQueue.length + ')');
+        }
+        pauseSinceMs = 0;
+        pauseReason = '';
+        resumeAttempts = 0;
         return false;
       }
 
       function restartRenderLoopIfNeeded() {
-        if (shouldPauseRendering()) return;
-        if (!lastRafCallback) return;
-        var callback = lastRafCallback;
-        lastRafCallback = null;
-        originalRequestAnimationFrame(callback);
+        if (updatePauseState()) return;
+        if (!pausedRafQueue.length) return;
+        // Drain a bounded number of queued callbacks to preserve RAF semantics better.
+        var toRun = pausedRafQueue.splice(0, MAX_QUEUED_RAF);
+        for (var i = 0; i < toRun.length; i++) {
+          try {
+            originalRequestAnimationFrame(toRun[i]);
+          } catch (e) {
+            debugLog('restartRenderLoop error: ' + e);
+          }
+        }
       }
 
       function refreshGlContextHandle(canvas) {
@@ -80,11 +122,15 @@
       function onContextLost(event) {
         event.preventDefault();
         isContextLost = true;
+        updatePauseState();
+        debugLog('webglcontextlost');
       }
 
       function onContextRestored(event) {
         isContextLost = false;
         refreshGlContextHandle(event.target);
+        updatePauseState();
+        debugLog('webglcontextrestored');
         setTimeout(nudge, 50);
         restartRenderLoopIfNeeded();
       }
@@ -101,8 +147,12 @@
       window.requestAnimationFrame = function (callback) {
         return originalRequestAnimationFrame(function (time) {
           // Guard loop work while hidden/lost.
-          if (shouldPauseRendering()) {
-            lastRafCallback = callback;
+          if (updatePauseState()) {
+            // Queue a bounded number of RAF callbacks while paused.
+            if (pausedRafQueue.length >= MAX_QUEUED_RAF) {
+              pausedRafQueue.shift();
+            }
+            pausedRafQueue.push(callback);
             return;
           }
           callback(time);
@@ -111,6 +161,87 @@
 
       function attachExistingCanvases() {
         document.querySelectorAll('canvas').forEach(attachWebGlLifecycle);
+      }
+
+      function ensureReloadOverlay() {
+        if (reloadOverlayShown) return;
+        reloadOverlayShown = true;
+
+        var overlay = document.createElement('div');
+        overlay.id = 'resume-recovery-overlay';
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.right = '0';
+        overlay.style.bottom = '0';
+        overlay.style.zIndex = '99999';
+        overlay.style.background = 'rgba(0, 0, 0, 0.85)';
+        overlay.style.color = 'white';
+        overlay.style.display = 'flex';
+        overlay.style.flexDirection = 'column';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.style.gap = '12px';
+        overlay.style.fontFamily = 'system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif';
+        overlay.style.padding = '24px';
+        overlay.style.textAlign = 'center';
+
+        var title = document.createElement('div');
+        title.textContent = 'App needs a refresh';
+        title.style.fontSize = '18px';
+        title.style.fontWeight = '600';
+
+        var subtitle = document.createElement('div');
+        subtitle.textContent = 'Rendering did not recover after resuming. Reload to continue.';
+        subtitle.style.fontSize = '14px';
+        subtitle.style.opacity = '0.9';
+        subtitle.style.maxWidth = '360px';
+
+        var btn = document.createElement('button');
+        btn.textContent = 'Reload';
+        btn.style.border = '0';
+        btn.style.borderRadius = '10px';
+        btn.style.padding = '12px 16px';
+        btn.style.fontSize = '16px';
+        btn.style.cursor = 'pointer';
+        btn.style.background = '#ffffff';
+        btn.style.color = '#000000';
+        btn.onclick = function () {
+          try {
+            window.location.reload();
+          } catch (_) {
+            // ignore
+          }
+        };
+
+        var details = document.createElement('div');
+        details.style.fontSize = '12px';
+        details.style.opacity = '0.75';
+        details.style.maxWidth = '360px';
+        details.textContent = 'Reason: ' + pauseReason;
+
+        overlay.appendChild(title);
+        overlay.appendChild(subtitle);
+        overlay.appendChild(btn);
+        overlay.appendChild(details);
+        document.body.appendChild(overlay);
+      }
+
+      function kickFrames(count) {
+        // Schedule a few ticks to help the engine re-enter its frame loop after resume.
+        for (var i = 0; i < count; i++) {
+          originalRequestAnimationFrame(function () {});
+        }
+      }
+
+      function onResumeLikeEvent(source) {
+        isPageHidden = false;
+        attachExistingCanvases();
+        // Resize/layout can help Flutter recreate surfaces.
+        setTimeout(nudge, 50);
+        kickFrames(3);
+        restartRenderLoopIfNeeded();
+        debugLog('resume-like event: ' + source);
       }
 
       var observer = new MutationObserver(function (mutations) {
@@ -133,26 +264,59 @@
 
       document.addEventListener('visibilitychange', function () {
         isPageHidden = document.hidden;
+        updatePauseState();
         if (isPageHidden) return;
-        if (!isContextLost) {
-          setTimeout(nudge, 50);
-          restartRenderLoopIfNeeded();
-        }
+        onResumeLikeEvent('visibilitychange');
       });
 
       window.addEventListener('pageshow', function () {
-        isPageHidden = false;
-        attachExistingCanvases();
-        setTimeout(nudge, 50);
-        restartRenderLoopIfNeeded();
+        onResumeLikeEvent('pageshow');
       });
 
       window.addEventListener('focus', function () {
-        isPageHidden = false;
+        onResumeLikeEvent('focus');
+      });
+
+      window.addEventListener('pagehide', function () {
+        // Some browsers treat pagehide as a stronger “background” signal.
+        isPageHidden = true;
+        updatePauseState();
+        debugLog('pagehide');
+      });
+
+      // Page Lifecycle API (supported in Chrome): helps with BFCache/freeze/resume.
+      document.addEventListener('freeze', function () {
+        isPageHidden = true;
+        updatePauseState();
+        debugLog('freeze');
+      });
+      document.addEventListener('resume', function () {
+        onResumeLikeEvent('resume');
+      });
+
+      // Watchdog: avoid getting stuck paused forever after a resume-like event.
+      // If context restore events don’t fire, try soft recovery steps periodically.
+      setInterval(function () {
+        if (!pauseSinceMs) return;
+        // Only attempt recovery when we believe we should be active again.
+        if (isPageHidden) return;
+        var pausedForMs = nowMs() - pauseSinceMs;
+        if (pausedForMs < 3000) return;
+        // Bound attempts to avoid loops.
+        if (resumeAttempts >= 4) {
+          // Last resort: show a reload affordance rather than leaving a permanent black screen.
+          if (pausedForMs > 12000) {
+            ensureReloadOverlay();
+          }
+          return;
+        }
+        resumeAttempts++;
+        debugLog('watchdog recovery attempt ' + resumeAttempts + ' (pausedForMs=' + Math.round(pausedForMs) + ', reason=' + pauseReason + ')');
         attachExistingCanvases();
         setTimeout(nudge, 50);
+        kickFrames(3);
         restartRenderLoopIfNeeded();
-      });
+      }, 1000);
     })();
   </script>
   <script src="flutter_bootstrap.js" defer></script>
