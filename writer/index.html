@@ -42,6 +42,7 @@
     // here so behavior is centralized and we don't duplicate Flutter/WebGL init logic.
     (function () {
       var DEBUG_RENDER_RECOVERY = false;
+      var AUTO_RELOAD_ON_CONTEXT_LOSS_ERROR = true;
       var isContextLost = false;
       var isPageHidden = false;
       var pausedRafQueue = [];
@@ -63,6 +64,38 @@
         if (!DEBUG_RENDER_RECOVERY) return;
         // Keep logs short; avoid allocating big strings.
         console.log('[render-recovery]', msg);
+      }
+
+      function looksLikeContextLossError(message, stack) {
+        if (!message && !stack) return false;
+        var m = (message || '').toString();
+        var s = (stack || '').toString();
+        // Common signatures seen in Chrome when GPU context dies.
+        if (m.indexOf('CONTEXT_LOST_WEBGL') !== -1) return true;
+        if (m.indexOf('Context Lost') !== -1) return true;
+        if (s.indexOf('OffscreenCanvas') !== -1) return true;
+        if (s.indexOf('CONTEXT_LOST_WEBGL') !== -1) return true;
+        return false;
+      }
+
+      function handleContextLossFailure(source, message, stack) {
+        // Mark paused and surface reload UI immediately.
+        isContextLost = true;
+        pauseReason = source || 'contextLostError';
+        updatePauseState();
+        debugLog('context-loss failure from ' + source);
+        ensureReloadOverlay();
+
+        // Optional auto-reload: helps when engine is unrecoverable after GPU reset.
+        if (!AUTO_RELOAD_ON_CONTEXT_LOSS_ERROR) return;
+        try {
+          // Give the overlay a moment to paint.
+          setTimeout(function () {
+            try { window.location.reload(); } catch (_) {}
+          }, 250);
+        } catch (_) {
+          // ignore
+        }
       }
 
       function nudge() {
@@ -155,7 +188,18 @@
             pausedRafQueue.push(callback);
             return;
           }
-          callback(time);
+          try {
+            callback(time);
+          } catch (e) {
+            // If the engine throws on resume due to context loss, fail safe to reload affordance.
+            var msg = (e && e.message) ? e.message : ('' + e);
+            var stack = (e && e.stack) ? e.stack : '';
+            if (looksLikeContextLossError(msg, stack) || isContextLost) {
+              handleContextLossFailure('rafCallbackException', msg, stack);
+              return;
+            }
+            throw e;
+          }
         });
       };
 
@@ -292,6 +336,35 @@
       });
       document.addEventListener('resume', function () {
         onResumeLikeEvent('resume');
+      });
+
+      window.addEventListener(
+        'error',
+        function (event) {
+          try {
+            var msg = event && event.message ? event.message : '';
+            var stack = event && event.error && event.error.stack ? event.error.stack : '';
+            if (looksLikeContextLossError(msg, stack)) {
+              handleContextLossFailure('window.error', msg, stack);
+            }
+          } catch (_) {
+            // ignore
+          }
+        },
+        true,
+      );
+
+      window.addEventListener('unhandledrejection', function (event) {
+        try {
+          var reason = event && event.reason ? event.reason : null;
+          var msg = reason && reason.message ? reason.message : ('' + reason);
+          var stack = reason && reason.stack ? reason.stack : '';
+          if (looksLikeContextLossError(msg, stack)) {
+            handleContextLossFailure('unhandledrejection', msg, stack);
+          }
+        } catch (_) {
+          // ignore
+        }
       });
 
       // Watchdog: avoid getting stuck paused forever after a resume-like event.
