@@ -38,31 +38,120 @@
 </head>
 <body>
   <script>
-    // Mobile browsers sometimes lose the WebGL surface (CanvasKit) after the tab/app is
-    // backgrounded, resulting in a black screen until reload. Nudging a resize on resume
-    // is a low-impact way to trigger a redraw.
+    // Mobile browsers may lose WebGL context after backgrounding. Keep render-loop control
+    // here so behavior is centralized and we don't duplicate Flutter/WebGL init logic.
     (function () {
+      var isContextLost = false;
+      var isPageHidden = false;
+      var lastRafCallback = null;
+      var observedCanvases = new WeakSet();
+      var activeGlContext = null;
+      var originalRequestAnimationFrame =
+        window.requestAnimationFrame.bind(window);
+
       function nudge() {
-        // Trigger Flutter's resize handling.
+        // Trigger Flutter resize/layout pass.
         window.dispatchEvent(new Event('resize'));
       }
 
-      // Note: We intentionally do NOT auto-reload on `webglcontextlost`.
-      // Reloading is disruptive on desktop (switching apps/tabs can cause a full reload).
-      // Instead we rely on Flutter-side resume rebuild + a resize nudge.
+      function shouldPauseRendering() {
+        if (isContextLost || isPageHidden) return true;
+        if (activeGlContext && activeGlContext.isContextLost()) return true;
+        return false;
+      }
+
+      function restartRenderLoopIfNeeded() {
+        if (shouldPauseRendering()) return;
+        if (!lastRafCallback) return;
+        var callback = lastRafCallback;
+        lastRafCallback = null;
+        originalRequestAnimationFrame(callback);
+      }
+
+      function refreshGlContextHandle(canvas) {
+        // Context handle must be reacquired after restore before resource recreation.
+        // Resource recreation itself remains owned by Flutter/engine.
+        activeGlContext =
+          canvas.getContext('webgl2') ||
+          canvas.getContext('webgl') ||
+          canvas.getContext('experimental-webgl');
+      }
+
+      function onContextLost(event) {
+        event.preventDefault();
+        isContextLost = true;
+      }
+
+      function onContextRestored(event) {
+        isContextLost = false;
+        refreshGlContextHandle(event.target);
+        setTimeout(nudge, 50);
+        restartRenderLoopIfNeeded();
+      }
+
+      function attachWebGlLifecycle(canvas) {
+        if (!(canvas instanceof HTMLCanvasElement)) return;
+        if (observedCanvases.has(canvas)) return;
+        observedCanvases.add(canvas);
+        canvas.addEventListener('webglcontextlost', onContextLost, false);
+        canvas.addEventListener('webglcontextrestored', onContextRestored, false);
+        refreshGlContextHandle(canvas);
+      }
+
+      window.requestAnimationFrame = function (callback) {
+        return originalRequestAnimationFrame(function (time) {
+          // Guard loop work while hidden/lost.
+          if (shouldPauseRendering()) {
+            lastRafCallback = callback;
+            return;
+          }
+          callback(time);
+        });
+      };
+
+      function attachExistingCanvases() {
+        document.querySelectorAll('canvas').forEach(attachWebGlLifecycle);
+      }
+
+      var observer = new MutationObserver(function (mutations) {
+        for (var i = 0; i < mutations.length; i++) {
+          var mutation = mutations[i];
+          for (var j = 0; j < mutation.addedNodes.length; j++) {
+            var node = mutation.addedNodes[j];
+            if (!(node instanceof Element)) continue;
+            if (node.tagName === 'CANVAS') attachWebGlLifecycle(node);
+            node.querySelectorAll &&
+              node.querySelectorAll('canvas').forEach(attachWebGlLifecycle);
+          }
+        }
+      });
+      observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true,
+      });
+      attachExistingCanvases();
 
       document.addEventListener('visibilitychange', function () {
-        if (!document.hidden) {
+        isPageHidden = document.hidden;
+        if (isPageHidden) return;
+        if (!isContextLost) {
           setTimeout(nudge, 50);
+          restartRenderLoopIfNeeded();
         }
       });
 
       window.addEventListener('pageshow', function () {
+        isPageHidden = false;
+        attachExistingCanvases();
         setTimeout(nudge, 50);
+        restartRenderLoopIfNeeded();
       });
 
       window.addEventListener('focus', function () {
+        isPageHidden = false;
+        attachExistingCanvases();
         setTimeout(nudge, 50);
+        restartRenderLoopIfNeeded();
       });
     })();
   </script>
