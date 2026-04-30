@@ -56,6 +56,42 @@
       var pauseReason = '';
       var reloadOverlayShown = false;
 
+      function resolveLocale() {
+        try {
+          var lang =
+            (navigator.languages && navigator.languages[0]) ||
+            navigator.language ||
+            'en';
+          lang = (lang || 'en').toLowerCase();
+          // Normalize: "ru-RU" -> "ru"
+          if (lang.indexOf('-') !== -1) lang = lang.split('-')[0];
+          if (lang.indexOf('_') !== -1) lang = lang.split('_')[0];
+          return lang || 'en';
+        } catch (_) {
+          return 'en';
+        }
+      }
+
+      function t(key) {
+        var lang = resolveLocale();
+        var dict = {
+          en: {
+            title: 'App needs a refresh',
+            subtitle: 'Rendering did not recover after resuming. Reload to continue.',
+            reload: 'Reload',
+            reasonPrefix: 'Reason: ',
+          },
+          ru: {
+            title: 'Нужно обновить приложение',
+            subtitle: 'Рендеринг не восстановился после возвращения. Обновите страницу, чтобы продолжить.',
+            reload: 'Обновить',
+            reasonPrefix: 'Причина: ',
+          },
+        };
+        var table = dict[lang] || dict.en;
+        return table[key] || dict.en[key] || key;
+      }
+
       function nowMs() {
         return (window.performance && performance.now) ? performance.now() : Date.now();
       }
@@ -231,18 +267,18 @@
         overlay.style.textAlign = 'center';
 
         var title = document.createElement('div');
-        title.textContent = 'App needs a refresh';
+        title.textContent = t('title');
         title.style.fontSize = '18px';
         title.style.fontWeight = '600';
 
         var subtitle = document.createElement('div');
-        subtitle.textContent = 'Rendering did not recover after resuming. Reload to continue.';
+        subtitle.textContent = t('subtitle');
         subtitle.style.fontSize = '14px';
         subtitle.style.opacity = '0.9';
         subtitle.style.maxWidth = '360px';
 
         var btn = document.createElement('button');
-        btn.textContent = 'Reload';
+        btn.textContent = t('reload');
         btn.style.border = '0';
         btn.style.borderRadius = '10px';
         btn.style.padding = '12px 16px';
@@ -262,7 +298,7 @@
         details.style.fontSize = '12px';
         details.style.opacity = '0.75';
         details.style.maxWidth = '360px';
-        details.textContent = 'Reason: ' + pauseReason;
+        details.textContent = t('reasonPrefix') + pauseReason;
 
         overlay.appendChild(title);
         overlay.appendChild(subtitle);
