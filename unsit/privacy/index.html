@@ -126,7 +126,7 @@
     <p>If we change this policy, we will publish the new version on this page and update the effective date above.</p>
 
     <h2>Contact</h2>
-    <p>Questions about this policy: <a href="mailto:rafaelekol@gmail.com">rafaelekol@gmail.com</a></p>
+    <p>Questions about this policy: <span class="email">rafaelekol [at] gmail [dot] com</span></p>
   </article>
 
   <article id="ru" lang="ru" hidden>
@@ -190,7 +190,7 @@
     <p>Если мы изменим политику, новая версия будет опубликована на этой странице с новой датой вступления в силу.</p>
 
     <h2>Контакты</h2>
-    <p>Вопросы об этой политике: <a href="mailto:rafaelekol@gmail.com">rafaelekol@gmail.com</a></p>
+    <p>Вопросы об этой политике: <span class="email">rafaelekol [at] gmail [dot] com</span></p>
   </article>
 
   <footer>© 2026 Unsit for Android</footer>
@@ -212,6 +212,15 @@
     }
     window.addEventListener("hashchange", function () { show(fromHash()); });
     show(fromHash());
+
+    // The address is put together here so it never appears whole in the page source.
+    var address = ["rafaelekol", "gmail.com"].join(String.fromCharCode(64));
+    document.querySelectorAll(".email").forEach(function (el) {
+      var link = document.createElement("a");
+      link.href = "mai" + "lto:" + address;
+      link.textContent = address;
+      el.replaceWith(link);
+    });
   })();
 </script>
 </body>
