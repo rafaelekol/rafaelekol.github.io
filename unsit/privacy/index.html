@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unsit Privacy Policy</title>
+<meta name="description" content="Privacy policy of Unsit, a passive activity, sitting and sleep tracker for Android.">
+<style>
+  :root {
+    --bg: #F2EBE2;
+    --surface: #FBF7F2;
+    --text: #1F1A17;
+    --muted: #6B5F57;
+    --accent: #B8502A;
+    --line: #E1D6CA;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1A1614;
+      --surface: #241F1C;
+      --text: #F2EBE2;
+      --muted: #B3A69C;
+      --accent: #E8845C;
+      --line: #3A322D;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { font-weight: 700; font-size: 20px; color: var(--accent); letter-spacing: -0.01em; }
+  nav.lang a {
+    color: var(--muted); text-decoration: none; padding: 4px 10px; border-radius: 999px;
+    border: 1px solid var(--line); font-size: 14px;
+  }
+  nav.lang a[aria-current="true"] { color: var(--text); background: var(--surface); }
+  h1 { font-size: 32px; line-height: 1.2; margin: 32px 0 4px; letter-spacing: -0.02em; }
+  .updated { color: var(--muted); margin: 0 0 24px; }
+  .summary {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 16px 20px; margin: 0 0 8px;
+  }
+  .summary ul { margin: 8px 0 0; padding-left: 20px; }
+  h2 { font-size: 20px; margin: 32px 0 8px; }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  a { color: var(--accent); }
+  code { font-size: 14px; }
+  article[hidden] { display: none; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="brand">Unsit</span>
+    <nav class="lang">
+      <a href="#en" data-lang="en">English</a>
+      <a href="#ru" data-lang="ru">Русский</a>
+    </nav>
+  </header>
+
+  <article id="en" lang="en">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Effective 30 September 2026</p>
+
+    <div class="summary">
+      <strong>In short</strong>
+      <ul>
+        <li>Everything Unsit records stays on your phone.</li>
+        <li>The app has no internet access, no accounts, no ads, no analytics and no crash reporting.</li>
+        <li>We never receive, sell or share your data.</li>
+      </ul>
+    </div>
+
+    <p>This policy explains how the Unsit Android app (“Unsit”, “the app”), developed by Rafael (“we”), handles your information.</p>
+
+    <h2>Information the app uses</h2>
+    <ul>
+      <li><strong>Profile</strong> you enter during setup: name, gender, age, height, current and target weight, and your goal. Used to show BMI, life expectancy estimates and personal goals.</li>
+      <li><strong>Physical activity</strong>: step counts from the phone’s step sensor, and walking, running, cycling and vehicle detection from Android and Google Play services. Used to show steps, active minutes and trips.</li>
+      <li><strong>Sitting and sleep estimates</strong>, derived on the phone from activity and from periods when the phone is not used.</li>
+      <li><strong>App usage statistics</strong> (only if you allow Usage Access): when the phone was used and which apps were open. Used to show screen time, to tell sitting with the phone from sitting without it, and to estimate sleep.</li>
+      <li><strong>Settings</strong> such as units, goals, language and theme.</li>
+    </ul>
+    <p>The app does not collect your location, contacts, photos, messages or any identifiers for advertising.</p>
+
+    <h2>Where the information is stored</h2>
+    <p>All of this information is stored only in the app’s private storage on your phone. Unsit does not request internet access, so it cannot send your data to us or anyone else. We have no servers and no way to see your data.</p>
+    <p>Detailed per-minute records are deleted automatically within 7 days; daily summaries are kept until you delete them as described below.</p>
+
+    <h2>Google Play services</h2>
+    <p>To detect activities and sleep and to count steps when the sensor misses them, Unsit uses the Activity Recognition, Sleep and Recording APIs of Google Play services. These run on your phone, and the results are delivered to the app on the device. Google Play services are provided by Google and covered by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+    <h2>Backups</h2>
+    <p>If Android backup is turned on for your phone, Android may include the app’s data in your device backup in your Google account, so it can be restored on a new phone. This backup is managed by Android and Google, not by us, and you can turn it off in your phone’s settings.</p>
+
+    <h2>Permissions</h2>
+    <ul>
+      <li><strong>Physical activity</strong>: to count steps and detect walking, running and cycling.</li>
+      <li><strong>Notifications</strong> and <strong>foreground service</strong>: to keep tracking running in the background and show today’s progress in an ongoing notification.</li>
+      <li><strong>Usage access</strong> (optional): for screen time, sitting and sleep estimates, as described above.</li>
+      <li><strong>Start at boot</strong>: to resume tracking after the phone restarts.</li>
+    </ul>
+    <p>You can revoke any permission at any time in Android Settings; the related features will stop working.</p>
+
+    <h2>Your choices and deleting your data</h2>
+    <ul>
+      <li>Turn tracking or sleep tracking off in the app’s settings at any time.</li>
+      <li>Delete all data by opening Android Settings → Apps → Unsit → Storage → Clear storage, or by uninstalling the app.</li>
+    </ul>
+    <p>Since we don’t hold any of your data, there is nothing for us to access, correct or delete on our side.</p>
+
+    <h2>Health information</h2>
+    <p>Steps, active minutes, sitting time, sleep, BMI and life expectancy shown in Unsit are estimates for general wellness only. They are not medical advice and are not intended to diagnose or treat any condition.</p>
+
+    <h2>Children</h2>
+    <p>Unsit is not directed at children under 13, and we do not knowingly collect information from them.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If we change this policy, we will publish the new version on this page and update the effective date above.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy: <a href="mailto:rafaelekol@gmail.com">rafaelekol@gmail.com</a></p>
+  </article>
+
+  <article id="ru" lang="ru" hidden>
+    <h1>Политика конфиденциальности</h1>
+    <p class="updated">Действует с 30 сентября 2026 г.</p>
+
+    <div class="summary">
+      <strong>Коротко</strong>
+      <ul>
+        <li>Всё, что записывает Unsit, остаётся на вашем телефоне.</li>
+        <li>У приложения нет доступа к интернету, нет аккаунтов, рекламы, аналитики и отчётов о сбоях.</li>
+        <li>Мы не получаем, не продаём и не передаём ваши данные.</li>
+      </ul>
+    </div>
+
+    <p>Эта политика объясняет, как Android-приложение Unsit («Unsit», «приложение»), разработанное Rafael («мы»), обращается с вашей информацией.</p>
+
+    <h2>Какую информацию использует приложение</h2>
+    <ul>
+      <li><strong>Профиль</strong>, который вы вводите при настройке: имя, пол, возраст, рост, текущий и целевой вес и ваша цель. Нужен для расчёта ИМТ, оценки продолжительности жизни и личных целей.</li>
+      <li><strong>Физическая активность</strong>: шаги с датчика шагов телефона, а также распознавание ходьбы, бега, езды на велосипеде и поездок средствами Android и сервисов Google Play. Нужна для показа шагов, активных минут и поездок.</li>
+      <li><strong>Оценки времени сидения и сна</strong>, которые вычисляются на телефоне по активности и периодам, когда телефоном не пользуются.</li>
+      <li><strong>Статистика использования приложений</strong> (только если вы разрешите доступ): когда использовался телефон и какие приложения были открыты. Нужна для экранного времени, чтобы отличать сидение с телефоном от сидения без него и оценивать сон.</li>
+      <li><strong>Настройки</strong>: единицы измерения, цели, язык и тема.</li>
+    </ul>
+    <p>Приложение не собирает ваше местоположение, контакты, фото, сообщения и рекламные идентификаторы.</p>
+
+    <h2>Где хранится информация</h2>
+    <p>Вся эта информация хранится только в закрытом хранилище приложения на вашем телефоне. Unsit не запрашивает доступ к интернету, поэтому не может отправить ваши данные нам или кому-либо ещё. У нас нет серверов и нет возможности видеть ваши данные.</p>
+    <p>Подробные поминутные записи автоматически удаляются в течение 7 дней; дневные итоги хранятся, пока вы их не удалите, как описано ниже.</p>
+
+    <h2>Сервисы Google Play</h2>
+    <p>Чтобы распознавать активность и сон и учитывать шаги, которые пропустил датчик, Unsit использует Activity Recognition, Sleep и Recording API сервисов Google Play. Они работают на вашем телефоне, и результаты передаются приложению на устройстве. Сервисы Google Play предоставляются Google, и на них распространяется <a href="https://policies.google.com/privacy?hl=ru">Политика конфиденциальности Google</a>.</p>
+
+    <h2>Резервные копии</h2>
+    <p>Если на телефоне включено резервное копирование Android, данные приложения могут попасть в резервную копию устройства в вашем аккаунте Google, чтобы их можно было восстановить на новом телефоне. Этим копированием управляют Android и Google, а не мы; его можно отключить в настройках телефона.</p>
+
+    <h2>Разрешения</h2>
+    <ul>
+      <li><strong>Физическая активность</strong>: подсчёт шагов и распознавание ходьбы, бега и езды на велосипеде.</li>
+      <li><strong>Уведомления</strong> и <strong>фоновая служба</strong>: чтобы отслеживание работало в фоне и прогресс за день был виден в постоянном уведомлении.</li>
+      <li><strong>Доступ к статистике использования</strong> (по желанию): для экранного времени, оценки сидения и сна, как описано выше.</li>
+      <li><strong>Запуск при включении</strong>: чтобы продолжать отслеживание после перезагрузки телефона.</li>
+    </ul>
+    <p>Любое разрешение можно отозвать в настройках Android; связанные функции перестанут работать.</p>
+
+    <h2>Ваш выбор и удаление данных</h2>
+    <ul>
+      <li>Отслеживание и отслеживание сна можно выключить в настройках приложения в любой момент.</li>
+      <li>Чтобы удалить все данные, откройте Настройки Android → Приложения → Unsit → Хранилище → Очистить хранилище или удалите приложение.</li>
+    </ul>
+    <p>Поскольку мы не храним ваши данные, с нашей стороны нечего просматривать, исправлять или удалять.</p>
+
+    <h2>Информация о здоровье</h2>
+    <p>Шаги, активные минуты, время сидения, сон, ИМТ и продолжительность жизни в Unsit — это оценки для общего самочувствия. Они не являются медицинской рекомендацией и не предназначены для диагностики или лечения.</p>
+
+    <h2>Дети</h2>
+    <p>Unsit не предназначен для детей младше 13 лет, и мы сознательно не собираем их информацию.</p>
+
+    <h2>Изменения политики</h2>
+    <p>Если мы изменим политику, новая версия будет опубликована на этой странице с новой датой вступления в силу.</p>
+
+    <h2>Контакты</h2>
+    <p>Вопросы об этой политике: <a href="mailto:rafaelekol@gmail.com">rafaelekol@gmail.com</a></p>
+  </article>
+
+  <footer>© 2026 Unsit for Android</footer>
+</main>
+<script>
+  (function () {
+    var langs = ["en", "ru"];
+    function show(lang) {
+      langs.forEach(function (l) {
+        document.getElementById(l).hidden = l !== lang;
+        document.querySelector('[data-lang="' + l + '"]').setAttribute("aria-current", String(l === lang));
+      });
+      document.documentElement.lang = lang;
+    }
+    function fromHash() {
+      var h = location.hash.slice(1);
+      if (langs.indexOf(h) >= 0) return h;
+      return (navigator.language || "").toLowerCase().indexOf("ru") === 0 ? "ru" : "en";
+    }
+    window.addEventListener("hashchange", function () { show(fromHash()); });
+    show(fromHash());
+  })();
+</script>
+</body>
+</html>
