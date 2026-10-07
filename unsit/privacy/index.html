@@ -67,7 +67,7 @@
 
   <article id="en" lang="en">
     <h1>Privacy Policy</h1>
-    <p class="updated">Effective 30 September 2026</p>
+    <p class="updated">Effective 7 October 2026</p>
 
     <div class="summary">
       <strong>In short</strong>
@@ -86,6 +86,7 @@
       <li><strong>Physical activity</strong>: step counts from the phone’s step sensor, and walking, running, cycling and vehicle detection from Android and Google Play services. Used to show steps, active minutes and trips.</li>
       <li><strong>Sitting and sleep estimates</strong>, derived on the phone from activity and from periods when the phone is not used.</li>
       <li><strong>App usage statistics</strong> (only if you allow Usage Access): when the phone was used and which apps were open. Used to show screen time, to tell sitting with the phone from sitting without it, and to estimate sleep.</li>
+      <li><strong>Health Connect data</strong> (only if you connect Health Connect): steps, exercise sessions, sleep and weight recorded by your watch, band, ring or smart scale. See “Health Connect” below.</li>
       <li><strong>Settings</strong> such as units, goals, language and theme.</li>
     </ul>
     <p>The app does not collect your location, contacts, photos, messages or any identifiers for advertising.</p>
@@ -97,6 +98,18 @@
     <h2>Google Play services</h2>
     <p>To detect activities and sleep and to count steps when the sensor misses them, Unsit uses the Activity Recognition, Sleep and Recording APIs of Google Play services. These run on your phone, and the results are delivered to the app on the device. Google Play services are provided by Google and covered by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 
+    <h2>Health Connect</h2>
+    <p>If you choose to connect Health Connect in Settings, Unsit asks for permission to read the data types below. Unsit only reads from Health Connect; it never writes, changes or deletes anything there. Each type is used only for the feature described:</p>
+    <ul>
+      <li><strong>Steps</strong>: steps counted by a watch, band or ring fill in the minutes when the phone was not with you, so your daily steps and brisk-walking and running minutes on the Home and Activity screens are complete. Steps written by phone apps are ignored, because Unsit counts them itself.</li>
+      <li><strong>Exercise sessions</strong>: cycling and stationary-bike workouts logged by a wearable are added to your cycling minutes on the Home and Activity screens, since the phone cannot reliably detect cycling on its own. Other workout types are not used.</li>
+      <li><strong>Sleep</strong>: a night measured by a wearable replaces the phone’s sleep estimate on the Sleep screen, so you see an accurate bedtime, wake time, time asleep and progress towards your sleep goal.</li>
+      <li><strong>Weight</strong>: your latest weight from a smart scale is offered on the Update weight screen, so your BMI and life expectancy estimate stay up to date.</li>
+      <li><strong>Reading in the background</strong>: Unsit syncs about once an hour so your day, the home screen widget and the ongoing notification stay up to date without opening the app.</li>
+    </ul>
+    <p>Data read from Health Connect is stored only in the app’s private storage on your phone, like everything else, and per-minute records are deleted within 7 days. It is never sent to us or anyone else, never sold, and never used for advertising, credit or insurance decisions, or any purpose other than the features above. It leaves the phone only if you export a backup file yourself in Settings → Backup, or through Android device backup as described below.</p>
+    <p>Unsit’s use of information received from Health Connect adheres to the <a href="https://support.google.com/googleplay/android-developer/answer/12991134">Health Connect Permissions policy</a>, including the Limited Use requirements. You can disconnect Unsit or revoke any of these permissions at any time in Health Connect.</p>
+
     <h2>Backups</h2>
     <p>If Android backup is turned on for your phone, Android may include the app’s data in your device backup in your Google account, so it can be restored on a new phone. This backup is managed by Android and Google, not by us, and you can turn it off in your phone’s settings.</p>
 
@@ -106,6 +119,7 @@
       <li><strong>Notifications</strong> and <strong>foreground service</strong>: to keep tracking running in the background and show today’s progress in an ongoing notification.</li>
       <li><strong>Usage access</strong> (optional): for screen time, sitting and sleep estimates, as described above.</li>
       <li><strong>Start at boot</strong>: to resume tracking after the phone restarts.</li>
+      <li><strong>Health Connect</strong> (optional): to read steps, exercise sessions, sleep and weight from your wearables, including in the background, as described above.</li>
     </ul>
     <p>You can revoke any permission at any time in Android Settings; the related features will stop working.</p>
 
@@ -131,7 +145,7 @@
 
   <article id="ru" lang="ru" hidden>
     <h1>Политика конфиденциальности</h1>
-    <p class="updated">Действует с 30 сентября 2026 г.</p>
+    <p class="updated">Действует с 7 октября 2026 г.</p>
 
     <div class="summary">
       <strong>Коротко</strong>
@@ -150,6 +164,7 @@
       <li><strong>Физическая активность</strong>: шаги с датчика шагов телефона, а также распознавание ходьбы, бега, езды на велосипеде и поездок средствами Android и сервисов Google Play. Нужна для показа шагов, активных минут и поездок.</li>
       <li><strong>Оценки времени сидения и сна</strong>, которые вычисляются на телефоне по активности и периодам, когда телефоном не пользуются.</li>
       <li><strong>Статистика использования приложений</strong> (только если вы разрешите доступ): когда использовался телефон и какие приложения были открыты. Нужна для экранного времени, чтобы отличать сидение с телефоном от сидения без него и оценивать сон.</li>
+      <li><strong>Данные Health Connect</strong> (только если вы подключите Health Connect): шаги, тренировки, сон и вес, записанные часами, браслетом, кольцом или умными весами. См. раздел «Health Connect» ниже.</li>
       <li><strong>Настройки</strong>: единицы измерения, цели, язык и тема.</li>
     </ul>
     <p>Приложение не собирает ваше местоположение, контакты, фото, сообщения и рекламные идентификаторы.</p>
@@ -161,6 +176,18 @@
     <h2>Сервисы Google Play</h2>
     <p>Чтобы распознавать активность и сон и учитывать шаги, которые пропустил датчик, Unsit использует Activity Recognition, Sleep и Recording API сервисов Google Play. Они работают на вашем телефоне, и результаты передаются приложению на устройстве. Сервисы Google Play предоставляются Google, и на них распространяется <a href="https://policies.google.com/privacy?hl=ru">Политика конфиденциальности Google</a>.</p>
 
+    <h2>Health Connect</h2>
+    <p>Если вы подключите Health Connect в настройках, Unsit запросит разрешение на чтение перечисленных ниже типов данных. Unsit только читает данные из Health Connect и никогда ничего там не записывает, не изменяет и не удаляет. Каждый тип используется только для указанной функции:</p>
+    <ul>
+      <li><strong>Шаги</strong>: шаги, посчитанные часами, браслетом или кольцом, дополняют минуты, когда телефона не было с вами, чтобы шаги за день и минуты быстрой ходьбы и бега на главном экране и в разделе «Активность» были полными. Шаги, записанные приложениями на телефоне, не используются: их Unsit считает сам.</li>
+      <li><strong>Тренировки</strong>: велотренировки и тренировки на велотренажёре, записанные носимым устройством, добавляются к минутам езды на велосипеде на главном экране и в разделе «Активность», потому что сам телефон не может надёжно распознать езду на велосипеде. Другие виды тренировок не используются.</li>
+      <li><strong>Сон</strong>: ночь, измеренная носимым устройством, заменяет оценку сна по телефону на экране «Сон», чтобы вы видели точное время отхода ко сну и пробуждения, длительность сна и прогресс к цели сна.</li>
+      <li><strong>Вес</strong>: последний вес с умных весов предлагается на экране обновления веса, чтобы ИМТ и оценка продолжительности жизни оставались актуальными.</li>
+      <li><strong>Чтение в фоне</strong>: Unsit синхронизируется примерно раз в час, чтобы данные за день, виджет и постоянное уведомление были актуальны без открытия приложения.</li>
+    </ul>
+    <p>Данные из Health Connect, как и всё остальное, хранятся только в закрытом хранилище приложения на вашем телефоне, а поминутные записи удаляются в течение 7 дней. Они никогда не отправляются нам или кому-либо ещё, не продаются и не используются для рекламы, решений о кредитах или страховании и любых других целей, кроме функций выше. Они покидают телефон только если вы сами экспортируете файл резервной копии в «Настройки → Резервная копия» или через резервное копирование Android, как описано ниже.</p>
+    <p>Использование Unsit информации, полученной из Health Connect, соответствует <a href="https://support.google.com/googleplay/android-developer/answer/12991134?hl=ru">Правилам в отношении разрешений Health Connect</a>, включая требования об ограниченном использовании. Отключить Unsit или отозвать любое из этих разрешений можно в любой момент в Health Connect.</p>
+
     <h2>Резервные копии</h2>
     <p>Если на телефоне включено резервное копирование Android, данные приложения могут попасть в резервную копию устройства в вашем аккаунте Google, чтобы их можно было восстановить на новом телефоне. Этим копированием управляют Android и Google, а не мы; его можно отключить в настройках телефона.</p>
 
@@ -170,6 +197,7 @@
       <li><strong>Уведомления</strong> и <strong>фоновая служба</strong>: чтобы отслеживание работало в фоне и прогресс за день был виден в постоянном уведомлении.</li>
       <li><strong>Доступ к статистике использования</strong> (по желанию): для экранного времени, оценки сидения и сна, как описано выше.</li>
       <li><strong>Запуск при включении</strong>: чтобы продолжать отслеживание после перезагрузки телефона.</li>
+      <li><strong>Health Connect</strong> (по желанию): чтение шагов, тренировок, сна и веса с носимых устройств, в том числе в фоне, как описано выше.</li>
     </ul>
     <p>Любое разрешение можно отозвать в настройках Android; связанные функции перестанут работать.</p>
 
