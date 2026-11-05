@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found</title>
+  <script>
+    // GitHub Pages serves this root 404.html for every unknown path on
+    // rafaelekol.github.io. Single-page apps listed here get their deep links
+    // back: remember the path, load the app's index, and let it restore the URL.
+    (function () {
+      var apps = ['/dexteams/'];
+      var path = location.pathname;
+      for (var i = 0; i < apps.length; i++) {
+        if (path.indexOf(apps[i]) === 0) {
+          try { sessionStorage.setItem('spa-redirect', path + location.search + location.hash); } catch (e) {}
+          location.replace(apps[i]);
+          return;
+        }
+      }
+    })();
+  </script>
+  <style>
+    body { font: 16px/1.5 system-ui, sans-serif; display: grid; place-items: center; min-height: 100vh; margin: 0; color: #334155; }
+  </style>
+</head>
+<body>
+  <p>Page not found.</p>
+</body>
+</html>
